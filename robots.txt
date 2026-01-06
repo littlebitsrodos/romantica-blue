@@ -1,0 +1,12 @@
+# Romantica Blue - Vacation Rental in Paros, Greece
+# https://littlebitsrodos.github.io/romantica-blue/
+
+User-agent: *
+Allow: /
+Disallow:
+
+# Sitemap location
+Sitemap: https://littlebitsrodos.github.io/romantica-blue/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

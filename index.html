@@ -7,7 +7,7 @@
 
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self'">
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
@@ -223,28 +223,28 @@
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="images/villa_exterior_1767725437168.png" alt="Villa Exterior">
+          <img src="images/villa_exterior_1767725437168.png" alt="Villa Exterior" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/terrace_sunset.png" alt="Terrace at Sunset">
+          <img src="images/terrace_sunset.png" alt="Terrace at Sunset" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/bedroom_interior_1767725514821.png" alt="Bedroom">
+          <img src="images/bedroom_interior_1767725514821.png" alt="Bedroom" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/living_area_1767725529653.png" alt="Living Area">
+          <img src="images/living_area_1767725529653.png" alt="Living Area" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/kitchen_dining.png" alt="Kitchen & Dining">
+          <img src="images/kitchen_dining.png" alt="Kitchen & Dining" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/bathroom_interior.png" alt="Bathroom">
+          <img src="images/bathroom_interior.png" alt="Bathroom" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/crystal_beach.png" alt="Crystal Clear Waters">
+          <img src="images/crystal_beach.png" alt="Crystal Clear Waters" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/romantic_dining.png" alt="Romantic Dinner View">
+          <img src="images/romantic_dining.png" alt="Romantic Dinner View" loading="lazy">
         </div>
       </div>
     </div>
@@ -487,7 +487,7 @@
       <div class="booking-grid">
         <div class="contact-form">
           <h3 data-translate="booking.formTitle">Send Us a Message</h3>
-          <form>
+          <form action="https://formspree.io/f/xvgkzwpn" method="POST">
             <!-- Honeypot field for spam protection - hidden from users -->
             <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
