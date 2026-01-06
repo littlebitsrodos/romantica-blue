@@ -1092,3 +1092,23 @@ section:nth-child(even) {
   opacity: 0;
   pointer-events: none;
 }
+
+/* Gallery Carousel Rotation */
+.gallery-item.gallery-highlight {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 12px 40px rgba(194, 113, 79, 0.4);
+}
+
+.gallery-item.gallery-highlight img {
+  transform: scale(1.05);
+}
+
+@keyframes gallery-pulse {
+  0%, 100% { box-shadow: 0 8px 30px rgba(194, 113, 79, 0.3); }
+  50% { box-shadow: 0 12px 40px rgba(194, 113, 79, 0.5); }
+}
+
+.gallery-item.gallery-highlight {
+  animation: gallery-pulse 2s ease-in-out infinite;
+}

@@ -107,12 +107,29 @@ function initNavigation() {
     });
 }
 
-// ----- Gallery Lightbox -----
+// ----- Gallery Lightbox & Carousel -----
+let galleryRotationInterval = null;
+let currentGalleryIndex = 0;
+
 function initGallery() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox?.querySelector('img');
     const lightboxClose = lightbox?.querySelector('.lightbox-close');
+    const galleryGrid = document.querySelector('.gallery-grid');
+
+    // Start auto-rotation
+    startGalleryRotation();
+
+    // Pause rotation on hover
+    if (galleryGrid) {
+        galleryGrid.addEventListener('mouseenter', () => {
+            stopGalleryRotation();
+        });
+        galleryGrid.addEventListener('mouseleave', () => {
+            startGalleryRotation();
+        });
+    }
 
     galleryItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -122,6 +139,7 @@ function initGallery() {
                 lightboxImg.alt = img.alt;
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                stopGalleryRotation();
             }
         });
     });
@@ -142,11 +160,43 @@ function initGallery() {
     });
 }
 
+function startGalleryRotation() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    if (galleryItems.length === 0) return;
+
+    // Clear existing interval
+    stopGalleryRotation();
+
+    // Rotate every 3 seconds
+    galleryRotationInterval = setInterval(() => {
+        // Remove highlight from current item
+        galleryItems.forEach(item => item.classList.remove('gallery-highlight'));
+
+        // Move to next item
+        currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+
+        // Add highlight to new current item
+        galleryItems[currentGalleryIndex].classList.add('gallery-highlight');
+    }, 3000);
+}
+
+function stopGalleryRotation() {
+    if (galleryRotationInterval) {
+        clearInterval(galleryRotationInterval);
+        galleryRotationInterval = null;
+    }
+    // Remove all highlights when stopped
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.classList.remove('gallery-highlight');
+    });
+}
+
 function closeLightbox() {
     const lightbox = document.querySelector('.lightbox');
     if (lightbox) {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+        startGalleryRotation();
     }
 }
 
