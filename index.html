@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self'">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
   <meta name="description"
     content="Romantica Blue - A unique vacation rental in Aliki Beach, Paros, Greece. Former disco bar transformed into a serene island retreat.">
   <meta name="keywords" content="Paros, Greece, vacation rental, Aliki Beach, holiday apartment, Cyclades">
@@ -481,6 +488,8 @@
         <div class="contact-form">
           <h3 data-translate="booking.formTitle">Send Us a Message</h3>
           <form>
+            <!-- Honeypot field for spam protection - hidden from users -->
+            <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-row">
               <div class="form-group">
                 <label for="name" data-translate="booking.name">Your Name</label>
@@ -516,14 +525,14 @@
 
         <div class="booking-links">
           <h3 data-translate="booking.platformsTitle">Or Book Directly</h3>
-          <a href="#" class="booking-platform">
+          <a href="#" class="booking-platform" rel="noopener noreferrer">
             <div class="booking-platform-logo airbnb">Airbnb</div>
             <div>
               <strong data-translate="booking.airbnb">Book on Airbnb</strong>
               <p style="margin: 0; font-size: 0.9rem;">Instant booking available</p>
             </div>
           </a>
-          <a href="#" class="booking-platform">
+          <a href="#" class="booking-platform" rel="noopener noreferrer">
             <div class="booking-platform-logo booking">B.com</div>
             <div>
               <strong data-translate="booking.bookingcom">Book on Booking.com</strong>

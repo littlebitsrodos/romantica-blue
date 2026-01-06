@@ -1083,3 +1083,12 @@ section:nth-child(even) {
 .delay-4 {
   animation-delay: 0.4s;
 }
+/* Security: Honeypot field for spam protection */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
