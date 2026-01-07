@@ -18,7 +18,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "From dance floor to dream stay",
+      tagline: "Breathe. Slow down. Be here.",
       location: "Aliki Beach, Paros, Greece",
       checkAvailability: "Check Availability",
       ourStory: "Our Story"
@@ -27,36 +27,48 @@ const translations = {
     // Story Section
     story: {
       label: "Our Story",
-      title: "Where the Party Vibes Became Tranquil Nights",
-      p1: "Once upon a time, this beautiful blue haven was the legendary Romantica disco bar — the heartbeat of Paros nightlife where islanders and travelers danced until sunrise.",
-      p2: "Today, those same walls that echoed with laughter and music have been lovingly transformed into a serene retreat. The soul of Romantica lives on — not in the bass drops, but in the magical sunsets, the sound of waves, and the unforgettable memories you'll create here.",
+      title: "Where the Party Vibes Became Quiet Mornings",
+      p1: "This blue house was once the Romantica disco bar — the heartbeat of Paros nightlife where islanders and travelers danced until sunrise.",
+      p2: "Today, those same walls hold a different rhythm. Morning light through white curtains. Coffee on the balcony. Stone floors cool underfoot. The soul of Romantica lives on — in the sound of waves, the salt air, and the slow pace of island life.",
       highlight: {
         title: "A Touch of History",
-        text: "Ask the locals about Romantica — they'll smile and share stories of the best parties on the island. Now it's your turn to create new memories."
+        text: "Ask the locals about Romantica — they'll smile and share stories of the island's best parties. Now it's your turn to create quieter memories."
       }
     },
 
     // Gallery
     gallery: {
       label: "Gallery",
-      title: "Your Home in the Aegean",
-      subtitle: "Sun-drenched spaces, authentic Greek charm, and views that take your breath away"
+      title: "The Space",
+      subtitle: "Natural light. Stone floors. Cotton linens. Room to breathe."
     },
 
     // Amenities
     amenities: {
       label: "Amenities",
-      title: "Everything You Need",
-      subtitle: "Thoughtfully equipped for your perfect island getaway",
+      title: "What We Provide",
+      subtitle: "Simple, quality essentials for your stay",
       items: {
-        wifi: { title: "Free WiFi", desc: "High-speed internet throughout" },
-        ac: { title: "Air Conditioning", desc: "Stay cool in summer heat" },
-        kitchen: { title: "Full Kitchen", desc: "Cook your own Greek feast" },
-        parking: { title: "Free Parking", desc: "Private parking space" },
-        terrace: { title: "Private Terrace", desc: "Sea views & sunset watching" },
+        wifi: { title: "Starlink Internet", desc: "Reliable high-speed connection" },
+        ac: { title: "Air Conditioning", desc: "In every room" },
+        kitchen: { title: "Full Kitchen", desc: "Cook with local ingredients" },
+        parking: { title: "Free Public Parking", desc: "Street parking available" },
+        terrace: { title: "Large Balcony", desc: "Southeast views, morning light" },
         washer: { title: "Washing Machine", desc: "For longer stays" },
-        linens: { title: "Premium Linens", desc: "Fresh towels & bedding" },
-        beach: { title: "Beach Access", desc: "Steps to the crystal sea" }
+        linens: { title: "100% Cotton Linens", desc: "Clean towels & bedding" },
+        beach: { title: "Sea Towels", desc: "Provided for your beach days" }
+      }
+    },
+
+    // The Space (selling points)
+    theSpace: {
+      label: "The Space",
+      title: "Room to Breathe",
+      subtitle: "A place designed for rest and slow mornings",
+      items: {
+        bathrooms: { title: "2 Bathrooms", desc: "One en-suite, one shared" },
+        yoga: { title: "Yoga Room", desc: "Dedicated space for practice" },
+        balcony: { title: "Large Balcony", desc: "Southeast facing, morning sun" }
       }
     },
 
@@ -97,13 +109,27 @@ const translations = {
     location: {
       label: "Location",
       title: "In the Heart of Aliki",
-      subtitle: "Perfectly positioned for exploring all of Paros",
+      subtitle: "A quiet village in south Paros",
       distances: {
-        port: { label: "Parikia Port", value: "12 km" },
-        airport: { label: "Paros Airport", value: "8 km" },
+        port: { label: "Parikia Port", value: "12 km (15 min)" },
+        airport: { label: "Paros Airport", value: "2 km (5 min)" },
         village: { label: "Aliki Village", value: "2 min walk" },
         market: { label: "Supermarket", value: "5 min walk" },
-        taverna: { label: "Nearest Taverna", value: "1 min walk" }
+        naousa: { label: "Naousa (nightlife)", value: "22 km (25 min)" }
+      }
+    },
+
+    // Neighborhood
+    neighborhood: {
+      label: "Eat & Explore",
+      title: "Your Neighborhood in Aliki",
+      subtitle: "Four family tavernas within walking distance. Fresh fish. Honest cooking.",
+      nightlife: "Prefer nightlife? Naousa is 25 minutes by car — the island's liveliest village.",
+      tavernas: {
+        mouragio: { name: "To Mouragio", desc: "Waterfront, fresh seafood, family-run for 30 years", distance: "2 min walk" },
+        aliki: { name: "Aliki Restaurant", desc: "Greek classics, family recipes since 1974", distance: "3 min walk" },
+        thalassamou: { name: "Thalassamou", desc: "Beachfront tables, grilled fish", distance: "4 min walk" },
+        balcony: { name: "To Balcony tou Aki", desc: "Local fisherman's catch, simple and fresh", distance: "5 min walk" }
       }
     },
 
@@ -162,7 +188,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "De pista de baile a estancia soñada",
+      tagline: "Respira. Desacelera. Está aquí.",
       location: "Playa de Aliki, Paros, Grecia",
       checkAvailability: "Ver Disponibilidad",
       ourStory: "Nuestra Historia"
@@ -171,36 +197,48 @@ const translations = {
     // Story Section
     story: {
       label: "Nuestra Historia",
-      title: "Donde el Ritmo Se Convirtió en Tranquilidad",
-      p1: "Érase una vez, este hermoso refugio azul era la legendaria discoteca Romantica — el corazón de la vida nocturna de Paros donde isleños y viajeros bailaban hasta el amanecer.",
-      p2: "Hoy, esas mismas paredes que resonaban con risas y música se han transformado con amor en un retiro sereno. El alma de Romantica sigue viva — no en los ritmos, sino en las mágicas puestas de sol, el sonido de las olas y los recuerdos inolvidables que crearás aquí.",
+      title: "Donde el Ritmo Se Convirtió en Mañanas Tranquilas",
+      p1: "Esta casa azul fue una vez la discoteca Romantica — el corazón de la vida nocturna de Paros donde isleños y viajeros bailaban hasta el amanecer.",
+      p2: "Hoy, esas mismas paredes tienen un ritmo diferente. Luz matutina a través de cortinas blancas. Café en el balcón. Suelos de piedra frescos bajo los pies. El alma de Romantica sigue viva — en el sonido de las olas, el aire salado y el ritmo lento de la vida isleña.",
       highlight: {
         title: "Un Toque de Historia",
-        text: "Pregunta a los locales sobre Romantica — sonreirán y compartirán historias de las mejores fiestas de la isla. Ahora es tu turno de crear nuevos recuerdos."
+        text: "Pregunta a los locales sobre Romantica — sonreirán y compartirán historias de las mejores fiestas de la isla. Ahora es tu turno de crear recuerdos más tranquilos."
       }
     },
 
     // Gallery
     gallery: {
       label: "Galería",
-      title: "Tu Hogar en el Egeo",
-      subtitle: "Espacios bañados por el sol, auténtico encanto griego y vistas que te dejarán sin aliento"
+      title: "El Espacio",
+      subtitle: "Luz natural. Suelos de piedra. Sábanas de algodón. Espacio para respirar."
     },
 
     // Amenities
     amenities: {
       label: "Servicios",
-      title: "Todo Lo Que Necesitas",
-      subtitle: "Equipado pensando en tu escapada perfecta a la isla",
+      title: "Lo Que Ofrecemos",
+      subtitle: "Esenciales simples y de calidad para tu estancia",
       items: {
-        wifi: { title: "WiFi Gratis", desc: "Internet de alta velocidad" },
-        ac: { title: "Aire Acondicionado", desc: "Mantente fresco en verano" },
-        kitchen: { title: "Cocina Completa", desc: "Prepara tu propio festín griego" },
-        parking: { title: "Parking Gratuito", desc: "Plaza de aparcamiento privada" },
-        terrace: { title: "Terraza Privada", desc: "Vistas al mar y puestas de sol" },
+        wifi: { title: "Internet Starlink", desc: "Conexión fiable de alta velocidad" },
+        ac: { title: "Aire Acondicionado", desc: "En cada habitación" },
+        kitchen: { title: "Cocina Completa", desc: "Cocina con ingredientes locales" },
+        parking: { title: "Parking Público Gratuito", desc: "Aparcamiento en la calle disponible" },
+        terrace: { title: "Gran Balcón", desc: "Vistas sureste, luz matutina" },
         washer: { title: "Lavadora", desc: "Para estancias largas" },
-        linens: { title: "Ropa de Cama Premium", desc: "Toallas y sábanas frescas" },
-        beach: { title: "Acceso a la Playa", desc: "A pasos del mar cristalino" }
+        linens: { title: "Sábanas 100% Algodón", desc: "Toallas y ropa de cama limpias" },
+        beach: { title: "Toallas de Playa", desc: "Incluidas para tus días de playa" }
+      }
+    },
+
+    // The Space (selling points)
+    theSpace: {
+      label: "El Espacio",
+      title: "Espacio para Respirar",
+      subtitle: "Un lugar diseñado para descansar y mañanas lentas",
+      items: {
+        bathrooms: { title: "2 Baños", desc: "Uno en suite, uno compartido" },
+        yoga: { title: "Sala de Yoga", desc: "Espacio dedicado para práctica" },
+        balcony: { title: "Gran Balcón", desc: "Orientación sureste, sol matutino" }
       }
     },
 
@@ -241,13 +279,27 @@ const translations = {
     location: {
       label: "Ubicación",
       title: "En el Corazón de Aliki",
-      subtitle: "Perfectamente ubicado para explorar todo Paros",
+      subtitle: "Un pueblo tranquilo en el sur de Paros",
       distances: {
-        port: { label: "Puerto de Parikia", value: "12 km" },
-        airport: { label: "Aeropuerto de Paros", value: "8 km" },
+        port: { label: "Puerto de Parikia", value: "12 km (15 min)" },
+        airport: { label: "Aeropuerto de Paros", value: "2 km (5 min)" },
         village: { label: "Pueblo de Aliki", value: "2 min a pie" },
         market: { label: "Supermercado", value: "5 min a pie" },
-        taverna: { label: "Taberna más cercana", value: "1 min a pie" }
+        naousa: { label: "Naousa (vida nocturna)", value: "22 km (25 min)" }
+      }
+    },
+
+    // Neighborhood
+    neighborhood: {
+      label: "Comer y Explorar",
+      title: "Tu Vecindario en Aliki",
+      subtitle: "Cuatro tabernas familiares a poca distancia. Pescado fresco. Cocina honesta.",
+      nightlife: "¿Prefieres vida nocturna? Naousa está a 25 minutos en coche — el pueblo más animado de la isla.",
+      tavernas: {
+        mouragio: { name: "To Mouragio", desc: "Frente al mar, mariscos frescos, familiar por 30 años", distance: "2 min a pie" },
+        aliki: { name: "Aliki Restaurant", desc: "Clásicos griegos, recetas familiares desde 1974", distance: "3 min a pie" },
+        thalassamou: { name: "Thalassamou", desc: "Mesas frente a la playa, pescado a la parrilla", distance: "4 min a pie" },
+        balcony: { name: "To Balcony tou Aki", desc: "Pescado del día, simple y fresco", distance: "5 min a pie" }
       }
     },
 
@@ -306,7 +358,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "Από πίστα χορού σε ονειρεμένη διαμονή",
+      tagline: "Ανάπνευσε. Χαλάρωσε. Να'σαι εδώ.",
       location: "Αλυκή, Πάρος, Ελλάδα",
       checkAvailability: "Έλεγχος Διαθεσιμότητας",
       ourStory: "Η Ιστορία μας"
@@ -315,36 +367,48 @@ const translations = {
     // Story Section
     story: {
       label: "Η Ιστορία μας",
-      title: "Όπου ο Ρυθμός Έγινε Γαλήνη",
-      p1: "Κάποτε, αυτό το όμορφο μπλε καταφύγιο ήταν το θρυλικό disco bar Romantica — η καρδιά της νυχτερινής ζωής της Πάρου όπου ντόπιοι και ταξιδιώτες χόρευαν μέχρι την ανατολή.",
-      p2: "Σήμερα, οι ίδιοι τοίχοι που αντηχούσαν γέλια και μουσική έχουν μετατραπεί με αγάπη σε ένα γαλήνιο καταφύγιο. Η ψυχή της Romantica ζει ακόμα — όχι στους ρυθμούς, αλλά στα μαγικά ηλιοβασιλέματα, τον ήχο των κυμάτων και τις αξέχαστες αναμνήσεις που θα δημιουργήσετε εδώ.",
+      title: "Όπου ο Ρυθμός Έγινε Ήσυχα Πρωινά",
+      p1: "Αυτό το μπλε σπίτι ήταν κάποτε το disco bar Romantica — η καρδιά της νυχτερινής ζωής της Πάρου όπου ντόπιοι και ταξιδιώτες χόρευαν μέχρι την ανατολή.",
+      p2: "Σήμερα, οι ίδιοι τοίχοι έχουν έναν διαφορετικό ρυθμό. Πρωινό φως μέσα από λευκές κουρτίνες. Καφές στο μπαλκόνι. Πέτρινα πατώματα δροσερά κάτω από τα πόδια. Η ψυχή της Romantica ζει ακόμα — στον ήχο των κυμάτων, τον αλμυρό αέρα και τον αργό ρυθμό της νησιώτικης ζωής.",
       highlight: {
         title: "Μια Πινελιά Ιστορίας",
-        text: "Ρωτήστε τους ντόπιους για τη Romantica — θα χαμογελάσουν και θα μοιραστούν ιστορίες από τα καλύτερα πάρτι του νησιού. Τώρα είναι η σειρά σας να δημιουργήσετε νέες αναμνήσεις."
+        text: "Ρωτήστε τους ντόπιους για τη Romantica — θα χαμογελάσουν και θα μοιραστούν ιστορίες από τα καλύτερα πάρτι του νησιού. Τώρα είναι η σειρά σας να δημιουργήσετε πιο ήσυχες αναμνήσεις."
       }
     },
 
     // Gallery
     gallery: {
       label: "Γκαλερί",
-      title: "Το Σπίτι σας στο Αιγαίο",
-      subtitle: "Ηλιόλουστοι χώροι, αυθεντική ελληνική γοητεία και θέα που κόβει την ανάσα"
+      title: "Ο Χώρος",
+      subtitle: "Φυσικό φως. Πέτρινα πατώματα. Βαμβακερά σεντόνια. Χώρος να αναπνεύσετε."
     },
 
     // Amenities
     amenities: {
       label: "Παροχές",
-      title: "Όλα Όσα Χρειάζεστε",
-      subtitle: "Προσεκτικά εξοπλισμένο για την τέλεια νησιώτικη απόδραση",
+      title: "Τι Προσφέρουμε",
+      subtitle: "Απλά, ποιοτικά απαραίτητα για τη διαμονή σας",
       items: {
-        wifi: { title: "Δωρεάν WiFi", desc: "Υψηλής ταχύτητας internet" },
-        ac: { title: "Κλιματισμός", desc: "Δροσιά στη ζέστη του καλοκαιριού" },
-        kitchen: { title: "Πλήρης Κουζίνα", desc: "Μαγειρέψτε το δικό σας ελληνικό γεύμα" },
-        parking: { title: "Δωρεάν Πάρκινγκ", desc: "Ιδιωτικός χώρος στάθμευσης" },
-        terrace: { title: "Ιδιωτική Βεράντα", desc: "Θέα θάλασσα & ηλιοβασίλεμα" },
+        wifi: { title: "Internet Starlink", desc: "Αξιόπιστη σύνδεση υψηλής ταχύτητας" },
+        ac: { title: "Κλιματισμός", desc: "Σε κάθε δωμάτιο" },
+        kitchen: { title: "Πλήρης Κουζίνα", desc: "Μαγειρέψτε με τοπικά υλικά" },
+        parking: { title: "Δωρεάν Δημόσιο Πάρκινγκ", desc: "Στάθμευση στο δρόμο διαθέσιμη" },
+        terrace: { title: "Μεγάλο Μπαλκόνι", desc: "Θέα νοτιοανατολικά, πρωινό φως" },
         washer: { title: "Πλυντήριο", desc: "Για μεγαλύτερες διαμονές" },
-        linens: { title: "Premium Σεντόνια", desc: "Φρέσκες πετσέτες & κλινοσκεπάσματα" },
-        beach: { title: "Πρόσβαση στην Παραλία", desc: "Λίγα βήματα από την κρυστάλλινη θάλασσα" }
+        linens: { title: "Σεντόνια 100% Βαμβάκι", desc: "Καθαρές πετσέτες & κλινοσκεπάσματα" },
+        beach: { title: "Πετσέτες Θαλάσσης", desc: "Παρέχονται για τις μέρες στην παραλία" }
+      }
+    },
+
+    // The Space (selling points)
+    theSpace: {
+      label: "Ο Χώρος",
+      title: "Χώρος να Αναπνεύσετε",
+      subtitle: "Ένας χώρος σχεδιασμένος για ξεκούραση και αργά πρωινά",
+      items: {
+        bathrooms: { title: "2 Μπάνια", desc: "Ένα en-suite, ένα κοινόχρηστο" },
+        yoga: { title: "Δωμάτιο Yoga", desc: "Αφιερωμένος χώρος για άσκηση" },
+        balcony: { title: "Μεγάλο Μπαλκόνι", desc: "Νοτιοανατολικός προσανατολισμός, πρωινός ήλιος" }
       }
     },
 
@@ -385,13 +449,27 @@ const translations = {
     location: {
       label: "Τοποθεσία",
       title: "Στην Καρδιά της Αλυκής",
-      subtitle: "Ιδανικά τοποθετημένο για εξερεύνηση όλης της Πάρου",
+      subtitle: "Ένα ήσυχο χωριό στη νότια Πάρο",
       distances: {
-        port: { label: "Λιμάνι Παροικιάς", value: "12 χλμ" },
-        airport: { label: "Αεροδρόμιο Πάρου", value: "8 χλμ" },
+        port: { label: "Λιμάνι Παροικιάς", value: "12 χλμ (15 λεπτά)" },
+        airport: { label: "Αεροδρόμιο Πάρου", value: "2 χλμ (5 λεπτά)" },
         village: { label: "Χωριό Αλυκής", value: "2 λεπτά πεζή" },
         market: { label: "Σούπερ Μάρκετ", value: "5 λεπτά πεζή" },
-        taverna: { label: "Πλησιέστερη Ταβέρνα", value: "1 λεπτό πεζή" }
+        naousa: { label: "Νάουσα (νυχτερινή ζωή)", value: "22 χλμ (25 λεπτά)" }
+      }
+    },
+
+    // Neighborhood
+    neighborhood: {
+      label: "Φαγητό & Εξερεύνηση",
+      title: "Η Γειτονιά σας στην Αλυκή",
+      subtitle: "Τέσσερις οικογενειακές ταβέρνες σε κοντινή απόσταση. Φρέσκο ψάρι. Ειλικρινής μαγειρική.",
+      nightlife: "Προτιμάτε νυχτερινή ζωή; Η Νάουσα είναι 25 λεπτά με αυτοκίνητο — το πιο ζωντανό χωριό του νησιού.",
+      tavernas: {
+        mouragio: { name: "To Mouragio", desc: "Στην παραλία, φρέσκα θαλασσινά, οικογενειακή για 30 χρόνια", distance: "2 λεπτά πεζή" },
+        aliki: { name: "Aliki Restaurant", desc: "Ελληνικά κλασικά, οικογενειακές συνταγές από το 1974", distance: "3 λεπτά πεζή" },
+        thalassamou: { name: "Thalassamou", desc: "Τραπέζια στην παραλία, ψητό ψάρι", distance: "4 λεπτά πεζή" },
+        balcony: { name: "To Balcony tou Aki", desc: "Ψάρι ντόπιου ψαρά, απλό και φρέσκο", distance: "5 λεπτά πεζή" }
       }
     },
 
@@ -450,7 +528,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "De la piste de danse au séjour de rêve",
+      tagline: "Respirez. Ralentissez. Soyez ici.",
       location: "Plage d'Aliki, Paros, Grèce",
       checkAvailability: "Vérifier Disponibilité",
       ourStory: "Notre Histoire"
@@ -459,36 +537,48 @@ const translations = {
     // Story Section
     story: {
       label: "Notre Histoire",
-      title: "Où les Rythmes Sont Devenus Sérénité",
-      p1: "Il était une fois, ce magnifique havre bleu était le légendaire disco-bar Romantica — le cœur de la vie nocturne de Paros où les insulaires et les voyageurs dansaient jusqu'au lever du soleil.",
-      p2: "Aujourd'hui, ces mêmes murs qui résonnaient de rires et de musique ont été transformés avec amour en une retraite sereine. L'âme de Romantica vit toujours — non pas dans les basses, mais dans les couchers de soleil magiques, le son des vagues et les souvenirs inoubliables que vous créerez ici.",
+      title: "Où les Rythmes Sont Devenus Matins Paisibles",
+      p1: "Cette maison bleue était autrefois le disco-bar Romantica — le cœur de la vie nocturne de Paros où les insulaires et les voyageurs dansaient jusqu'au lever du soleil.",
+      p2: "Aujourd'hui, ces mêmes murs ont un rythme différent. Lumière du matin à travers les rideaux blancs. Café sur le balcon. Sols en pierre fraîche sous les pieds. L'âme de Romantica vit toujours — dans le bruit des vagues, l'air salé et le rythme lent de la vie insulaire.",
       highlight: {
         title: "Une Touche d'Histoire",
-        text: "Demandez aux locaux à propos de Romantica — ils souriront et partageront des histoires des meilleures fêtes de l'île. C'est maintenant à votre tour de créer de nouveaux souvenirs."
+        text: "Demandez aux locaux à propos de Romantica — ils souriront et partageront des histoires des meilleures fêtes de l'île. C'est maintenant à votre tour de créer des souvenirs plus paisibles."
       }
     },
 
     // Gallery
     gallery: {
       label: "Galerie",
-      title: "Votre Maison dans l'Égée",
-      subtitle: "Espaces baignés de soleil, charme grec authentique et vues à couper le souffle"
+      title: "L'Espace",
+      subtitle: "Lumière naturelle. Sols en pierre. Draps en coton. Espace pour respirer."
     },
 
     // Amenities
     amenities: {
       label: "Équipements",
-      title: "Tout Ce Dont Vous Avez Besoin",
-      subtitle: "Équipé avec soin pour votre escapade insulaire parfaite",
+      title: "Ce Que Nous Offrons",
+      subtitle: "Essentiels simples et de qualité pour votre séjour",
       items: {
-        wifi: { title: "WiFi Gratuit", desc: "Internet haut débit partout" },
-        ac: { title: "Climatisation", desc: "Restez au frais en été" },
-        kitchen: { title: "Cuisine Équipée", desc: "Préparez votre propre festin grec" },
-        parking: { title: "Parking Gratuit", desc: "Place de stationnement privée" },
-        terrace: { title: "Terrasse Privée", desc: "Vue mer & couchers de soleil" },
+        wifi: { title: "Internet Starlink", desc: "Connexion fiable haut débit" },
+        ac: { title: "Climatisation", desc: "Dans chaque pièce" },
+        kitchen: { title: "Cuisine Équipée", desc: "Cuisinez avec des ingrédients locaux" },
+        parking: { title: "Parking Public Gratuit", desc: "Stationnement dans la rue disponible" },
+        terrace: { title: "Grand Balcon", desc: "Vue sud-est, lumière du matin" },
         washer: { title: "Machine à Laver", desc: "Pour les longs séjours" },
-        linens: { title: "Linge Premium", desc: "Serviettes & draps frais" },
-        beach: { title: "Accès Plage", desc: "À quelques pas de la mer cristalline" }
+        linens: { title: "Draps 100% Coton", desc: "Serviettes & literie propres" },
+        beach: { title: "Serviettes de Plage", desc: "Fournies pour vos journées à la plage" }
+      }
+    },
+
+    // The Space (selling points)
+    theSpace: {
+      label: "L'Espace",
+      title: "Espace pour Respirer",
+      subtitle: "Un lieu conçu pour le repos et les matins lents",
+      items: {
+        bathrooms: { title: "2 Salles de Bain", desc: "Une en suite, une partagée" },
+        yoga: { title: "Salle de Yoga", desc: "Espace dédié pour la pratique" },
+        balcony: { title: "Grand Balcon", desc: "Orientation sud-est, soleil du matin" }
       }
     },
 
@@ -529,13 +619,27 @@ const translations = {
     location: {
       label: "Emplacement",
       title: "Au Cœur d'Aliki",
-      subtitle: "Parfaitement situé pour explorer tout Paros",
+      subtitle: "Un village paisible dans le sud de Paros",
       distances: {
-        port: { label: "Port de Parikia", value: "12 km" },
-        airport: { label: "Aéroport de Paros", value: "8 km" },
+        port: { label: "Port de Parikia", value: "12 km (15 min)" },
+        airport: { label: "Aéroport de Paros", value: "2 km (5 min)" },
         village: { label: "Village d'Aliki", value: "2 min à pied" },
         market: { label: "Supermarché", value: "5 min à pied" },
-        taverna: { label: "Taverne la plus proche", value: "1 min à pied" }
+        naousa: { label: "Naousa (vie nocturne)", value: "22 km (25 min)" }
+      }
+    },
+
+    // Neighborhood
+    neighborhood: {
+      label: "Manger & Explorer",
+      title: "Votre Quartier à Aliki",
+      subtitle: "Quatre tavernes familiales à distance de marche. Poisson frais. Cuisine honnête.",
+      nightlife: "Vous préférez la vie nocturne? Naousa est à 25 minutes en voiture — le village le plus animé de l'île.",
+      tavernas: {
+        mouragio: { name: "To Mouragio", desc: "Front de mer, fruits de mer frais, familial depuis 30 ans", distance: "2 min à pied" },
+        aliki: { name: "Aliki Restaurant", desc: "Classiques grecs, recettes familiales depuis 1974", distance: "3 min à pied" },
+        thalassamou: { name: "Thalassamou", desc: "Tables en bord de plage, poisson grillé", distance: "4 min à pied" },
+        balcony: { name: "To Balcony tou Aki", desc: "Poisson du pêcheur local, simple et frais", distance: "5 min à pied" }
       }
     },
 

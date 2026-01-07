@@ -59,20 +59,20 @@
       "longitude": 25.0518
     },
     "numberOfBedrooms": 2,
-    "numberOfBathroomsTotal": 1,
+    "numberOfBathroomsTotal": 2,
     "occupancy": {
       "@type": "QuantitativeValue",
       "maxValue": 4
     },
     "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Starlink Internet", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Full Kitchen", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Private Terrace", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Public Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Large Balcony", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Washing Machine", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Beach Access", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Sea View", "value": true }
+      { "@type": "LocationFeatureSpecification", "name": "Yoga Room", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Sea Towels", "value": true }
     ],
     "checkinTime": "15:00",
     "checkoutTime": "11:00",
@@ -432,7 +432,7 @@
       <div class="section-header">
         <span class="section-label" data-translate="location.label">Location</span>
         <h2 data-translate="location.title">In the Heart of Aliki</h2>
-        <p data-translate="location.subtitle">Perfectly positioned for exploring all of Paros</p>
+        <p data-translate="location.subtitle">A quiet village in south Paros</p>
       </div>
 
       <div class="location-grid">
@@ -448,12 +448,12 @@
             <li>
               <span class="distance-icon">⛴️</span>
               <span data-translate="location.distances.port.label">Parikia Port</span>
-              <span class="distance-value" data-translate="location.distances.port.value">12 km</span>
+              <span class="distance-value" data-translate="location.distances.port.value">12 km (15 min)</span>
             </li>
             <li>
               <span class="distance-icon">✈️</span>
               <span data-translate="location.distances.airport.label">Paros Airport</span>
-              <span class="distance-value" data-translate="location.distances.airport.value">8 km</span>
+              <span class="distance-value" data-translate="location.distances.airport.value">2 km (5 min)</span>
             </li>
             <li>
               <span class="distance-icon">🏘️</span>
@@ -466,13 +466,56 @@
               <span class="distance-value" data-translate="location.distances.market.value">5 min walk</span>
             </li>
             <li>
-              <span class="distance-icon">🍽️</span>
-              <span data-translate="location.distances.taverna.label">Nearest Taverna</span>
-              <span class="distance-value" data-translate="location.distances.taverna.value">1 min walk</span>
+              <span class="distance-icon">🎉</span>
+              <span data-translate="location.distances.naousa.label">Naousa (nightlife)</span>
+              <span class="distance-value" data-translate="location.distances.naousa.value">22 km (25 min)</span>
             </li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Neighborhood Section -->
+  <section id="neighborhood" class="neighborhood-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-translate="neighborhood.label">Eat & Explore</span>
+        <h2 data-translate="neighborhood.title">Your Neighborhood in Aliki</h2>
+        <p data-translate="neighborhood.subtitle">Four family tavernas within walking distance. Fresh fish. Honest
+          cooking.</p>
+      </div>
+
+      <div class="tavernas-grid">
+        <div class="taverna-card">
+          <div class="taverna-icon">🍽️</div>
+          <h4 data-translate="neighborhood.tavernas.mouragio.name">To Mouragio</h4>
+          <p data-translate="neighborhood.tavernas.mouragio.desc">Waterfront, fresh seafood, family-run for 30 years</p>
+          <span class="taverna-distance" data-translate="neighborhood.tavernas.mouragio.distance">2 min walk</span>
+        </div>
+        <div class="taverna-card">
+          <div class="taverna-icon">🍽️</div>
+          <h4 data-translate="neighborhood.tavernas.aliki.name">Aliki Restaurant</h4>
+          <p data-translate="neighborhood.tavernas.aliki.desc">Greek classics, family recipes since 1974</p>
+          <span class="taverna-distance" data-translate="neighborhood.tavernas.aliki.distance">3 min walk</span>
+        </div>
+        <div class="taverna-card">
+          <div class="taverna-icon">🍽️</div>
+          <h4 data-translate="neighborhood.tavernas.thalassamou.name">Thalassamou</h4>
+          <p data-translate="neighborhood.tavernas.thalassamou.desc">Beachfront tables, grilled fish</p>
+          <span class="taverna-distance" data-translate="neighborhood.tavernas.thalassamou.distance">4 min walk</span>
+        </div>
+        <div class="taverna-card">
+          <div class="taverna-icon">🍽️</div>
+          <h4 data-translate="neighborhood.tavernas.balcony.name">To Balcony tou Aki</h4>
+          <p data-translate="neighborhood.tavernas.balcony.desc">Local fisherman's catch, simple and fresh</p>
+          <span class="taverna-distance" data-translate="neighborhood.tavernas.balcony.distance">5 min walk</span>
+        </div>
+      </div>
+
+      <p class="nightlife-note" data-translate="neighborhood.nightlife">
+        Prefer nightlife? Naousa is 25 minutes by car — the island's liveliest village.
+      </p>
     </div>
   </section>
 
