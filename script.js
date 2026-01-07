@@ -110,72 +110,212 @@ function initNavigation() {
 // ----- Gallery Lightbox & Carousel -----
 let galleryRotationInterval = null;
 let currentGalleryIndex = 0;
+let currentLightboxIndex = 0;
+let galleryImages = [];
+let touchStartX = 0;
+let touchEndX = 0;
 
 function initGallery() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = lightbox?.querySelector('img');
     const lightboxClose = lightbox?.querySelector('.lightbox-close');
+    const lightboxPrev = lightbox?.querySelector('.lightbox-prev');
+    const lightboxNext = lightbox?.querySelector('.lightbox-next');
     const galleryGrid = document.querySelector('.gallery-grid');
 
-    // Start auto-rotation
+    // Collect all gallery images
+    galleryImages = Array.from(galleryItems).map(item => ({
+        src: item.querySelector('img')?.src,
+        alt: item.querySelector('img')?.alt
+    }));
+
+    // Initialize mobile carousel
+    initMobileCarousel();
+
+    // Start auto-rotation on desktop
     startGalleryRotation();
 
-    // Pause rotation on hover
+    // Pause rotation on hover (desktop)
     if (galleryGrid) {
-        galleryGrid.addEventListener('mouseenter', () => {
-            stopGalleryRotation();
-        });
-        galleryGrid.addEventListener('mouseleave', () => {
-            startGalleryRotation();
-        });
+        galleryGrid.addEventListener('mouseenter', () => stopGalleryRotation());
+        galleryGrid.addEventListener('mouseleave', () => startGalleryRotation());
     }
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            if (lightboxImg && img) {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                stopGalleryRotation();
-            }
-        });
+    // Desktop grid click handlers
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openLightbox(index));
     });
 
-    // Close lightbox
-    if (lightboxClose) {
-        lightboxClose.addEventListener('click', closeLightbox);
-    }
+    // Lightbox controls
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+    if (lightboxNext) lightboxNext.addEventListener('click', () => navigateLightbox(1));
 
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) closeLightbox();
         });
+
+        // Touch gestures for lightbox
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleLightboxSwipe();
+        }, { passive: true });
     }
 
+    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
+        const lightbox = document.querySelector('.lightbox');
+        if (!lightbox?.classList.contains('active')) return;
+
         if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
     });
+}
+
+function initMobileCarousel() {
+    const carousel = document.querySelector('.gallery-carousel');
+    const track = carousel?.querySelector('.carousel-track');
+    const slides = carousel?.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel?.querySelector('.carousel-prev');
+    const nextBtn = carousel?.querySelector('.carousel-next');
+    const dotsContainer = carousel?.querySelector('.carousel-dots');
+
+    if (!carousel || !slides?.length) return;
+
+    let carouselIndex = 0;
+    let autoSlideInterval = null;
+
+    // Create dots
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer?.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+        carouselIndex = index;
+        if (carouselIndex < 0) carouselIndex = slides.length - 1;
+        if (carouselIndex >= slides.length) carouselIndex = 0;
+
+        track.style.transform = `translateX(-${carouselIndex * 100}%)`;
+
+        // Update dots
+        dotsContainer?.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === carouselIndex);
+        });
+    }
+
+    function nextSlide() {
+        goToSlide(carouselIndex + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(carouselIndex - 1);
+    }
+
+    // Button handlers
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+
+    // Touch/swipe support
+    let carouselTouchStartX = 0;
+
+    track?.addEventListener('touchstart', (e) => {
+        carouselTouchStartX = e.changedTouches[0].screenX;
+        stopAutoSlide();
+    }, { passive: true });
+
+    track?.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const diff = carouselTouchStartX - touchEndX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextSlide();
+            else prevSlide();
+        }
+        startAutoSlide();
+    }, { passive: true });
+
+    // Auto-slide
+    function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+    }
+
+    // Click to open lightbox from carousel
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => openLightbox(index));
+    });
+
+    startAutoSlide();
+}
+
+function openLightbox(index) {
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox?.querySelector('img');
+    const counterCurrent = lightbox?.querySelector('.lightbox-counter .current');
+    const counterTotal = lightbox?.querySelector('.lightbox-counter .total');
+
+    if (!lightbox || !lightboxImg || !galleryImages[index]) return;
+
+    currentLightboxIndex = index;
+    lightboxImg.src = galleryImages[index].src;
+    lightboxImg.alt = galleryImages[index].alt;
+
+    if (counterCurrent) counterCurrent.textContent = index + 1;
+    if (counterTotal) counterTotal.textContent = galleryImages.length;
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    stopGalleryRotation();
+}
+
+function navigateLightbox(direction) {
+    currentLightboxIndex += direction;
+    if (currentLightboxIndex < 0) currentLightboxIndex = galleryImages.length - 1;
+    if (currentLightboxIndex >= galleryImages.length) currentLightboxIndex = 0;
+
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox?.querySelector('img');
+    const counterCurrent = lightbox?.querySelector('.lightbox-counter .current');
+
+    if (lightboxImg && galleryImages[currentLightboxIndex]) {
+        lightboxImg.src = galleryImages[currentLightboxIndex].src;
+        lightboxImg.alt = galleryImages[currentLightboxIndex].alt;
+    }
+    if (counterCurrent) counterCurrent.textContent = currentLightboxIndex + 1;
+}
+
+function handleLightboxSwipe() {
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) navigateLightbox(1);
+        else navigateLightbox(-1);
+    }
 }
 
 function startGalleryRotation() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     if (galleryItems.length === 0) return;
 
-    // Clear existing interval
     stopGalleryRotation();
 
-    // Rotate every 3 seconds
     galleryRotationInterval = setInterval(() => {
-        // Remove highlight from current item
         galleryItems.forEach(item => item.classList.remove('gallery-highlight'));
-
-        // Move to next item
         currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
-
-        // Add highlight to new current item
         galleryItems[currentGalleryIndex].classList.add('gallery-highlight');
     }, 3000);
 }
@@ -185,7 +325,6 @@ function stopGalleryRotation() {
         clearInterval(galleryRotationInterval);
         galleryRotationInterval = null;
     }
-    // Remove all highlights when stopped
     document.querySelectorAll('.gallery-item').forEach(item => {
         item.classList.remove('gallery-highlight');
     });
