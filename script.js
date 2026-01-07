@@ -177,6 +177,23 @@ function initGallery() {
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
+
+    // Click on lightbox image to navigate (left half = prev, right half = next)
+    if (lightboxImg) {
+        lightboxImg.style.cursor = 'pointer';
+        lightboxImg.addEventListener('click', (e) => {
+            const rect = lightboxImg.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const imageWidth = rect.width;
+
+            // Click on left third = previous, right two-thirds = next
+            if (clickX < imageWidth / 3) {
+                navigateLightbox(-1);
+            } else {
+                navigateLightbox(1);
+            }
+        });
+    }
 }
 
 function initMobileCarousel() {
