@@ -18,7 +18,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "Breathe. Slow down. Be here.",
+      tagline: "Slow down. Breathe. Be.",
       location: "Aliki Beach, Paros, Greece",
       checkAvailability: "Check Availability",
       ourStory: "Our Story"
@@ -188,7 +188,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "Respira. Desacelera. Está aquí.",
+      tagline: "Desacelera. Respira. Sé.",
       location: "Playa de Aliki, Paros, Grecia",
       checkAvailability: "Ver Disponibilidad",
       ourStory: "Nuestra Historia"
@@ -358,7 +358,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "Ανάπνευσε. Χαλάρωσε. Να'σαι εδώ.",
+      tagline: "Χαλάρωσε. Ανάπνευσε. Να'σαι.",
       location: "Αλυκή, Πάρος, Ελλάδα",
       checkAvailability: "Έλεγχος Διαθεσιμότητας",
       ourStory: "Η Ιστορία μας"
@@ -528,7 +528,7 @@ const translations = {
     // Hero
     hero: {
       title: "Romantica Blue",
-      tagline: "Respirez. Ralentissez. Soyez ici.",
+      tagline: "Ralentissez. Respirez. Soyez.",
       location: "Plage d'Aliki, Paros, Grèce",
       checkAvailability: "Vérifier Disponibilité",
       ourStory: "Notre Histoire"

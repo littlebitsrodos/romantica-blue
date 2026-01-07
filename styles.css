@@ -258,15 +258,16 @@ section:nth-child(even) {
 .hero h1 {
   color: var(--color-white);
   margin-bottom: var(--space-sm);
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-tagline {
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-style: italic;
-  opacity: 0.95;
+  color: var(--color-white);
   margin-bottom: var(--space-md);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-location {
@@ -275,7 +276,8 @@ section:nth-child(even) {
   justify-content: center;
   gap: var(--space-xs);
   font-size: 1.1rem;
-  opacity: 0.9;
+  color: var(--color-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-location svg {
