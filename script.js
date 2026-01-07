@@ -265,7 +265,7 @@ function initMobileCarousel() {
     // Auto-slide
     function startAutoSlide() {
         stopAutoSlide();
-        autoSlideInterval = setInterval(nextSlide, 4000);
+        autoSlideInterval = setInterval(nextSlide, 6000);
     }
 
     function stopAutoSlide() {
@@ -334,7 +334,7 @@ function startGalleryRotation() {
         galleryItems.forEach(item => item.classList.remove('gallery-highlight'));
         currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
         galleryItems[currentGalleryIndex].classList.add('gallery-highlight');
-    }, 3000);
+    }, 5000);
 }
 
 function stopGalleryRotation() {
