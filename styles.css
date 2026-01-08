@@ -1532,3 +1532,47 @@ section:nth-child(even) {
   background: var(--color-terracotta);
   color: var(--color-white);
 }
+
+/* Calendar Season Colors */
+.calendar-day.low-season {
+  border-bottom: 3px solid var(--color-olive);
+}
+
+.calendar-day.mid-season {
+  border-bottom: 3px solid var(--color-aegean);
+}
+
+.calendar-day.peak-season {
+  border-bottom: 3px solid var(--color-terracotta);
+}
+
+/* Pricing Legend */
+.pricing-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.pricing-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.pricing-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.pricing-dot.low { background: var(--color-olive); }
+.pricing-dot.mid { background: var(--color-aegean); }
+.pricing-dot.peak { background: var(--color-terracotta); }
+
+.pricing-legend-item strong {
+  color: var(--color-sea-blue);
+}

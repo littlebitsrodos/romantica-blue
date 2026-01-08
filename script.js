@@ -13,6 +13,41 @@ let bookedDates = []; // Will be populated from iCal
 let selectedCheckIn = null;
 let selectedCheckOut = null;
 
+// ----- Pricing Configuration -----
+const PRICING = {
+    seasons: {
+        low: { months: [11, 12, 1, 2, 3], weekly: 400, nightly: 57 },
+        mid: { months: [4, 5, 6, 9, 10], weekly: 600, nightly: 86 },
+        peak: { months: [7, 8], weekly: 800, nightly: 114 }
+    },
+    currency: '€'
+};
+
+function getSeasonForDate(dateStr) {
+    const date = new Date(dateStr + 'T00:00:00');
+    const month = date.getMonth() + 1;
+    for (const [season, config] of Object.entries(PRICING.seasons)) {
+        if (config.months.includes(month)) return season;
+    }
+    return 'mid';
+}
+
+function getNightlyRate(dateStr) {
+    return PRICING.seasons[getSeasonForDate(dateStr)].nightly;
+}
+
+function calculateTotalPrice(checkIn, checkOut) {
+    if (!checkIn || !checkOut) return 0;
+    let total = 0;
+    let current = new Date(checkIn + 'T00:00:00');
+    const end = new Date(checkOut + 'T00:00:00');
+    while (current < end) {
+        total += getNightlyRate(formatDate(current));
+        current.setDate(current.getDate() + 1);
+    }
+    return total;
+}
+
 // ----- Initialize on DOM Load -----
 document.addEventListener('DOMContentLoaded', () => {
     initLanguageSwitcher();
@@ -529,6 +564,7 @@ function renderCalendar() {
             dayEl.classList.add('booked');
         } else {
             dayEl.classList.add('available');
+            dayEl.classList.add(getSeasonForDate(dateStr) + '-season');
             // Add click handler for available dates
             dayEl.addEventListener('click', () => handleDateClick(dateStr));
         }
@@ -608,13 +644,14 @@ function updateSelectionDisplay() {
 
     if (selectedCheckIn && selectedCheckOut) {
         const nights = calculateNights(selectedCheckIn, selectedCheckOut);
+        const totalPrice = calculateTotalPrice(selectedCheckIn, selectedCheckOut);
         display.innerHTML = `
             <div class="selection-info">
                 <span class="selection-dates">
                     <strong>Check-in:</strong> ${formatDisplayDate(selectedCheckIn)} → 
                     <strong>Check-out:</strong> ${formatDisplayDate(selectedCheckOut)}
                 </span>
-                <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''}</span>
+                <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''} — <strong>${PRICING.currency}${totalPrice}</strong></span>
             </div>
             <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
         `;
