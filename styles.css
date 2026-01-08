@@ -273,15 +273,17 @@ section:nth-child(even) {
 /* Simple Breathing Circle Animation */
 .breathe-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: var(--space-sm) auto var(--space-md);
-  height: 80px;
+  height: 120px;
+  position: relative;
 }
 
 .breathe-circle {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.4);
@@ -289,6 +291,28 @@ section:nth-child(even) {
   box-shadow:
     0 0 20px rgba(255, 255, 255, 0.1),
     inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.breathe-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.breathe-in {
+  animation: breathe-text-in 8s ease-in-out infinite;
+}
+
+.breathe-out {
+  animation: breathe-text-out 8s ease-in-out infinite;
 }
 
 @keyframes breathe-pulse {
@@ -301,9 +325,51 @@ section:nth-child(even) {
   }
 
   50% {
-    transform: scale(1.5);
+    transform: scale(1.6);
     opacity: 1;
     border-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes breathe-text-in {
+
+  0%,
+  5% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  10%,
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+@keyframes breathe-text-out {
+
+  0%,
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  55%,
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+
+  95%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
   }
 }
 
@@ -1475,6 +1541,7 @@ section:nth-child(even) {
     grid-template-columns: 1fr;
   }
 }
+
 /* Calendar Date Selection */
 .calendar-day.check-in,
 .calendar-day.check-out {
@@ -1569,9 +1636,17 @@ section:nth-child(even) {
   border-radius: 50%;
 }
 
-.pricing-dot.low { background: var(--color-olive); }
-.pricing-dot.mid { background: var(--color-aegean); }
-.pricing-dot.peak { background: var(--color-terracotta); }
+.pricing-dot.low {
+  background: var(--color-olive);
+}
+
+.pricing-dot.mid {
+  background: var(--color-aegean);
+}
+
+.pricing-dot.peak {
+  background: var(--color-terracotta);
+}
 
 .pricing-legend-item strong {
   color: var(--color-sea-blue);
@@ -1616,7 +1691,7 @@ section:nth-child(even) {
     gap: var(--space-sm);
     text-align: center;
   }
-  
+
   .selection-actions {
     width: 100%;
     justify-content: center;
