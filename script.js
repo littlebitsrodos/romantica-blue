@@ -677,7 +677,7 @@ function updateSelectionDisplay() {
             </div>
             <div class="selection-actions">
                 <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
-                <a href="${paymentUrl}" target="_blank" class="book-now-btn" ${paymentUrl === '#' ? 'onclick="alert(\'Payment links coming soon! Please use the contact form below.\'); return false;"' : ''}>
+                <a href="${paymentUrl}" target="_blank" rel="noopener noreferrer" class="book-now-btn" ${paymentUrl === '#' ? 'onclick="alert(\'Payment links coming soon! Please use the contact form below.\'); return false;"' : ''}>
                     Book Now
                 </a>
             </div>
