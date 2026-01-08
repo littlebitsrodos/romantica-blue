@@ -9,6 +9,10 @@ let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let bookedDates = []; // Will be populated from iCal
 
+// Date selection state
+let selectedCheckIn = null;
+let selectedCheckOut = null;
+
 // ----- Initialize on DOM Load -----
 document.addEventListener('DOMContentLoaded', () => {
     initLanguageSwitcher();
@@ -514,6 +518,7 @@ function renderCalendar() {
         const dayEl = document.createElement('div');
         dayEl.className = 'calendar-day';
         dayEl.textContent = day;
+        dayEl.dataset.date = dateStr;
 
         const dateObj = new Date(currentYear, currentMonth, day);
         const isPast = dateObj < new Date(today.getFullYear(), today.getMonth(), today.getDate());
@@ -524,9 +529,144 @@ function renderCalendar() {
             dayEl.classList.add('booked');
         } else {
             dayEl.classList.add('available');
+            // Add click handler for available dates
+            dayEl.addEventListener('click', () => handleDateClick(dateStr));
+        }
+
+        // Apply selection styling
+        if (dateStr === selectedCheckIn) {
+            dayEl.classList.add('check-in');
+        }
+        if (dateStr === selectedCheckOut) {
+            dayEl.classList.add('check-out');
+        }
+        if (isInSelectedRange(dateStr)) {
+            dayEl.classList.add('in-range');
         }
 
         calendarEl.appendChild(dayEl);
+    }
+
+    // Update selection display
+    updateSelectionDisplay();
+}
+
+// Handle calendar date click
+function handleDateClick(dateStr) {
+    if (!selectedCheckIn || (selectedCheckIn && selectedCheckOut)) {
+        // Start new selection
+        selectedCheckIn = dateStr;
+        selectedCheckOut = null;
+    } else {
+        // Complete the selection
+        if (dateStr < selectedCheckIn) {
+            // User clicked an earlier date, swap
+            selectedCheckOut = selectedCheckIn;
+            selectedCheckIn = dateStr;
+        } else if (dateStr === selectedCheckIn) {
+            // Same date clicked, clear selection
+            selectedCheckIn = null;
+        } else {
+            selectedCheckOut = dateStr;
+        }
+    }
+
+    // Check for booked dates in range and invalidate if found
+    if (selectedCheckIn && selectedCheckOut && hasBookedDatesInRange()) {
+        alert('Selected range contains unavailable dates. Please choose different dates.');
+        selectedCheckOut = null;
+    }
+
+    renderCalendar();
+    syncDatesToForm();
+}
+
+// Check if a date is within the selected range
+function isInSelectedRange(dateStr) {
+    if (!selectedCheckIn || !selectedCheckOut) return false;
+    return dateStr > selectedCheckIn && dateStr < selectedCheckOut;
+}
+
+// Check if there are booked dates in the selected range
+function hasBookedDatesInRange() {
+    if (!selectedCheckIn || !selectedCheckOut) return false;
+    return bookedDates.some(d => d > selectedCheckIn && d < selectedCheckOut);
+}
+
+// Update the selection info display
+function updateSelectionDisplay() {
+    const container = document.querySelector('.calendar-container');
+    if (!container) return;
+
+    // Remove existing display
+    let display = container.querySelector('.selection-display');
+    if (!display) {
+        display = document.createElement('div');
+        display.className = 'selection-display';
+        container.appendChild(display);
+    }
+
+    if (selectedCheckIn && selectedCheckOut) {
+        const nights = calculateNights(selectedCheckIn, selectedCheckOut);
+        display.innerHTML = `
+            <div class="selection-info">
+                <span class="selection-dates">
+                    <strong>Check-in:</strong> ${formatDisplayDate(selectedCheckIn)} → 
+                    <strong>Check-out:</strong> ${formatDisplayDate(selectedCheckOut)}
+                </span>
+                <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''}</span>
+            </div>
+            <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
+        `;
+        display.style.display = 'flex';
+    } else if (selectedCheckIn) {
+        display.innerHTML = `
+            <div class="selection-info">
+                <span class="selection-dates">Check-in: ${formatDisplayDate(selectedCheckIn)} — Select check-out date</span>
+            </div>
+            <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
+        `;
+        display.style.display = 'flex';
+    } else {
+        display.style.display = 'none';
+    }
+}
+
+// Format date for display (e.g., "Jan 15, 2026")
+function formatDisplayDate(dateStr) {
+    const date = new Date(dateStr + 'T00:00:00');
+    const t = translations[currentLang].calendar;
+    return `${t.months[date.getMonth()].slice(0, 3)} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
+// Calculate nights between dates
+function calculateNights(checkIn, checkOut) {
+    const start = new Date(checkIn);
+    const end = new Date(checkOut);
+    return Math.round((end - start) / (1000 * 60 * 60 * 24));
+}
+
+// Clear date selection
+function clearDateSelection() {
+    selectedCheckIn = null;
+    selectedCheckOut = null;
+    renderCalendar();
+    syncDatesToForm();
+}
+
+// Sync selected dates to the contact form
+function syncDatesToForm() {
+    const datesInput = document.getElementById('dates');
+    if (!datesInput) return;
+
+    if (selectedCheckIn && selectedCheckOut) {
+        datesInput.value = `${formatDisplayDate(selectedCheckIn)} - ${formatDisplayDate(selectedCheckOut)}`;
+        // Scroll to contact form
+        setTimeout(() => {
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+    } else {
+        datesInput.value = '';
     }
 }
 
