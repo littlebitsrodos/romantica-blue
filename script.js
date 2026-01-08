@@ -23,6 +23,27 @@ const PRICING = {
     currency: '€'
 };
 
+// ----- Stripe Payment Links -----
+// Replace these placeholder URLs with your actual Stripe Payment Links
+// Create products in Stripe Dashboard, then create Payment Links with quantity enabled
+const STRIPE_LINKS = {
+    low: '#',   // Replace with: https://buy.stripe.com/YOUR_LOW_SEASON_LINK
+    mid: '#',   // Replace with: https://buy.stripe.com/YOUR_MID_SEASON_LINK
+    peak: '#'   // Replace with: https://buy.stripe.com/YOUR_PEAK_SEASON_LINK
+};
+
+// Get payment link for the check-in date's season
+function getPaymentLink(checkInDate, nights) {
+    const season = getSeasonForDate(checkInDate);
+    const baseUrl = STRIPE_LINKS[season];
+
+    // If no link configured yet, return placeholder
+    if (baseUrl === '#') return '#';
+
+    // Add quantity parameter for number of nights
+    return `${baseUrl}?quantity=${nights}`;
+}
+
 function getSeasonForDate(dateStr) {
     const date = new Date(dateStr + 'T00:00:00');
     const month = date.getMonth() + 1;
@@ -645,6 +666,7 @@ function updateSelectionDisplay() {
     if (selectedCheckIn && selectedCheckOut) {
         const nights = calculateNights(selectedCheckIn, selectedCheckOut);
         const totalPrice = calculateTotalPrice(selectedCheckIn, selectedCheckOut);
+        const paymentUrl = getPaymentLink(selectedCheckIn, nights);
         display.innerHTML = `
             <div class="selection-info">
                 <span class="selection-dates">
@@ -653,7 +675,12 @@ function updateSelectionDisplay() {
                 </span>
                 <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''} — <strong>${PRICING.currency}${totalPrice}</strong></span>
             </div>
-            <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
+            <div class="selection-actions">
+                <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
+                <a href="${paymentUrl}" target="_blank" class="book-now-btn" ${paymentUrl === '#' ? 'onclick="alert(\'Payment links coming soon! Please use the contact form below.\'); return false;"' : ''}>
+                    Book Now
+                </a>
+            </div>
         `;
         display.style.display = 'flex';
     } else if (selectedCheckIn) {
