@@ -16,9 +16,9 @@ let selectedCheckOut = null;
 // ----- Pricing Configuration -----
 const PRICING = {
     seasons: {
-        low: { months: [11, 12, 1, 2, 3], weekly: 400, nightly: 57 },
-        mid: { months: [4, 5, 6, 9, 10], weekly: 600, nightly: 86 },
-        peak: { months: [7, 8], weekly: 800, nightly: 114 }
+        low: { months: [11, 12, 1, 2, 3], weekly: 400, nightly: 400 },
+        mid: { months: [4, 5, 6, 9, 10], weekly: 600, nightly: 600 },
+        peak: { months: [7, 8], weekly: 800, nightly: 800 }
     },
     currency: '€'
 };
