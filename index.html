@@ -16,12 +16,15 @@
   <meta name="keywords" content="Paros, Greece, vacation rental, Aliki Beach, holiday apartment, Cyclades">
   <title>Romantica Blue | Vacation Rental in Paros, Greece</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Romantica Blue | Vacation Rental in Paros, Greece">
   <meta property="og:description"
     content="From dance floor to dream stay — a unique vacation rental in Aliki Beach, Paros. Former legendary disco bar transformed into a serene island retreat.">
-  <meta property="og:image" content="images/optimized/living-room-sea-view.jpg">
+  <meta property="og:image" content="images/optimized/living-room-sea-view.webp">
   <meta property="og:url" content="https://romanticablue.com">
   <meta property="og:site_name" content="Romantica Blue">
 
@@ -29,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Romantica Blue | Paros, Greece">
   <meta name="twitter:description" content="From dance floor to dream stay — vacation rental in Aliki Beach, Paros.">
-  <meta name="twitter:image" content="images/optimized/living-room-sea-view.jpg">
+  <meta name="twitter:image" content="images/optimized/living-room-sea-view.webp">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -40,10 +43,10 @@
     "description": "A unique vacation rental in Aliki Beach, Paros, Greece. This beautiful blue haven was once the legendary Romantica disco bar — the heartbeat of Paros nightlife. Today, those same walls have been lovingly transformed into a serene island retreat.",
     "url": "https://romanticablue.com",
     "image": [
-      "images/optimized/living-room-sea-view.jpg",
-      "images/optimized/bedroom.jpg",
-      "images/optimized/workspace-sea-view.jpg",
-      "images/optimized/terrace-sea-view.jpg"
+      "images/optimized/living-room-sea-view.webp",
+      "images/optimized/bedroom.webp",
+      "images/optimized/workspace-sea-view.webp",
+      "images/optimized/terrace-sea-view.webp"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -117,12 +120,14 @@
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts - Loaded asynchronously for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -157,7 +162,7 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <img src="images/optimized/kitchen-dining.jpg" alt="Romantica Blue Villa" class="hero-bg">
+    <img src="images/optimized/kitchen-dining.webp" alt="Romantica Blue Villa" class="hero-bg">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 data-translate="hero.title">Romantica Blue</h1>
@@ -208,7 +213,7 @@
           </div>
         </div>
         <div class="story-image">
-          <img src="images/optimized/living-room-sofa.jpg" alt="Romantica Blue Interior">
+          <img src="images/optimized/living-room-sofa.webp" alt="Romantica Blue Interior">
         </div>
       </div>
     </div>
@@ -228,28 +233,28 @@
       <div class="gallery-carousel">
         <div class="carousel-track">
           <div class="carousel-slide">
-            <img src="images/optimized/living-room-sea-view.jpg" alt="Living Area with Sea View" loading="lazy">
+            <img src="images/optimized/living-room-sea-view.webp" alt="Living Area with Sea View" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/terrace-sea-view.jpg" alt="Sea View from Terrace" loading="lazy">
+            <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Terrace" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/bedroom.jpg" alt="Bedroom" loading="lazy">
+            <img src="images/optimized/bedroom.webp" alt="Bedroom" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/workspace-sea-view.jpg" alt="Living Area with Desk" loading="lazy">
+            <img src="images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/kitchen-dining.jpg" alt="Kitchen & Dining" loading="lazy">
+            <img src="images/optimized/kitchen-dining.webp" alt="Kitchen & Dining" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/kitchen-full.jpg" alt="Full Kitchen" loading="lazy">
+            <img src="images/optimized/kitchen-full.webp" alt="Full Kitchen" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/living-room-fireplace.jpg" alt="Living Room Sea View" loading="lazy">
+            <img src="images/optimized/living-room-fireplace.webp" alt="Living Room Sea View" loading="lazy">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/living-room-panorama.jpg" alt="Living Room Panorama" loading="lazy">
+            <img src="images/optimized/living-room-panorama.webp" alt="Living Room Panorama" loading="lazy">
           </div>
         </div>
         <button class="carousel-btn carousel-prev" aria-label="Previous">❮</button>
@@ -260,28 +265,28 @@
       <!-- Desktop Grid (visible on desktop) -->
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="images/optimized/living-room-sea-view.jpg" alt="Living Area with Sea View" loading="lazy">
+          <img src="images/optimized/living-room-sea-view.webp" alt="Living Area with Sea View" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/terrace-sea-view.jpg" alt="Sea View from Terrace" loading="lazy">
+          <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Terrace" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/bedroom.jpg" alt="Bedroom" loading="lazy">
+          <img src="images/optimized/bedroom.webp" alt="Bedroom" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/workspace-sea-view.jpg" alt="Living Area with Desk" loading="lazy">
+          <img src="images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/kitchen-dining.jpg" alt="Kitchen & Dining" loading="lazy">
+          <img src="images/optimized/kitchen-dining.webp" alt="Kitchen & Dining" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/kitchen-full.jpg" alt="Full Kitchen" loading="lazy">
+          <img src="images/optimized/kitchen-full.webp" alt="Full Kitchen" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/living-room-fireplace.jpg" alt="Living Room Sea View" loading="lazy">
+          <img src="images/optimized/living-room-fireplace.webp" alt="Living Room Sea View" loading="lazy">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/living-room-panorama.jpg" alt="Living Room Panorama" loading="lazy">
+          <img src="images/optimized/living-room-panorama.webp" alt="Living Room Panorama" loading="lazy">
         </div>
       </div>
     </div>
@@ -369,7 +374,7 @@
       <div class="bedrooms-grid">
         <div class="bedroom-card">
           <div class="bedroom-image">
-            <img src="images/optimized/bedroom.jpg" alt="Master Bedroom">
+            <img src="images/optimized/bedroom.webp" alt="Master Bedroom">
           </div>
           <div class="bedroom-info">
             <h4 data-translate="bedrooms.room1.title">Master Bedroom</h4>
@@ -378,7 +383,7 @@
         </div>
         <div class="bedroom-card">
           <div class="bedroom-image">
-            <img src="images/optimized/living-room-sofa.jpg" alt="Guest Room / Living Area">
+            <img src="images/optimized/living-room-sofa.webp" alt="Guest Room / Living Area">
           </div>
           <div class="bedroom-info">
             <h4 data-translate="bedrooms.room2.title">Guest Bedroom</h4>
@@ -399,7 +404,7 @@
 
       <div class="beach-content">
         <div class="beach-image">
-          <img src="images/optimized/terrace-sea-view.jpg" alt="Sea View from Property"
+          <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Property"
             style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
         </div>
         <div>
@@ -442,7 +447,8 @@
         <div class="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12812.878424881377!2d25.0518!3d36.9932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1ee61fdd3fbb3%3A0x1ae6087c6ee10f45!2sAliki%2C%20Paros!5e0!3m2!1sen!2sgr!4v1704567890123!5m2!1sen!2sgr"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            title="Map of Aliki, Paros, Greece" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
         <div>
@@ -666,7 +672,7 @@
 
   <!-- Scripts -->
   <script src="translations.js"></script>
-  <script src="script.js"></script>
+  <script src="script.min.js"></script>
 </body>
 
 </html>

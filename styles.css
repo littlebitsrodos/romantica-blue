@@ -6,8 +6,8 @@
 /* ----- CSS Variables ----- */
 :root {
   /* Colors - Earthy, Grounded Palette */
-  --color-terracotta: #B8886B;
-  --color-terracotta-light: #D4A889;
+  --color-terracotta: #9A6E50;
+  --color-terracotta-light: #B8886B;
   --color-sand: #E8DCC4;
   --color-sand-light: #F7F3ED;
   --color-olive: #8A9B7A;
@@ -163,7 +163,7 @@ section:nth-child(even) {
 }
 
 .logo span {
-  color: var(--color-terracotta);
+  color: var(--color-terracotta-light);
 }
 
 .nav-links {
@@ -244,8 +244,8 @@ section:nth-child(even) {
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom,
-      rgba(30, 58, 95, 0.3) 0%,
-      rgba(30, 58, 95, 0.5) 100%);
+      rgba(20, 40, 60, 0.55) 0%,
+      rgba(20, 40, 60, 0.70) 100%);
   z-index: -1;
 }
 
@@ -945,6 +945,10 @@ section:nth-child(even) {
 .footer h4 {
   color: var(--color-white);
   margin-bottom: var(--space-sm);
+}
+
+.footer .logo span {
+  color: var(--color-sand-light);
 }
 
 .footer p,
