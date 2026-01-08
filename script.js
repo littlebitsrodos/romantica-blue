@@ -80,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set initial language
     setLanguage('en');
+
+    // Load fonts (CSP friendly)
+    const fonts = document.getElementById('google-fonts');
+    if (fonts) fonts.media = 'all';
 });
 
 // ----- Language Switcher -----
@@ -667,6 +671,7 @@ function updateSelectionDisplay() {
         const nights = calculateNights(selectedCheckIn, selectedCheckOut);
         const totalPrice = calculateTotalPrice(selectedCheckIn, selectedCheckOut);
         const paymentUrl = getPaymentLink(selectedCheckIn, nights);
+
         display.innerHTML = `
             <div class="selection-info">
                 <span class="selection-dates">
@@ -676,20 +681,37 @@ function updateSelectionDisplay() {
                 <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''} — <strong>${PRICING.currency}${totalPrice}</strong></span>
             </div>
             <div class="selection-actions">
-                <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
-                <a href="${paymentUrl}" target="_blank" rel="noopener noreferrer" class="book-now-btn" ${paymentUrl === '#' ? 'onclick="alert(\'Payment links coming soon! Please use the contact form below.\'); return false;"' : ''}>
+                <button class="clear-selection-btn">Clear</button>
+                <a href="${paymentUrl}" target="_blank" rel="noopener noreferrer" class="book-now-btn">
                     Book Now
                 </a>
             </div>
         `;
+
+        // Attach event listeners (CSP compliance)
+        const clearBtn = display.querySelector('.clear-selection-btn');
+        if (clearBtn) clearBtn.addEventListener('click', clearDateSelection);
+
+        const bookBtn = display.querySelector('.book-now-btn');
+        if (bookBtn && paymentUrl === '#') {
+            bookBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Payment links coming soon! Please use the contact form below.');
+            });
+        }
+
         display.style.display = 'flex';
     } else if (selectedCheckIn) {
         display.innerHTML = `
             <div class="selection-info">
                 <span class="selection-dates">Check-in: ${formatDisplayDate(selectedCheckIn)} — Select check-out date</span>
             </div>
-            <button class="clear-selection-btn" onclick="clearDateSelection()">Clear</button>
+            <button class="clear-selection-btn">Clear</button>
         `;
+
+        const clearBtn = display.querySelector('.clear-selection-btn');
+        if (clearBtn) clearBtn.addEventListener('click', clearDateSelection);
+
         display.style.display = 'flex';
     } else {
         display.style.display = 'none';
@@ -739,8 +761,22 @@ function initContactForm() {
     const form = document.querySelector('.contact-form form');
 
     if (form) {
+        // Rate limiting: max 3 submissions per 5 minutes
+        const RATE_LIMIT = { maxSubmissions: 3, windowMs: 5 * 60 * 1000 };
+        let submissions = JSON.parse(sessionStorage.getItem('formSubmissions') || '[]');
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // Clean old submissions outside the window
+            const now = Date.now();
+            submissions = submissions.filter(time => now - time < RATE_LIMIT.windowMs);
+
+            // Check rate limit
+            if (submissions.length >= RATE_LIMIT.maxSubmissions) {
+                showFormMessage('Too many submissions. Please try again in a few minutes.', 'error');
+                return;
+            }
 
             // Get form data
             const formData = new FormData(form);
@@ -757,10 +793,35 @@ function initContactForm() {
                 return;
             }
 
-            // Success (in production, send to server)
-            console.log('Form submitted:', data);
-            showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
-            form.reset();
+            // Honeypot check (if field exists and is filled, it's a bot)
+            if (data.website) {
+                console.log('Bot detected');
+                showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
+                form.reset();
+                return;
+            }
+
+            // Submit to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Track submission for rate limiting on success
+                    submissions.push(now);
+                    sessionStorage.setItem('formSubmissions', JSON.stringify(submissions));
+
+                    showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
+                    form.reset();
+                } else {
+                    showFormMessage('Oops! There was a problem sending your message.', 'error');
+                }
+            }).catch(error => {
+                showFormMessage('Oops! There was a problem sending your message.', 'error');
+            });
         });
     }
 }

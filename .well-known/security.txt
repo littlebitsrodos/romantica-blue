@@ -1,0 +1,7 @@
+# Security Policy for Romantica Blue
+# https://securitytxt.org/
+
+Contact: mailto:info@romanticablue.com
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en, el
+Canonical: https://romanticablue.com/.well-known/security.txt
