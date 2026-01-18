@@ -129,7 +129,12 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap">
   <link id="google-fonts"
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap"
-    rel="stylesheet" media="print">
+    rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Preload Hero Image -->
+  <link rel="preload" as="image" href="images/optimized/kitchen-dining.webp"
+    imagesrcset="images/optimized/kitchen-dining-600.jpg 600w, images/optimized/kitchen-dining.webp 1200w"
+    imagesizes="(max-width: 600px) 100vw, 100vw">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
@@ -164,7 +169,9 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <img src="images/optimized/kitchen-dining.webp" alt="Romantica Blue Villa" class="hero-bg">
+    <img src="images/optimized/kitchen-dining.webp"
+      srcset="images/optimized/kitchen-dining-600.jpg 600w, images/optimized/kitchen-dining.webp 1200w"
+      sizes="(max-width: 600px) 100vw, 100vw" alt="Romantica Blue Villa" class="hero-bg" fetchpriority="high">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 data-translate="hero.title">Romantica Blue</h1>
@@ -217,7 +224,7 @@
           </div>
         </div>
         <div class="story-image">
-          <img src="images/optimized/living-room-sofa.webp" alt="Romantica Blue Interior">
+          <img src="images/optimized/living-room-sofa.webp" alt="Romantica Blue Interior" loading="lazy">
         </div>
       </div>
     </div>
@@ -378,7 +385,7 @@
       <div class="bedrooms-grid">
         <div class="bedroom-card">
           <div class="bedroom-image">
-            <img src="images/optimized/bedroom.webp" alt="Master Bedroom">
+            <img src="images/optimized/bedroom.webp" alt="Master Bedroom" loading="lazy">
           </div>
           <div class="bedroom-info">
             <h4 data-translate="bedrooms.room1.title">Master Bedroom</h4>
@@ -387,7 +394,7 @@
         </div>
         <div class="bedroom-card">
           <div class="bedroom-image">
-            <img src="images/optimized/living-room-sofa.webp" alt="Guest Room / Living Area">
+            <img src="images/optimized/living-room-sofa.webp" alt="Guest Room / Living Area" loading="lazy">
           </div>
           <div class="bedroom-info">
             <h4 data-translate="bedrooms.room2.title">Guest Bedroom</h4>
@@ -409,7 +416,7 @@
       <div class="beach-content">
         <div class="beach-image">
           <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Property"
-            style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+            style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" loading="lazy">
         </div>
         <div>
           <div class="beach-warning">
@@ -692,7 +699,6 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js"></script>
   <script src="translations.js"></script>
-  <script src="script.js"></script>
   <script src="script.js"></script>
 </body>
 
