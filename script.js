@@ -44,6 +44,16 @@ function getPaymentLink(checkInDate, nights) {
     return `${baseUrl}?quantity=${nights}`;
 }
 
+// ----- External Calendar Config -----
+const ICAL_URLS = [
+    // Placeholder URLs - Replace with actual iCal links from Airbnb/Booking
+    'https://www.airbnb.com/calendar/ical/YOUR_AIRBNB_ID.ics?s=8d58c9735a29735d134676527ba56779',
+    'https://admin.booking.com/hotel/hoteladmin/ical/booking/export.html?id=YOUR_BOOKING_ID&token=YOUR_TOKEN'
+];
+
+// CORS Proxy (Use a public one for demo, or own Worker for production)
+const CORS_PROXY = 'https://corsproxy.io/?';
+
 function getSeasonForDate(dateStr) {
     const date = new Date(dateStr + 'T00:00:00');
     const month = date.getMonth() + 1;
@@ -454,32 +464,38 @@ function initCalendar() {
     renderCalendar();
 }
 
-function loadBookedDates() {
-    // Sample booked dates for demo
-    // In production, this would fetch from iCal URLs
-    const today = new Date();
+async function loadBookedDates() {
+    // Check session storage cache first (valid for 1 hour)
+    const cached = sessionStorage.getItem('bookedDates');
+    const cachedTime = sessionStorage.getItem('bookedDatesTime');
 
-    // Generate some sample booked dates
-    bookedDates = [
-        // Sample bookings - next 2 weeks
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 4)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 6)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7)),
-        // Another booking
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 15)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 16)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 17)),
-        formatDate(new Date(today.getFullYear(), today.getMonth(), today.getDate() + 18)),
-    ];
+    if (cached && cachedTime && (Date.now() - cachedTime < 3600000)) {
+        bookedDates = JSON.parse(cached);
+        renderCalendar();
+        return;
+    }
+
+    // Fetch from all sources
+    const allDates = await Promise.all(ICAL_URLS.map(fetchICalData));
+
+    // Merge and deduplicate
+    const mergedDates = new Set(allDates.flat());
+    bookedDates = Array.from(mergedDates);
+
+    // Cache result
+    sessionStorage.setItem('bookedDates', JSON.stringify(bookedDates));
+    sessionStorage.setItem('bookedDatesTime', Date.now());
+
+    renderCalendar();
 }
 
 // Fetch and parse iCal data (for future integration)
 async function fetchICalData(url) {
+    if (url.includes('YOUR_')) return []; // Skip placeholders
+
     try {
-        // Note: This requires a CORS proxy in production
-        const response = await fetch(url);
+        const response = await fetch(CORS_PROXY + encodeURIComponent(url));
+        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.text();
         return parseICalData(data);
     } catch (error) {
@@ -489,44 +505,34 @@ async function fetchICalData(url) {
 }
 
 function parseICalData(icalData) {
-    const dates = [];
-    const lines = icalData.split('\n');
-    let inEvent = false;
-    let startDate = null;
-    let endDate = null;
+    try {
+        const jcalData = ICAL.parse(icalData);
+        const comp = new ICAL.Component(jcalData);
+        const events = comp.getAllSubcomponents('vevent');
+        const dates = [];
 
-    for (const line of lines) {
-        if (line.startsWith('BEGIN:VEVENT')) {
-            inEvent = true;
-        } else if (line.startsWith('END:VEVENT')) {
-            if (startDate && endDate) {
-                // Add all dates between start and end
-                let current = new Date(startDate);
-                const end = new Date(endDate);
+        events.forEach(event => {
+            const dtstart = event.getFirstPropertyValue('dtstart');
+            const dtend = event.getFirstPropertyValue('dtend');
+
+            if (dtstart && dtend) {
+                let current = dtstart.toJSDate();
+                const end = dtend.toJSDate();
+
+                // Adjust for timezones if needed, but ical.js acts in UTC usually
+                // Iterate days
                 while (current < end) {
                     dates.push(formatDate(current));
                     current.setDate(current.getDate() + 1);
                 }
             }
-            inEvent = false;
-            startDate = null;
-            endDate = null;
-        } else if (inEvent) {
-            if (line.startsWith('DTSTART')) {
-                const match = line.match(/(\d{4})(\d{2})(\d{2})/);
-                if (match) {
-                    startDate = `${match[1]}-${match[2]}-${match[3]}`;
-                }
-            } else if (line.startsWith('DTEND')) {
-                const match = line.match(/(\d{4})(\d{2})(\d{2})/);
-                if (match) {
-                    endDate = `${match[1]}-${match[2]}-${match[3]}`;
-                }
-            }
-        }
-    }
+        });
 
-    return dates;
+        return dates;
+    } catch (e) {
+        console.error('Error parsing iCal:', e);
+        return [];
+    }
 }
 
 function formatDate(date) {
@@ -577,8 +583,13 @@ function renderCalendar() {
         const dateStr = formatDate(new Date(currentYear, currentMonth, day));
         const dayEl = document.createElement('div');
         dayEl.className = 'calendar-day';
-        dayEl.textContent = day;
         dayEl.dataset.date = dateStr;
+
+        // Add day number
+        const numberEl = document.createElement('span');
+        numberEl.className = 'day-number';
+        numberEl.textContent = day;
+        dayEl.appendChild(numberEl);
 
         const dateObj = new Date(currentYear, currentMonth, day);
         const isPast = dateObj < new Date(today.getFullYear(), today.getMonth(), today.getDate());
@@ -589,7 +600,15 @@ function renderCalendar() {
             dayEl.classList.add('booked');
         } else {
             dayEl.classList.add('available');
-            dayEl.classList.add(getSeasonForDate(dateStr) + '-season');
+            const season = getSeasonForDate(dateStr);
+            dayEl.classList.add(season + '-season');
+
+            // Add price
+            const priceEl = document.createElement('span');
+            priceEl.className = 'day-price';
+            priceEl.textContent = `€${PRICING.seasons[season].nightly}`;
+            dayEl.appendChild(priceEl);
+
             // Add click handler for available dates
             dayEl.addEventListener('click', () => handleDateClick(dateStr));
         }
@@ -678,7 +697,7 @@ function updateSelectionDisplay() {
                     <strong>Check-in:</strong> ${formatDisplayDate(selectedCheckIn)} → 
                     <strong>Check-out:</strong> ${formatDisplayDate(selectedCheckOut)}
                 </span>
-                <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''} — <strong>${PRICING.currency}${totalPrice}</strong></span>
+                <span class="selection-nights">${nights} night${nights > 1 ? 's' : ''} — <strong class="price-highlight">${PRICING.currency}${totalPrice}</strong></span>
             </div>
             <div class="selection-actions">
                 <button class="clear-selection-btn">Clear</button>
@@ -747,10 +766,7 @@ function syncDatesToForm() {
 
     if (selectedCheckIn && selectedCheckOut) {
         datesInput.value = `${formatDisplayDate(selectedCheckIn)} - ${formatDisplayDate(selectedCheckOut)}`;
-        // Scroll to contact form
-        setTimeout(() => {
-            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300);
+        // Removed auto-scroll so user can see price
     } else {
         datesInput.value = '';
     }

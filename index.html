@@ -16,8 +16,10 @@
   <meta name="keywords" content="Paros, Greece, vacation rental, Aliki Beach, holiday apartment, Cyclades">
   <title>Romantica Blue | Vacation Rental in Paros, Greece</title>
 
-  <!-- Favicon -->
+  <!-- Favicon & PWA -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3D5A6E">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
@@ -688,8 +690,18 @@
   </div>
 
   <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js"></script>
   <script src="translations.js"></script>
-  <script src="script.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(registration => console.log('ServiceWorker registration successful'))
+          .catch(err => console.log('ServiceWorker registration failed: ', err));
+      });
+    }
+  </script>
 </body>
 
 </html>
