@@ -693,15 +693,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js"></script>
   <script src="translations.js"></script>
   <script src="script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(registration => console.log('ServiceWorker registration successful'))
-          .catch(err => console.log('ServiceWorker registration failed: ', err));
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
