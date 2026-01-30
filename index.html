@@ -19,6 +19,7 @@
   <!-- Favicon & PWA -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="favicon.svg">
   <meta name="theme-color" content="#3D5A6E">
 
   <!-- Open Graph / Social Media -->
@@ -138,6 +139,11 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Scripts - Defer for performance -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js" defer></script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -171,7 +177,8 @@
   <section class="hero" id="home">
     <img src="images/optimized/kitchen-dining.webp"
       srcset="images/optimized/kitchen-dining-600.jpg 600w, images/optimized/kitchen-dining.webp 1200w"
-      sizes="(max-width: 600px) 100vw, 100vw" alt="Romantica Blue Villa" class="hero-bg" fetchpriority="high">
+      sizes="(max-width: 600px) 100vw, 100vw" width="1200" height="900" alt="Romantica Blue Villa" class="hero-bg"
+      fetchpriority="high">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 data-translate="hero.title">Romantica Blue</h1>
@@ -224,7 +231,8 @@
           </div>
         </div>
         <div class="story-image">
-          <img src="images/optimized/living-room-sofa.webp" alt="Romantica Blue Interior" loading="lazy">
+          <img src="images/optimized/living-room-sofa.webp" alt="Romantica Blue Interior" loading="lazy" width="1200"
+            height="900">
         </div>
       </div>
     </div>
@@ -244,28 +252,34 @@
       <div class="gallery-carousel">
         <div class="carousel-track">
           <div class="carousel-slide">
-            <img src="images/optimized/living-room-sea-view.webp" alt="Living Area with Sea View" loading="lazy">
+            <img src="images/optimized/living-room-sea-view.webp" alt="Living Area with Sea View" loading="lazy"
+              width="1200" height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Terrace" loading="lazy">
+            <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Terrace" loading="lazy" width="1200"
+              height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/bedroom.webp" alt="Bedroom" loading="lazy">
+            <img src="images/optimized/bedroom.webp" alt="Bedroom" loading="lazy" width="1200" height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy">
+            <img src="images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy" width="1200"
+              height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/kitchen-dining.webp" alt="Kitchen & Dining" loading="lazy">
+            <img src="images/optimized/kitchen-dining.webp" alt="Kitchen & Dining" loading="lazy" width="1200"
+              height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/kitchen-full.webp" alt="Full Kitchen" loading="lazy">
+            <img src="images/optimized/kitchen-full.webp" alt="Full Kitchen" loading="lazy" width="1200" height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/living-room-fireplace.webp" alt="Living Room Sea View" loading="lazy">
+            <img src="images/optimized/living-room-fireplace.webp" alt="Living Room Sea View" loading="lazy"
+              width="1200" height="900">
           </div>
           <div class="carousel-slide">
-            <img src="images/optimized/living-room-panorama.webp" alt="Living Room Panorama" loading="lazy">
+            <img src="images/optimized/living-room-panorama.webp" alt="Living Room Panorama" loading="lazy" width="1200"
+              height="900">
           </div>
         </div>
         <button class="carousel-btn carousel-prev" aria-label="Previous">❮</button>
@@ -276,28 +290,34 @@
       <!-- Desktop Grid (visible on desktop) -->
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="images/optimized/living-room-sea-view.webp" alt="Living Area with Sea View" loading="lazy">
+          <img src="images/optimized/living-room-sea-view.webp" alt="Living Area with Sea View" loading="lazy"
+            width="1200" height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Terrace" loading="lazy">
+          <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Terrace" loading="lazy" width="1200"
+            height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/bedroom.webp" alt="Bedroom" loading="lazy">
+          <img src="images/optimized/bedroom.webp" alt="Bedroom" loading="lazy" width="1200" height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy">
+          <img src="images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy" width="1200"
+            height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/kitchen-dining.webp" alt="Kitchen & Dining" loading="lazy">
+          <img src="images/optimized/kitchen-dining.webp" alt="Kitchen & Dining" loading="lazy" width="1200"
+            height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/kitchen-full.webp" alt="Full Kitchen" loading="lazy">
+          <img src="images/optimized/kitchen-full.webp" alt="Full Kitchen" loading="lazy" width="1200" height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/living-room-fireplace.webp" alt="Living Room Sea View" loading="lazy">
+          <img src="images/optimized/living-room-fireplace.webp" alt="Living Room Sea View" loading="lazy" width="1200"
+            height="900">
         </div>
         <div class="gallery-item">
-          <img src="images/optimized/living-room-panorama.webp" alt="Living Room Panorama" loading="lazy">
+          <img src="images/optimized/living-room-panorama.webp" alt="Living Room Panorama" loading="lazy" width="1200"
+            height="900">
         </div>
       </div>
     </div>
@@ -385,7 +405,7 @@
       <div class="bedrooms-grid">
         <div class="bedroom-card">
           <div class="bedroom-image">
-            <img src="images/optimized/bedroom.webp" alt="Master Bedroom" loading="lazy">
+            <img src="images/optimized/bedroom.webp" alt="Master Bedroom" loading="lazy" width="1200" height="900">
           </div>
           <div class="bedroom-info">
             <h4 data-translate="bedrooms.room1.title">Master Bedroom</h4>
@@ -394,7 +414,8 @@
         </div>
         <div class="bedroom-card">
           <div class="bedroom-image">
-            <img src="images/optimized/living-room-sofa.webp" alt="Guest Room / Living Area" loading="lazy">
+            <img src="images/optimized/living-room-sofa.webp" alt="Guest Room / Living Area" loading="lazy" width="1200"
+              height="900">
           </div>
           <div class="bedroom-info">
             <h4 data-translate="bedrooms.room2.title">Guest Bedroom</h4>
@@ -416,7 +437,8 @@
       <div class="beach-content">
         <div class="beach-image">
           <img src="images/optimized/terrace-sea-view.webp" alt="Sea View from Property"
-            style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" loading="lazy">
+            style="width: 100%; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" loading="lazy"
+            width="1200" height="900">
         </div>
         <div>
           <div class="beach-warning">
@@ -696,10 +718,6 @@
     <div class="lightbox-counter"><span class="current">1</span> / <span class="total">8</span></div>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.5.0/ical.min.js"></script>
-  <script src="translations.js"></script>
-  <script src="script.js"></script>
 </body>
 
 </html>

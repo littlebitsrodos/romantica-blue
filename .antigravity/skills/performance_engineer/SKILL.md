@@ -39,10 +39,14 @@ You are a Performance Engineer obsessed with speed, efficiency, and user experie
 
 ### 3. Asset Optimization (The Diet)
 - [ ] **Images**:
-    - **Format**: ALL images must be **WebP** (modern format).
+    - **Format**: ALL images must be **WebP** (primary) with JPEG fallbacks if needed.
     - **Sizing**: Serve specific sizes for specific viewports (responsive images with `srcset`).
-    - **Lazy Loading**: `loading="lazy"` on all below-the-fold images.
+        - *Crucial*: Create a specific mobile variant (e.g., 600px width) for the Hero image.
+    - **Lazy Loading**: `loading="lazy"` on ALL below-the-fold images.
     - **Dimensions**: Explicit `width` and `height` attributes to prevent CLS (Cumulative Layout Shift).
+    - **LCP Optimization**:
+        - Preload the Hero image: `<link rel="preload" as="image" href="...">`.
+        - Use `fetchpriority="high"` on the Hero `<img>` tag.
 - [ ] **Fonts**:
     - Locally hosted whenever possible.
     - If using Google Fonts, use `display=swap` and preconnect.

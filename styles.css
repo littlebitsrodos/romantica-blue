@@ -435,6 +435,7 @@ section:nth-child(even) {
   background: var(--color-terracotta-light);
   box-shadow: 0 6px 24px rgba(184, 136, 107, 0.25);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -446,6 +447,7 @@ section:nth-child(even) {
 .btn-secondary:hover {
   background: var(--color-sea-blue);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 .btn-white {
