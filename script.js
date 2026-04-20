@@ -843,15 +843,12 @@ function isValidEmail(email) {
 }
 
 function showFormMessage(message, type) {
-    // Remove existing message
-    const existing = document.querySelector('.form-message');
-    if (existing) existing.remove();
+    const feedback = document.querySelector('.form-feedback');
+    if (!feedback) return;
 
-    // Create message element
-    const messageEl = document.createElement('div');
-    messageEl.className = `form-message ${type}`;
-    messageEl.textContent = message;
-    messageEl.style.cssText = `
+    feedback.textContent = message;
+    feedback.className = `form-feedback form-message ${type}`;
+    feedback.style.cssText = `
     padding: 1rem;
     margin-top: 1rem;
     border-radius: 8px;
@@ -861,12 +858,10 @@ function showFormMessage(message, type) {
             : 'background: #f8d7da; color: #721c24;'}
   `;
 
-    const form = document.querySelector('.contact-form form');
-    form.appendChild(messageEl);
-
-    // Remove after 5 seconds
     setTimeout(() => {
-        messageEl.remove();
+        feedback.textContent = '';
+        feedback.className = 'form-feedback';
+        feedback.removeAttribute('style');
     }, 5000);
 }
 

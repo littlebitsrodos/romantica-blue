@@ -5,6 +5,11 @@
 
 const translations = {
   en: {
+    // Accessibility
+    a11y: {
+      skipToMain: "Skip to main content"
+    },
+
     // Navigation
     nav: {
       story: "Our Story",
@@ -175,6 +180,11 @@ const translations = {
   },
 
   es: {
+    // Accessibility
+    a11y: {
+      skipToMain: "Saltar al contenido principal"
+    },
+
     // Navigation
     nav: {
       story: "Nuestra Historia",
@@ -345,6 +355,11 @@ const translations = {
   },
 
   el: {
+    // Accessibility
+    a11y: {
+      skipToMain: "Μετάβαση στο κύριο περιεχόμενο"
+    },
+
     // Navigation
     nav: {
       story: "Η Ιστορία μας",
@@ -515,6 +530,11 @@ const translations = {
   },
 
   fr: {
+    // Accessibility
+    a11y: {
+      skipToMain: "Passer au contenu principal"
+    },
+
     // Navigation
     nav: {
       story: "Notre Histoire",

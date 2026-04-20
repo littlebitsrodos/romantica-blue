@@ -1,12 +1,12 @@
-# Romantica Blue - Vacation Rental in Paros, Greece
-# https://littlebitsrodos.github.io/romantica-blue/
+# Sea Tree - Vacation Rental in Paros, Greece
+# https://seatree.gr/
 
 User-agent: *
 Allow: /
 Disallow:
 
 # Sitemap location
-Sitemap: https://littlebitsrodos.github.io/romantica-blue/sitemap.xml
+Sitemap: https://seatree.gr/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

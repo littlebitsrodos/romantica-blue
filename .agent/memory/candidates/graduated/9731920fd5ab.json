@@ -1,0 +1,60 @@
+{
+  "id": "9731920fd5ab",
+  "key": "manual_973192",
+  "name": "manual_973192",
+  "claim": "Before a structural HTML change (lifting heading levels, renaming elements, changing tag names), grep the stylesheet for selectors that target the old element \u2014 update both HTML and CSS in the same pass.",
+  "conditions": [
+    "before",
+    "both",
+    "change",
+    "changing",
+    "css",
+    "element",
+    "elements",
+    "grep",
+    "heading",
+    "html",
+    "levels",
+    "lifting",
+    "names",
+    "old",
+    "pass",
+    "renaming",
+    "same",
+    "selectors",
+    "structural",
+    "stylesheet",
+    "tag",
+    "target",
+    "update"
+  ],
+  "evidence_ids": [
+    "2026-04-21T01:19:38.687604"
+  ],
+  "cluster_size": 1,
+  "canonical_salience": 8.0,
+  "staged_at": "2026-04-21T01:19:38.687604",
+  "status": "accepted",
+  "decisions": [
+    {
+      "ts": "2026-04-21T01:19:38.687604",
+      "action": "staged",
+      "reviewer": "learn"
+    },
+    {
+      "ts": "2026-04-21T01:19:38.780258",
+      "action": "graduated",
+      "reviewer": "learn.py",
+      "notes": "On the WCAG pass for Sea Tree I ran 'replace_all <h4 \u2192 <h3' without checking styles.css, which targets .amenity-card h4, .bedroom-info h4, .footer h4, etc. The user reverted the HTML change to save styling. Loss = one round-trip + a partial commit that had to be unwound. Even simple find-replace on an HTML tag name is not safe without a CSS selector audit.",
+      "provisional": false,
+      "evidence_snapshot": [
+        "2026-04-21T01:19:38.687604"
+      ],
+      "lessons_sha": "fce99a23d1d2"
+    }
+  ],
+  "rejection_count": 0,
+  "accepted_at": "2026-04-21T01:19:38.780238",
+  "reviewer": "learn.py",
+  "rationale": "On the WCAG pass for Sea Tree I ran 'replace_all <h4 \u2192 <h3' without checking styles.css, which targets .amenity-card h4, .bedroom-info h4, .footer h4, etc. The user reverted the HTML change to save styling. Loss = one round-trip + a partial commit that had to be unwound. Even simple find-replace on an HTML tag name is not safe without a CSS selector audit."
+}
