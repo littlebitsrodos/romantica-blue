@@ -20,6 +20,12 @@ const translations = {
       skipToMain: "Skip to main content"
     },
 
+    // Sticky mobile booking bar
+    mobileBar: {
+      checkAvailability: "Check Availability",
+      whatsappAria: "Message us on WhatsApp"
+    },
+
     // Navigation
     nav: {
       story: "Our Story",
@@ -212,6 +218,12 @@ const translations = {
     // Accessibility
     a11y: {
       skipToMain: "Saltar al contenido principal"
+    },
+
+    // Mobile book bar
+    mobileBar: {
+      checkAvailability: "Ver Disponibilidad",
+      whatsappAria: "Escríbenos por WhatsApp"
     },
 
     // Navigation
@@ -408,6 +420,12 @@ const translations = {
       skipToMain: "Μετάβαση στο κύριο περιεχόμενο"
     },
 
+    // Mobile book bar
+    mobileBar: {
+      checkAvailability: "Δείτε Διαθεσιμότητα",
+      whatsappAria: "Γράψτε μας στο WhatsApp"
+    },
+
     // Navigation
     nav: {
       story: "Η Ιστορία μας",
@@ -600,6 +618,12 @@ const translations = {
     // Accessibility
     a11y: {
       skipToMain: "Passer au contenu principal"
+    },
+
+    // Mobile book bar
+    mobileBar: {
+      checkAvailability: "Voir la Disponibilité",
+      whatsappAria: "Écrivez-nous sur WhatsApp"
     },
 
     // Navigation

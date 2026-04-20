@@ -89,9 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalendar();
     initContactForm();
     initScrollAnimations();
+    initMobileBookBar();
 
-    // Set initial language
-    setLanguage('en');
+    // Re-apply current locale (matches <html lang>). No-op on translated
+    // static HTML, but ensures dynamic DOM (calendar month names, form
+    // feedback, etc.) stays in the correct language.
+    setLanguage(currentLang);
 });
 
 // ----- Language Switcher -----
@@ -871,6 +874,30 @@ function showFormMessage(message, type) {
         feedback.className = 'form-feedback';
         feedback.removeAttribute('style');
     }, 5000);
+}
+
+// ----- Sticky Mobile Booking Bar -----
+// Hides itself while the Availability or Contact sections are in view
+// (user is already looking at the CTA equivalents — bar would be noise).
+function initMobileBookBar() {
+    const bar = document.querySelector('.mobile-book-bar');
+    if (!bar) return;
+    // Desktop users never see it; save the observer cost.
+    if (window.matchMedia('(min-width: 769px)').matches) return;
+
+    const availability = document.getElementById('availability');
+    const contact = document.getElementById('contact');
+    const targets = [availability, contact].filter(Boolean);
+    if (!targets.length) return;
+
+    const state = new WeakMap();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => state.set(entry.target, entry.isIntersecting));
+        const anyVisible = targets.some(t => state.get(t));
+        bar.classList.toggle('is-hidden', anyVisible);
+    }, { rootMargin: '0px 0px -20% 0px' });
+
+    targets.forEach(t => observer.observe(t));
 }
 
 // ----- Scroll Animations -----

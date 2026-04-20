@@ -156,31 +156,7 @@
 
   <a href="#main" class="skip-link" data-translate="a11y.skipToMain">Skip to main content</a>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container navbar-content">
-      <a href="#" class="logo">Sea <span>Tree</span></a>
-
-      <ul class="nav-links">
-        <li><a href="#story" data-translate="nav.story">Our Story</a></li>
-        <li><a href="#gallery" data-translate="nav.gallery">Gallery</a></li>
-        <li><a href="#reviews" data-translate="nav.reviews">Reviews</a></li>
-        <li><a href="#amenities" data-translate="nav.amenities">Amenities</a></li>
-        <li><a href="#location" data-translate="nav.location">Location</a></li>
-        <li><a href="#availability" data-translate="nav.availability">Availability</a></li>
-        <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
-      </ul>
-
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="es">ES</button>
-        <button class="lang-btn" data-lang="el">ΕΛ</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-      </div>
-
-      <button class="mobile-menu-btn" aria-label="Menu">☰</button>
-    </div>
-  </nav>
+  <div class="page-shell">
 
   <main id="main">
 
@@ -193,14 +169,32 @@
         fetchpriority="high">
     </picture>
     <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 data-translate="hero.title">Sea Tree</h1>
-      <p class="hero-tagline" data-translate="hero.tagline">Slow down. Breathe. Be.</p>
-      <div class="breathe-container" aria-hidden="true">
-        <div class="breathe-circle"></div>
-        <span class="breathe-text breathe-in">Breathe In</span>
-        <span class="breathe-text breathe-out">Breathe Out</span>
+
+    <!-- Navigation (now inside the hero card) -->
+    <nav class="navbar">
+      <div class="navbar-content">
+        <a href="#" class="logo">Sea <span>Tree</span></a>
+
+        <ul class="nav-links">
+          <li><a href="#story" data-translate="nav.story">Our Story</a></li>
+          <li><a href="#gallery" data-translate="nav.gallery">Gallery</a></li>
+          <li><a href="#amenities" data-translate="nav.amenities">Amenities</a></li>
+          <li><a href="#location" data-translate="nav.location">Location</a></li>
+          <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+        </ul>
+
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="el">ΕΛ</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
       </div>
+    </nav>
+
+    <div class="hero-content">
       <p class="hero-location">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -209,17 +203,68 @@
         </svg>
         <span data-translate="hero.location">Aliki Beach, Paros, Greece</span>
       </p>
-      <div style="margin-top: 2rem">
-        <a href="#availability" class="btn btn-primary" data-translate="hero.checkAvailability">Check Availability</a>
-        <a href="#story" class="btn btn-white" style="margin-left: 1rem" data-translate="hero.ourStory">Our Story</a>
+      <h1 data-translate="hero.title">Sea Tree</h1>
+      <p class="hero-tagline" data-translate="hero.tagline">Slow down. Breathe. Be.</p>
+
+      <div class="breathe-container" aria-hidden="true">
+        <div class="breathe-circle"></div>
+        <span class="breathe-text breathe-in">Breathe In</span>
+        <span class="breathe-text breathe-out">Breathe Out</span>
+      </div>
+
+      <!-- Luxe search / reservation pill -->
+      <div class="hero-search" role="group" aria-label="Reservation">
+        <a class="hero-search__field" href="#availability">
+          <span class="hero-search__label" data-translate="hero.search.destination">Stay</span>
+          <span class="hero-search__value" data-translate="hero.search.destinationValue">Sea Tree, Aliki</span>
+        </a>
+        <a class="hero-search__field" href="#availability">
+          <span class="hero-search__label" data-translate="hero.search.dates">Dates</span>
+          <span class="hero-search__value" data-translate="hero.search.datesValue">Add dates</span>
+        </a>
+        <a class="hero-search__field" href="#availability">
+          <span class="hero-search__label" data-translate="hero.search.guests">Guests</span>
+          <span class="hero-search__value" data-translate="hero.search.guestsValue">2 guests</span>
+        </a>
+        <a class="hero-search__cta" href="#availability" data-translate="hero.checkAvailability">Check Availability</a>
       </div>
     </div>
     <div class="scroll-indicator">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M12 5v14M19 12l-7 7-7-7" />
       </svg>
     </div>
   </section>
+
+  <!-- Bento row: calendar preview + season/image card -->
+  <div class="bento-row" aria-hidden="true">
+    <div class="bento-cell bento-calendar">
+      <div class="bento-calendar__head">
+        <button type="button" aria-label="Previous month">‹</button>
+        <span>February</span>
+        <button type="button" aria-label="Next month">›</button>
+      </div>
+      <div class="bento-calendar__grid">
+        <span class="dow">S</span><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span>
+        <span class="is-dim">26</span><span class="is-dim">27</span><span class="is-dim">28</span><span class="is-dim">29</span><span class="is-dim">30</span><span class="is-dim">31</span><span class="is-inmonth">1</span>
+        <span class="is-inmonth">2</span><span class="is-inmonth is-range-start">3</span><span class="is-inmonth is-range">4</span><span class="is-inmonth is-range">5</span><span class="is-inmonth is-range">6</span><span class="is-inmonth is-range-end">7</span><span class="is-inmonth">8</span>
+        <span class="is-inmonth">9</span><span class="is-inmonth">10</span><span class="is-inmonth">11</span><span class="is-inmonth">12</span><span class="is-inmonth">13</span><span class="is-inmonth">14</span><span class="is-inmonth">15</span>
+        <span class="is-inmonth">16</span><span class="is-inmonth">17</span><span class="is-inmonth">18</span><span class="is-inmonth">19</span><span class="is-inmonth">20</span><span class="is-inmonth">21</span><span class="is-inmonth">22</span>
+        <span class="is-inmonth">23</span><span class="is-inmonth">24</span><span class="is-inmonth">25</span><span class="is-inmonth">26</span><span class="is-inmonth">27</span><span class="is-inmonth">28</span><span class="is-dim">1</span>
+      </div>
+      <div class="bento-calendar__footer">
+        <a class="bento-calendar__btn" href="#availability">Cancel</a>
+        <a class="bento-calendar__btn bento-calendar__btn--primary" href="#availability">Done</a>
+      </div>
+    </div>
+    <div class="bento-cell bento-season">
+      <div class="bento-season__content">
+        <span class="eyebrow" style="color: rgba(250,244,234,0.7); margin-bottom: 0.75rem;">In season</span>
+        <h3 data-translate="bento.season.title">Plan Your Stay by Season</h3>
+        <p data-translate="bento.season.body">Choose your preferred dates to see when Sea Tree opens its doors — soft shoulder months, long golden summers, and the quiet luxury of off-season Paros.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Story Section -->
   <section id="story">
@@ -803,6 +848,19 @@
 
   </main>
 
+  <!-- Sticky mobile booking bar (≤768px) -->
+  <div class="mobile-book-bar">
+    <a href="#availability" class="mobile-book-bar-btn mobile-book-bar-primary"
+      data-translate="mobileBar.checkAvailability">Check Availability</a>
+    <a href="https://wa.me/30XXXXXXXXX" class="mobile-book-bar-btn mobile-book-bar-whatsapp" rel="noopener noreferrer"
+      data-translate-aria-label="mobileBar.whatsappAria" aria-label="Message us on WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+        <path fill="currentColor"
+          d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.9 4.44-9.91 9.9 0 1.76.46 3.46 1.32 4.97L2.05 22l5.25-1.38a9.95 9.95 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.91-9.9a9.82 9.82 0 0 0-2.91-7.02zm-7.01 15.24a8.24 8.24 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24a8.19 8.19 0 0 1 5.82 2.42 8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.22 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.55.13-.16.25-.64.8-.79.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42-.14-.01-.3-.01-.47-.01-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28z" />
+      </svg>
+    </a>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
@@ -832,6 +890,8 @@
       </div>
     </div>
   </footer>
+
+  </div><!-- /.page-shell -->
 
   <!-- Lightbox -->
   <div class="lightbox">
