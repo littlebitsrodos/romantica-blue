@@ -52,7 +52,7 @@ Skip it and the system is just files on disk.
 ## Stack
 
 - Plain HTML / CSS / ES modules, served statically.
-- Google Fonts loaded with `media=print` swap trick (non-blocking).
+- Fonts self-hosted from `./fonts/` via `./fonts.css` (no Google Fonts runtime dependency, strict CSP).
 - Formspree for contact form. Stripe Payment Links for booking.
 - Service Worker with cache-first strategy (`sw.js`); `offline.html` fallback.
 - Schema.org `VacationRental` JSON-LD in `<head>`.
@@ -87,7 +87,7 @@ Skip it and the system is just files on disk.
 
 - **Layout stability:** Every `<img>` needs explicit `width` + `height`. Non-critical images use `loading="lazy"`.
 - **Scripts:** `<script defer>` in `<head>`, not at end of `<body>`.
-- **Fonts:** `<link rel="stylesheet" media="print" onload="this.media='all'">` pattern for Google Fonts.
+- **Fonts:** Self-hosted woff2 files under `fonts/`, declarations in `fonts.css`. Preload the two critical latin variants (Cormorant regular + Outfit regular) in `<head>` for LCP. Latin-ext subsets load automatically via `unicode-range` when accented characters appear (ES/FR). Greek falls back to system — neither font ships a greek subset on Google Fonts.
 - **Interactive polish:** Buttons get a consistent `transform: translateY(-2px)` on hover.
 - **Palette:** Aegean blue, terracotta, sand, olive — grounded, hospitality-appropriate.
 - **Translations:** New user-facing copy needs a `data-translate` key + entries in all 4 languages.

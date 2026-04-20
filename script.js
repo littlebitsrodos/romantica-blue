@@ -90,10 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set initial language
     setLanguage('en');
-
-    // Load fonts (CSP friendly)
-    const fonts = document.getElementById('google-fonts');
-    if (fonts) fonts.media = 'all';
 });
 
 // ----- Language Switcher -----
