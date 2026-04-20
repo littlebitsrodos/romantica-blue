@@ -1,5 +1,5 @@
 // =====================================================
-// ROMANTICA BLUE — Translations
+// SEA TREE — Translations
 // All text content in 4 languages: EN, ES, GR, FR
 // =====================================================
 
@@ -17,7 +17,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Romantica Blue",
+      title: "Sea Tree",
       tagline: "Slow down. Breathe. Be.",
       location: "Aliki Beach, Paros, Greece",
       checkAvailability: "Check Availability",
@@ -148,7 +148,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Book Your Stay",
-      title: "Ready to Experience Romantica?",
+      title: "Ready to Experience Sea Tree?",
       subtitle: "Get in touch or book directly through your favorite platform",
       formTitle: "Send Us a Message",
       name: "Your Name",
@@ -168,9 +168,9 @@ const translations = {
       quickLinks: "Quick Links",
       contactTitle: "Contact",
       phone: "+30 XXX XXX XXXX",
-      email: "info@romanticablue.com",
+      email: "info@seatree.gr",
       address: "Aliki Beach, Paros 844 00, Greece",
-      copyright: "© 2026 Romantica Blue. All rights reserved."
+      copyright: "© 2026 Sea Tree. All rights reserved."
     }
   },
 
@@ -187,7 +187,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Romantica Blue",
+      title: "Sea Tree",
       tagline: "Desacelera. Respira. Sé.",
       location: "Playa de Aliki, Paros, Grecia",
       checkAvailability: "Ver Disponibilidad",
@@ -318,7 +318,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Reserva Tu Estancia",
-      title: "¿Listo Para Vivir Romantica?",
+      title: "¿Listo Para Vivir Sea Tree?",
       subtitle: "Contáctanos o reserva directamente en tu plataforma favorita",
       formTitle: "Envíanos un Mensaje",
       name: "Tu Nombre",
@@ -338,9 +338,9 @@ const translations = {
       quickLinks: "Enlaces Rápidos",
       contactTitle: "Contacto",
       phone: "+30 XXX XXX XXXX",
-      email: "info@romanticablue.com",
+      email: "info@seatree.gr",
       address: "Playa de Aliki, Paros 844 00, Grecia",
-      copyright: "© 2026 Romantica Blue. Todos los derechos reservados."
+      copyright: "© 2026 Sea Tree. Todos los derechos reservados."
     }
   },
 
@@ -357,7 +357,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Romantica Blue",
+      title: "Sea Tree",
       tagline: "Χαλάρωσε. Ανάπνευσε. Να'σαι.",
       location: "Αλυκή, Πάρος, Ελλάδα",
       checkAvailability: "Έλεγχος Διαθεσιμότητας",
@@ -488,7 +488,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Κλείστε τη Διαμονή σας",
-      title: "Έτοιμοι να Ζήσετε τη Romantica;",
+      title: "Έτοιμοι να Ζήσετε το Sea Tree;",
       subtitle: "Επικοινωνήστε μαζί μας ή κλείστε απευθείας στην αγαπημένη σας πλατφόρμα",
       formTitle: "Στείλτε μας Μήνυμα",
       name: "Το Όνομά σας",
@@ -508,9 +508,9 @@ const translations = {
       quickLinks: "Γρήγοροι Σύνδεσμοι",
       contactTitle: "Επικοινωνία",
       phone: "+30 XXX XXX XXXX",
-      email: "info@romanticablue.com",
+      email: "info@seatree.gr",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
-      copyright: "© 2026 Romantica Blue. Με επιφύλαξη παντός δικαιώματος."
+      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος."
     }
   },
 
@@ -527,7 +527,7 @@ const translations = {
 
     // Hero
     hero: {
-      title: "Romantica Blue",
+      title: "Sea Tree",
       tagline: "Ralentissez. Respirez. Soyez.",
       location: "Plage d'Aliki, Paros, Grèce",
       checkAvailability: "Vérifier Disponibilité",
@@ -658,7 +658,7 @@ const translations = {
     // Booking/Contact
     booking: {
       label: "Réservez Votre Séjour",
-      title: "Prêt à Vivre l'Expérience Romantica ?",
+      title: "Prêt à Vivre l'Expérience Sea Tree ?",
       subtitle: "Contactez-nous ou réservez directement sur votre plateforme préférée",
       formTitle: "Envoyez-nous un Message",
       name: "Votre Nom",
@@ -678,9 +678,9 @@ const translations = {
       quickLinks: "Liens Rapides",
       contactTitle: "Contact",
       phone: "+30 XXX XXX XXXX",
-      email: "info@romanticablue.com",
+      email: "info@seatree.gr",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
-      copyright: "© 2026 Romantica Blue. Tous droits réservés."
+      copyright: "© 2026 Sea Tree. Tous droits réservés."
     }
   }
 };
