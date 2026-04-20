@@ -24,6 +24,7 @@ const translations = {
     nav: {
       story: "Our Story",
       gallery: "Gallery",
+      reviews: "Reviews",
       amenities: "Amenities",
       location: "Location",
       availability: "Availability",
@@ -56,6 +57,14 @@ const translations = {
       label: "Gallery",
       title: "The Space",
       subtitle: "Natural light. Stone floors. Cotton linens. Room to breathe."
+    },
+
+    // Reviews
+    reviews: {
+      label: "Guest Reviews",
+      title: "What guests say",
+      subtitle: "Real visitors, real stays — pulled from our Airbnb, Google, and Booking.com pages.",
+      moreAirbnb: "See more on Airbnb →"
     },
 
     // Amenities
@@ -209,6 +218,7 @@ const translations = {
     nav: {
       story: "Nuestra Historia",
       gallery: "Galería",
+      reviews: "Reseñas",
       amenities: "Servicios",
       location: "Ubicación",
       availability: "Disponibilidad",
@@ -241,6 +251,14 @@ const translations = {
       label: "Galería",
       title: "El Espacio",
       subtitle: "Luz natural. Suelos de piedra. Sábanas de algodón. Espacio para respirar."
+    },
+
+    // Reviews
+    reviews: {
+      label: "Reseñas de Huéspedes",
+      title: "Lo que dicen los huéspedes",
+      subtitle: "Visitantes reales, estancias reales — extraídas de nuestras páginas en Airbnb, Google y Booking.com.",
+      moreAirbnb: "Ver más en Airbnb →"
     },
 
     // Amenities
@@ -394,6 +412,7 @@ const translations = {
     nav: {
       story: "Η Ιστορία μας",
       gallery: "Γκαλερί",
+      reviews: "Κριτικές",
       amenities: "Παροχές",
       location: "Τοποθεσία",
       availability: "Διαθεσιμότητα",
@@ -426,6 +445,14 @@ const translations = {
       label: "Γκαλερί",
       title: "Ο Χώρος",
       subtitle: "Φυσικό φως. Πέτρινα πατώματα. Βαμβακερά σεντόνια. Χώρος να αναπνεύσετε."
+    },
+
+    // Reviews
+    reviews: {
+      label: "Κριτικές Επισκεπτών",
+      title: "Τι λένε οι επισκέπτες",
+      subtitle: "Αληθινοί επισκέπτες, αληθινές διαμονές — από τις σελίδες μας σε Airbnb, Google και Booking.com.",
+      moreAirbnb: "Δείτε περισσότερα στο Airbnb →"
     },
 
     // Amenities
@@ -579,6 +606,7 @@ const translations = {
     nav: {
       story: "Notre Histoire",
       gallery: "Galerie",
+      reviews: "Avis",
       amenities: "Équipements",
       location: "Emplacement",
       availability: "Disponibilité",
@@ -611,6 +639,14 @@ const translations = {
       label: "Galerie",
       title: "L'Espace",
       subtitle: "Lumière naturelle. Sols en pierre. Draps en coton. Espace pour respirer."
+    },
+
+    // Reviews
+    reviews: {
+      label: "Avis de Voyageurs",
+      title: "Ce que disent nos hôtes",
+      subtitle: "Vrais voyageurs, vrais séjours — tirés de nos pages Airbnb, Google et Booking.com.",
+      moreAirbnb: "Voir plus sur Airbnb →"
     },
 
     // Amenities
