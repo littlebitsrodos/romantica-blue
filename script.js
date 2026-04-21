@@ -48,8 +48,9 @@ function getPaymentLink(checkInDate, nights) {
 
 // ----- External Calendar Config -----
 const ICAL_URLS = [
-    'https://www.airbnb.co.uk/calendar/ical/1659626910469787873.ics?t=27432fdc07c54e9bb8e3ea8622b9fac0',
-    'https://ical.booking.com/v1/export?t=5cafb294-ac4f-4cff-be12-ab4f933ad203'
+    // Placeholder URLs - Replace with actual iCal links from Airbnb/Booking
+    'https://www.airbnb.com/calendar/ical/YOUR_AIRBNB_ID.ics?s=8d58c9735a29735d134676527ba56779',
+    'https://admin.booking.com/hotel/hoteladmin/ical/booking/export.html?id=YOUR_BOOKING_ID&token=YOUR_TOKEN'
 ];
 
 // CORS Proxy (Use a public one for demo, or own Worker for production)
@@ -88,12 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalendar();
     initContactForm();
     initScrollAnimations();
-    initMobileBookBar();
 
-    // Re-apply current locale (matches <html lang>). No-op on translated
-    // static HTML, but ensures dynamic DOM (calendar month names, form
-    // feedback, etc.) stays in the correct language.
-    setLanguage(currentLang);
+    // Set initial language
+    setLanguage('en');
 });
 
 // ----- Language Switcher -----
@@ -873,30 +871,6 @@ function showFormMessage(message, type) {
         feedback.className = 'form-feedback';
         feedback.removeAttribute('style');
     }, 5000);
-}
-
-// ----- Sticky Mobile Booking Bar -----
-// Hides itself while the Availability or Contact sections are in view
-// (user is already looking at the CTA equivalents — bar would be noise).
-function initMobileBookBar() {
-    const bar = document.querySelector('.mobile-book-bar');
-    if (!bar) return;
-    // Desktop users never see it; save the observer cost.
-    if (window.matchMedia('(min-width: 769px)').matches) return;
-
-    const availability = document.getElementById('availability');
-    const contact = document.getElementById('contact');
-    const targets = [availability, contact].filter(Boolean);
-    if (!targets.length) return;
-
-    const state = new WeakMap();
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => state.set(entry.target, entry.isIntersecting));
-        const anyVisible = targets.some(t => state.get(t));
-        bar.classList.toggle('is-hidden', anyVisible);
-    }, { rootMargin: '0px 0px -20% 0px' });
-
-    targets.forEach(t => observer.observe(t));
 }
 
 // ----- Scroll Animations -----
