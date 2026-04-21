@@ -71,7 +71,10 @@ Skip it and the system is just files on disk.
 | `offline.html` | Offline fallback page. |
 | `images/` | Raw / source photos. Do not link these from HTML. |
 | `images/optimized/` | Public images, both `.jpg` and `.webp` per asset. Always link from here. |
-| `lighthouse-*.json` | Historical audit reports (Jan 2026 optimization pass). |
+| `{es,el,fr}/index.html` | Generated per-locale pages. Never hand-edit — regenerate via `scripts/build_locales.py`. |
+| `scripts/build_locales.py` | Reads `translations.js` + `index.html`, emits per-locale HTML with translated head/body, hreflang cluster, and FAQPage JSON-LD. |
+| `.claude/skills/optimize-photos/` | Pipeline for importing new source photos → paired `.jpg`/`.webp` + snippet generator. |
+| `lighthouse-*.json` | Historical audit reports (Jan 2026 optimization pass). Gitignored. |
 
 ## Image pipeline
 
@@ -97,7 +100,45 @@ Skip it and the system is just files on disk.
 
 - Serve locally: `python3 -m http.server 8000` then open `http://localhost:8000`.
 - The browse skill (`/browse`) is the preferred way to dogfood changes in a real browser.
-- Lighthouse runs: `npx lighthouse <production-url> --output json` _(TODO: confirm current production URL after Sea Tree rebrand)_.
+- Lighthouse runs: `npx lighthouse https://seatree.gr/ --output json`.
+- After any change to `translations.js` or the `index.html` body, rebuild per-locale pages:
+  `python3 scripts/build_locales.py`.
+
+## i18n architecture
+
+- **Four locales, four URLs.** EN at `/`, others at `/es/`, `/el/`, `/fr/`. Each has its own `index.html` so
+  crawlers (Google, ChatGPT browse, Perplexity) see real translated content without JS.
+- `translations.js` is the single source of truth. Shape: `{ en: {...}, es: {...}, el: {...}, fr: {...} }`.
+  UMD export at the bottom so `node` can `require()` it.
+- `scripts/build_locales.py`:
+  1. Reads `translations.js` via `node -e "console.log(JSON.stringify(require('./translations.js')))"`.
+  2. Reads `index.html` as the template.
+  3. For each non-default locale: sets `<html lang>`, rewrites meta tags (title, description, OG, Twitter, canonical),
+     injects an `hreflang` cluster + `x-default`, generates a `FAQPage` JSON-LD from `translations.faq.q*`, walks every
+     `data-translate="…"` element and replaces inner text with the translated string, and rewrites asset paths from
+     relative to absolute (`styles.css` → `/styles.css`).
+  4. Writes to `{locale}/index.html`.
+  5. Patches the root `index.html` in place — same hreflang cluster + `FAQPage` in EN.
+- The client-side `setLanguage()` in `script.js` still exists, but the language switcher now navigates between locale
+  URLs (preserving the current `#anchor`) rather than swapping DOM in place. `currentLang` is read from
+  `document.documentElement.lang` on init.
+- CI (`.github/workflows/deploy.yml`) runs `build_locales.py` before every deploy so the locale HTMLs always match
+  `translations.js` in production.
+
+## Deliberate non-features
+
+A running list of features considered and deliberately skipped — so a future Claude or contributor doesn't re-propose
+them. If data changes, revisit.
+
+- **No hero video.** The widely-cited "86% conversion lift" traces to vendor blog posts, not controlled studies.
+  Mobile LCP tax is real (HTTP Archive 2025). WebP `<picture>` hero is the better trade.
+- **No `llms.txt`.** 30-day bot-log audits (Longato, 2025) show GPTBot / ClaudeBot / PerplexityBot rarely fetch it.
+  Invest in crawlable `#faq` and `FAQPage` JSON-LD instead — that's what AI search actually cites.
+- **No AI-chat widget.** "71% more bookings with AI" is a Hostaway vendor survey with selection bias. For a single-
+  listing rental, a Formspree form + WhatsApp tap is higher-signal than a chatbot.
+- **No `Review` / `aggregateRating` JSON-LD.** Google's 2019 self-serving review rule still applies in 2025 —
+  first-party `Review` on `LocalBusiness` / `VacationRental` is ignored (BrightLocal). Visible guest quotes on-page
+  are fine for CRO; we don't claim stars in structured data.
 
 ## Agent assets in this project
 
@@ -113,6 +154,6 @@ Three layered systems coexist — check each before assuming a capability lives 
 
 ## Known quirks
 
-- Project dir was renamed from `romantica-blue/` to `sea-tree-paros/`; the brand is being rebranded from Romantica Blue to Sea Tree. `index.html`, schema, OG tags, and the production domain may still contain old brand references — check before editing copy.
+- Project dir was renamed from `romantica-blue/` to `sea-tree-paros/`; brand is now **Sea Tree**. The *Romantica* name is preserved intentionally in historical copy ("the former Romantica disco bar", "soul of Romantica lives on"). Don't scrub it — the disco history is part of the story.
 - Files in the repo are a mix of `yorgos:staff` and `littlebits:staff` ownership. If git complains about dubious ownership, add the path via `git config --global --add safe.directory`.
 - `.DS_Store` files keep reappearing — `.gitignore` already excludes them.
