@@ -7,3 +7,6 @@ __pycache__/
 *.pyc
 
 .gstack/
+
+# Generated at deploy time by scripts/sync_bookings.py
+bookings.json

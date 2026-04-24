@@ -7,7 +7,7 @@
 
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://formspree.io https://www.airbnb.co.uk https://ical.booking.com; form-action 'self' https://formspree.io">
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
@@ -147,7 +147,6 @@
   <link rel="stylesheet" href="/styles.css">
 
   <!-- Scripts - Defer for performance -->
-  <script src="/ical.min.js" defer></script>
   <script src="/translations.js" defer></script>
   <script src="/script.js" defer></script>
 </head>

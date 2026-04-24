@@ -46,14 +46,12 @@ function getPaymentLink(checkInDate, nights) {
     return `${baseUrl}?quantity=${nights}`;
 }
 
-// ----- External Calendar Config -----
-const ICAL_URLS = [
-    'https://www.airbnb.co.uk/calendar/ical/1659626910469787873.ics?t=27432fdc07c54e9bb8e3ea8622b9fac0',
-    'https://ical.booking.com/v1/export?t=5cafb294-ac4f-4cff-be12-ab4f933ad203'
-];
-
-// CORS Proxy (Use a public one for demo, or own Worker for production)
-const CORS_PROXY = 'https://corsproxy.io/?';
+// ----- Availability Source -----
+// /bookings.json is regenerated at deploy time (and every 2h via cron)
+// by scripts/sync_bookings.py, which unions the Airbnb + Booking.com
+// iCal feeds server-side. Same-origin fetch keeps CSP minimal and means
+// no third-party CORS proxy sits between us and the booking calendar.
+const BOOKINGS_URL = '/bookings.json';
 
 function getSeasonForDate(dateStr) {
     const date = new Date(dateStr + 'T00:00:00');
@@ -468,74 +466,19 @@ function initCalendar() {
 }
 
 async function loadBookedDates() {
-    // Check session storage cache first (valid for 1 hour)
-    const cached = sessionStorage.getItem('bookedDates');
-    const cachedTime = sessionStorage.getItem('bookedDatesTime');
-
-    if (cached && cachedTime && (Date.now() - cachedTime < 3600000)) {
-        bookedDates = JSON.parse(cached);
-        renderCalendar();
-        return;
+    try {
+        // `cache: 'no-cache'` forces revalidation with the server so a
+        // stale HTTP cache never hides a new booking. The service worker
+        // handles /bookings.json as network-first for the same reason.
+        const res = await fetch(BOOKINGS_URL, { cache: 'no-cache' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        bookedDates = Array.isArray(data.dates) ? data.dates : [];
+    } catch (err) {
+        console.error('Failed to load bookings.json:', err);
+        bookedDates = [];
     }
-
-    // Fetch from all sources
-    const allDates = await Promise.all(ICAL_URLS.map(fetchICalData));
-
-    // Merge and deduplicate
-    const mergedDates = new Set(allDates.flat());
-    bookedDates = Array.from(mergedDates);
-
-    // Cache result
-    sessionStorage.setItem('bookedDates', JSON.stringify(bookedDates));
-    sessionStorage.setItem('bookedDatesTime', Date.now());
-
     renderCalendar();
-}
-
-// Fetch and parse iCal data (for future integration)
-async function fetchICalData(url) {
-    if (url.includes('YOUR_')) return []; // Skip placeholders
-
-    try {
-        const response = await fetch(CORS_PROXY + encodeURIComponent(url));
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.text();
-        return parseICalData(data);
-    } catch (error) {
-        console.error('Error fetching iCal data:', error);
-        return [];
-    }
-}
-
-function parseICalData(icalData) {
-    try {
-        const jcalData = ICAL.parse(icalData);
-        const comp = new ICAL.Component(jcalData);
-        const events = comp.getAllSubcomponents('vevent');
-        const dates = [];
-
-        events.forEach(event => {
-            const dtstart = event.getFirstPropertyValue('dtstart');
-            const dtend = event.getFirstPropertyValue('dtend');
-
-            if (dtstart && dtend) {
-                let current = dtstart.toJSDate();
-                const end = dtend.toJSDate();
-
-                // Adjust for timezones if needed, but ical.js acts in UTC usually
-                // Iterate days
-                while (current < end) {
-                    dates.push(formatDate(current));
-                    current.setDate(current.getDate() + 1);
-                }
-            }
-        });
-
-        return dates;
-    } catch (e) {
-        console.error('Error parsing iCal:', e);
-        return [];
-    }
 }
 
 function formatDate(date) {
@@ -894,29 +837,6 @@ function initScrollAnimations() {
         observer.observe(el);
     });
 }
-
-// ----- iCal Integration (placeholder for user's URLs) -----
-// To integrate with Airbnb and Booking.com:
-// 1. Get your iCal export URLs from each platform
-// 2. Use a CORS proxy or backend service to fetch the data
-// 3. Call fetchICalData() with each URL
-// 4. Merge the results into bookedDates array
-
-/*
-Example usage:
-async function loadAllBookings() {
-  const airbnbUrl = 'YOUR_AIRBNB_ICAL_URL';
-  const bookingUrl = 'YOUR_BOOKING_ICAL_URL';
-  
-  const [airbnbDates, bookingDates] = await Promise.all([
-    fetchICalData(airbnbUrl),
-    fetchICalData(bookingUrl)
-  ]);
-  
-  bookedDates = [...new Set([...airbnbDates, ...bookingDates])];
-  renderCalendar();
-}
-*/
 
 // ----- Service Worker Registration (PWA) -----
 if ('serviceWorker' in navigator) {

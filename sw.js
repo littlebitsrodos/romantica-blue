@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sea-tree-v4';
+const CACHE_NAME = 'sea-tree-v5';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -7,7 +7,6 @@ const ASSETS_TO_CACHE = [
     './translations.js',
     './offline.html',
     './favicon.svg',
-    './ical.min.js',
     './fonts.css'
 ];
 
@@ -43,30 +42,35 @@ self.addEventListener('activate', (event) => {
 
 // Fetch Event - Network First, then Cache, then Offline Page
 self.addEventListener('fetch', (event) => {
-    // Skip cross-origin requests like Google Maps/Fonts for now to keep it simple, 
-    // or handle them with Stale-While-Revalidate if advanced.
-    // For this simple version: use Stale-While-Revalidate for local assets.
+    const url = new URL(event.request.url);
+
+    // bookings.json is freshness-critical — cache-first would hide a
+    // new Airbnb/Booking.com block for up to a full SW lifetime. Go
+    // network-first and only fall back to cache when offline.
+    if (url.origin === self.location.origin && url.pathname.endsWith('/bookings.json')) {
+        event.respondWith(
+            fetch(event.request).then((networkResponse) => {
+                const copy = networkResponse.clone();
+                caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+                return networkResponse;
+            }).catch(() => caches.match(event.request))
+        );
+        return;
+    }
 
     if (event.request.url.startsWith(self.location.origin)) {
         event.respondWith(
             caches.match(event.request).then((cachedResponse) => {
-                // Return cached response if found
                 if (cachedResponse) {
-                    // Optional: Update cache in background (stale-while-revalidate behavior)
-                    // fetch(event.request).then(networkResponse => {
-                    //   caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse));
-                    // });
                     return cachedResponse;
                 }
 
-                // Otherwise fetch from network
                 return fetch(event.request).then((networkResponse) => {
                     return caches.open(CACHE_NAME).then((cache) => {
                         cache.put(event.request, networkResponse.clone());
                         return networkResponse;
                     });
                 }).catch(() => {
-                    // If network fails (offline) and not in cache, show offline page for HTML requests
                     if (event.request.headers.get('accept').includes('text/html')) {
                         return caches.match('./offline.html');
                     }
