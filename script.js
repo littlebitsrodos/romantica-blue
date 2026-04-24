@@ -87,8 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initScrollAnimations();
 
-    // Set initial language
-    setLanguage('en');
+    // Set initial language from the URL-resolved locale (not hardcoded 'en',
+    // which would clobber the pre-translated /es/, /el/, /fr/ HTML back to English).
+    setLanguage(currentLang);
 });
 
 // ----- Language Switcher -----
