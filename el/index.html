@@ -33,7 +33,7 @@
   <meta property="og:title" content="Sea Tree | Εξοχική Κατοικία στην Πάρο, Ελλάδα">
   <meta property="og:description"
     content="Από την πίστα χορού στο όνειρο — Sea Tree, μοναδική εξοχική κατοικία στην Αλυκή, Πάρο. Το θρυλικό disco bar Romantica, τώρα γαλήνιο καταφύγιο.">
-  <meta property="og:image" content="images/optimized/terrace-sunset-panorama.webp">
+  <meta property="og:image" content="https://seatree.gr/images/optimized/terrace-sunset-panorama.webp">
   <meta property="og:url" content="https://seatree.gr/el/">
   <meta property="og:site_name" content="Sea Tree">
 
@@ -42,7 +42,7 @@
   <meta name="twitter:title" content="Sea Tree | Πάρος, Ελλάδα">
   <meta name="twitter:description"
     content="Από την πίστα χορού στο όνειρο — Sea Tree, εξοχική κατοικία στην Αλυκή, Πάρος.">
-  <meta name="twitter:image" content="images/optimized/terrace-sunset-panorama.webp">
+  <meta name="twitter:image" content="https://seatree.gr/images/optimized/terrace-sunset-panorama.webp">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -53,12 +53,12 @@
     "description": "Sea Tree — a unique vacation rental in Aliki Beach, Paros, Greece. This beautiful blue haven was once the legendary Romantica disco bar — the heartbeat of Paros nightlife. Today, those same walls have been lovingly transformed into a serene island retreat.",
     "url": "https://seatree.gr",
     "image": [
-      "images/optimized/terrace-sunset-panorama.webp",
-      "images/optimized/daybed-moon-sunset.webp",
-      "images/optimized/living-room-sea-view.webp",
-      "images/optimized/bedroom.webp",
-      "images/optimized/workspace-sea-view.webp",
-      "images/optimized/terrace-sea-view.webp"
+      "https://seatree.gr/images/optimized/terrace-sunset-panorama.webp",
+      "https://seatree.gr/images/optimized/daybed-moon-sunset.webp",
+      "https://seatree.gr/images/optimized/living-room-sea-view.webp",
+      "https://seatree.gr/images/optimized/bedroom.webp",
+      "https://seatree.gr/images/optimized/workspace-sea-view.webp",
+      "https://seatree.gr/images/optimized/terrace-sea-view.webp"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -93,15 +93,26 @@
     "checkoutTime": "11:00",
     "petsAllowed": false,
     "tourBookingPage": "https://seatree.gr/#contact",
-    "containsPlace": {
-      "@type": "Accommodation",
-      "name": "Master Bedroom",
-      "bed": {
-        "@type": "BedDetails",
-        "typeOfBed": "King",
-        "numberOfBeds": 1
+    "containsPlace": [
+      {
+        "@type": "Accommodation",
+        "name": "Master Bedroom",
+        "bed": {
+          "@type": "BedDetails",
+          "typeOfBed": "King",
+          "numberOfBeds": 1
+        }
+      },
+      {
+        "@type": "Accommodation",
+        "name": "Guest Bedroom",
+        "bed": {
+          "@type": "BedDetails",
+          "typeOfBed": "Single",
+          "numberOfBeds": 2
+        }
       }
-    }
+    ]
   }
   </script>
 
@@ -112,33 +123,6 @@
     "name": "Sea Tree",
     "url": "https://seatree.gr/",
     "inLanguage": ["en", "es", "el", "fr"]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://seatree.gr"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Vacation Rentals in Paros",
-        "item": "https://seatree.gr/#gallery"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Book Now",
-        "item": "https://seatree.gr/#contact"
-      }
-    ]
   }
   </script>
 
