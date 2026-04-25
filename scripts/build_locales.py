@@ -20,6 +20,7 @@ Run it before commit/deploy:
 Re-runs are idempotent — it always regenerates the locale files
 fresh from the current index.html + translations.js.
 """
+import datetime
 import json
 import re
 import subprocess
@@ -207,6 +208,36 @@ def absolutize_paths(html):
     return html
 
 
+def _git_date(*args):
+    try:
+        return subprocess.check_output(
+            ["git", "log", "-1", "--format=%cs", *args],
+            cwd=ROOT,
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return ""
+
+
+def update_sitemap_lastmod():
+    last_change = (
+        _git_date("--", "index.html", "translations.js")
+        or _git_date("HEAD")
+        or datetime.date.today().isoformat()
+    )
+    sitemap_path = ROOT / "sitemap.xml"
+    sitemap = sitemap_path.read_text()
+    new_sitemap = re.sub(
+        r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>",
+        f"<lastmod>{last_change}</lastmod>",
+        sitemap,
+    )
+    if new_sitemap != sitemap:
+        sitemap_path.write_text(new_sitemap)
+    print(f"updated sitemap.xml lastmod → {last_change}")
+
+
 def build_locale(src_html, locale, all_translations):
     t = all_translations[locale]
     html = src_html
@@ -243,6 +274,8 @@ def main():
     root_html = build_locale(src_html, "en", all_translations)
     SRC.write_text(root_html)
     print(f"updated {SRC.relative_to(ROOT)}  ({len(root_html):,} bytes)")
+
+    update_sitemap_lastmod()
 
 
 if __name__ == "__main__":

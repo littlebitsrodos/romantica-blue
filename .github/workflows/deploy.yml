@@ -28,6 +28,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history so build_locales.py can read the last commit date
+          # touching index.html / translations.js for sitemap <lastmod>.
+          fetch-depth: 0
       - name: Setup Node (for build_locales.py → translations.js bridge)
         uses: actions/setup-node@v4
         with:

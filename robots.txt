@@ -3,10 +3,10 @@
 
 User-agent: *
 Allow: /
-Disallow:
+Disallow: /bookings.json
 
 # Sitemap location
 Sitemap: https://seatree.gr/sitemap.xml
 
-# Crawl-delay for polite crawling
+# Crawl-delay for polite crawling (Bingbot honors this; Googlebot ignores it)
 Crawl-delay: 1
