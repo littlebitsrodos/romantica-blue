@@ -72,7 +72,7 @@ Skip it and the system is just files on disk.
 | `images/` | Raw / source photos. Do not link these from HTML. |
 | `images/optimized/` | Public images, both `.jpg` and `.webp` per asset. Always link from here. |
 | `{es,el,fr}/index.html` | Generated per-locale pages. Never hand-edit — regenerate via `scripts/build_locales.py`. |
-| `scripts/build_locales.py` | Reads `translations.js` + `index.html`, emits per-locale HTML with translated head/body, hreflang cluster, and FAQPage JSON-LD. |
+| `scripts/build_locales.py` | Reads `translations.js` + `index.html`, emits per-locale HTML with translated head/body and hreflang cluster. Also rewrites `sitemap.xml` `<lastmod>` from the most recent commit on `index.html` / `translations.js`. |
 | `.claude/skills/optimize-photos/` | Pipeline for importing new source photos → paired `.jpg`/`.webp` + snippet generator. |
 | `lighthouse-*.json` | Historical audit reports (Jan 2026 optimization pass). Gitignored. |
 
@@ -114,11 +114,10 @@ Skip it and the system is just files on disk.
   1. Reads `translations.js` via `node -e "console.log(JSON.stringify(require('./translations.js')))"`.
   2. Reads `index.html` as the template.
   3. For each non-default locale: sets `<html lang>`, rewrites meta tags (title, description, OG, Twitter, canonical),
-     injects an `hreflang` cluster + `x-default`, generates a `FAQPage` JSON-LD from `translations.faq.q*`, walks every
-     `data-translate="…"` element and replaces inner text with the translated string, and rewrites asset paths from
-     relative to absolute (`styles.css` → `/styles.css`).
+     injects an `hreflang` cluster + `x-default`, walks every `data-translate="…"` element and replaces inner text
+     with the translated string, and rewrites asset paths from relative to absolute (`styles.css` → `/styles.css`).
   4. Writes to `{locale}/index.html`.
-  5. Patches the root `index.html` in place — same hreflang cluster + `FAQPage` in EN.
+  5. Patches the root `index.html` in place — same hreflang cluster in EN.
 - The client-side `setLanguage()` in `script.js` still exists, but the language switcher now navigates between locale
   URLs (preserving the current `#anchor`) rather than swapping DOM in place. `currentLang` is read from
   `document.documentElement.lang` on init.
