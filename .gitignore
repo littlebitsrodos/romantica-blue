@@ -21,3 +21,6 @@ __pycache__/
 
 # Generated at deploy time by scripts/sync_bookings.py
 bookings.json
+
+# Local-only review/working docs (not part of the project)
+docs/
