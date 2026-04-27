@@ -33,7 +33,7 @@ const translations = {
     // Hero
     hero: {
       title: "Sea Tree",
-      tagline: "Slow down. Breathe. Be.",
+      tagline: "Slow down. Breathe.",
       location: "Aliki Beach, Paros, Greece",
       checkAvailability: "Check Availability",
       ourStory: "Our Story"
@@ -218,7 +218,7 @@ const translations = {
     // Hero
     hero: {
       title: "Sea Tree",
-      tagline: "Desacelera. Respira. Sé.",
+      tagline: "Desacelera. Respira.",
       location: "Playa de Aliki, Paros, Grecia",
       checkAvailability: "Ver Disponibilidad",
       ourStory: "Nuestra Historia"
@@ -403,7 +403,7 @@ const translations = {
     // Hero
     hero: {
       title: "Sea Tree",
-      tagline: "Χαλάρωσε. Ανάπνευσε. Να'σαι.",
+      tagline: "Χαλάρωσε. Ανάπνευσε.",
       location: "Αλυκή, Πάρος, Ελλάδα",
       checkAvailability: "Έλεγχος Διαθεσιμότητας",
       ourStory: "Η Ιστορία μας"
@@ -588,7 +588,7 @@ const translations = {
     // Hero
     hero: {
       title: "Sea Tree",
-      tagline: "Ralentissez. Respirez. Soyez.",
+      tagline: "Ralentissez. Respirez.",
       location: "Plage d'Aliki, Paros, Grèce",
       checkAvailability: "Vérifier Disponibilité",
       ourStory: "Notre Histoire"
