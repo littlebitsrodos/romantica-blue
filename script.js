@@ -223,6 +223,12 @@ function initGallery() {
         item.addEventListener('click', () => openLightbox(index));
     });
 
+    // "View all photos" button opens lightbox at the first image
+    const viewAllBtn = document.querySelector('.gallery-view-all');
+    if (viewAllBtn) {
+        viewAllBtn.addEventListener('click', () => openLightbox(0));
+    }
+
     // Lightbox controls
     if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
     if (lightboxPrev) lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
@@ -401,7 +407,10 @@ function handleLightboxSwipe() {
 }
 
 function startGalleryRotation() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    // Only rotate through items currently visible in the desktop grid —
+    // items 10+ are display:none after the curated-grid pass.
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-grid .gallery-item'))
+        .filter(item => item.offsetParent !== null);
     if (galleryItems.length === 0) return;
 
     stopGalleryRotation();

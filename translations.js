@@ -55,7 +55,8 @@ const translations = {
     gallery: {
       label: "Gallery",
       title: "The Space",
-      subtitle: "Natural light. Stone floors. Cotton linens. Room to breathe."
+      subtitle: "Natural light. Stone floors. Cotton linens. Room to breathe.",
+      viewAll: "View all photos"
     },
 
     // Amenities
@@ -240,7 +241,8 @@ const translations = {
     gallery: {
       label: "Galería",
       title: "El Espacio",
-      subtitle: "Luz natural. Suelos de piedra. Sábanas de algodón. Espacio para respirar."
+      subtitle: "Luz natural. Suelos de piedra. Sábanas de algodón. Espacio para respirar.",
+      viewAll: "Ver todas las fotos"
     },
 
     // Amenities
@@ -425,7 +427,8 @@ const translations = {
     gallery: {
       label: "Γκαλερί",
       title: "Ο Χώρος",
-      subtitle: "Φυσικό φως. Πέτρινα πατώματα. Βαμβακερά σεντόνια. Χώρος να αναπνεύσετε."
+      subtitle: "Φυσικό φως. Πέτρινα πατώματα. Βαμβακερά σεντόνια. Χώρος να αναπνεύσετε.",
+      viewAll: "Δείτε όλες τις φωτογραφίες"
     },
 
     // Amenities
@@ -610,7 +613,8 @@ const translations = {
     gallery: {
       label: "Galerie",
       title: "L'Espace",
-      subtitle: "Lumière naturelle. Sols en pierre. Draps en coton. Espace pour respirer."
+      subtitle: "Lumière naturelle. Sols en pierre. Draps en coton. Espace pour respirer.",
+      viewAll: "Voir toutes les photos"
     },
 
     // Amenities

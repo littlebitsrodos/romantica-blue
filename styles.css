@@ -617,6 +617,24 @@ section:nth-child(even) {
   background: rgba(61, 90, 110, 0.1);
 }
 
+/* Limit visible grid to first 9 items; rest reachable via "View all photos" lightbox */
+.gallery-grid > .gallery-item:nth-child(n+10) {
+  display: none;
+}
+
+.gallery-view-all-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .gallery-view-all-wrap {
+    display: none;
+  }
+}
+
+
 /* ----- Amenities ----- */
 .amenities-grid {
   display: grid;
