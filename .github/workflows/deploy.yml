@@ -6,9 +6,9 @@ on:
     branches: ["main"]
   workflow_dispatch:
   schedule:
-    # Refresh availability from Airbnb + Booking.com every 2 hours.
+    # Refresh availability from Airbnb + Booking.com every hour.
     # Cron runs in UTC; :15 to dodge the top-of-hour runner burst.
-    - cron: "15 */2 * * *"
+    - cron: "15 * * * *"
 
 permissions:
   contents: read
