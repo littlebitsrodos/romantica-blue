@@ -1,10 +1,11 @@
-const CACHE_NAME = 'sea-tree-v16';
+const CACHE_NAME = 'sea-tree-v17';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './styles.css',
     './script.js',
     './translations.js',
+    './analytics.js',
     './offline.html',
     './favicon.svg'
 ];

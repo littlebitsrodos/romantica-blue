@@ -8,6 +8,25 @@ const LOCALES = [
   { path: '/fr/', lang: 'fr', label: 'FR' },
 ];
 
+// Block third-party analytics network calls in tests — keeps networkidle
+// deterministic and prevents gtag.js fetches from racing with axe scans
+// or overflow measurements. analytics.js (same-origin) still runs and
+// sets up Consent Mode defaults.
+test.beforeEach(async ({ context }) => {
+  await context.route(/googletagmanager\.com|google-analytics\.com|analytics\.google\.com/, route => route.abort());
+});
+
+// Pre-seed the cookie-consent decision so the banner doesn't render during
+// layout/a11y tests — it's a fixed-positioned overlay whose presence on
+// first-visit was racing with body.scrollWidth measurement. The consent
+// suite below opts out so it can exercise the first-visit flow.
+test.beforeEach(async ({ page }, testInfo) => {
+  if (testInfo.titlePath.some(p => p.includes('cookie consent'))) return;
+  await page.addInitScript(() => {
+    try { localStorage.setItem('seatree-consent', 'denied'); } catch (_) {}
+  });
+});
+
 test.describe('mobile layout', () => {
   test.beforeEach(({ }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile', 'mobile-only suite');
@@ -108,5 +127,34 @@ test.describe('navigation', () => {
     await page.locator('.lang-btn[data-lang="es"]').click();
     await expect(page).toHaveURL(/\/es\/?$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  });
+});
+
+test.describe('cookie consent (GA4 Consent Mode v2)', () => {
+  test('banner appears for first-time visitors and persists the decision', async ({ page }) => {
+    await page.goto('/');
+    const banner = page.locator('#consent-banner');
+    await expect(banner).toBeVisible();
+    await expect(banner).toContainText(/cookies/i);
+
+    await banner.locator('.consent-accept').click();
+    await expect(banner).toBeHidden();
+
+    const stored = await page.evaluate(() => localStorage.getItem('seatree-consent'));
+    expect(stored).toBe('granted');
+
+    // Reload — banner should NOT reappear
+    await page.reload();
+    await expect(page.locator('#consent-banner')).toBeHidden();
+  });
+
+  test('decline path stores denied state and hides the banner', async ({ page }) => {
+    await page.goto('/');
+    const banner = page.locator('#consent-banner');
+    await expect(banner).toBeVisible();
+    await banner.locator('.consent-decline').click();
+    await expect(banner).toBeHidden();
+    const stored = await page.evaluate(() => localStorage.getItem('seatree-consent'));
+    expect(stored).toBe('denied');
   });
 });

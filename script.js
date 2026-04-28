@@ -86,11 +86,43 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalendar();
     initContactForm();
     initScrollAnimations();
+    initConsentBanner();
 
     // Set initial language from the URL-resolved locale (not hardcoded 'en',
     // which would clobber the pre-translated /es/, /el/, /fr/ HTML back to English).
     setLanguage(currentLang);
 });
+
+// ----- Cookie Consent (GA4 Consent Mode v2) -----
+// analytics.js sets analytics_storage='denied' by default; this banner asks
+// the visitor and persists the choice in localStorage so returning visitors
+// don't see it again. Greek/EU jurisdiction => banner is non-negotiable.
+function initConsentBanner() {
+    const banner = document.getElementById('consent-banner');
+    if (!banner) return;
+
+    let stored = null;
+    try { stored = localStorage.getItem('seatree-consent'); } catch (_) {}
+    if (stored === 'granted' || stored === 'denied') {
+        banner.classList.add('hidden');
+        return;
+    }
+
+    banner.classList.remove('hidden');
+
+    banner.querySelector('.consent-accept')?.addEventListener('click', () => {
+        try { localStorage.setItem('seatree-consent', 'granted'); } catch (_) {}
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', { analytics_storage: 'granted' });
+        }
+        banner.classList.add('hidden');
+    });
+
+    banner.querySelector('.consent-decline')?.addEventListener('click', () => {
+        try { localStorage.setItem('seatree-consent', 'denied'); } catch (_) {}
+        banner.classList.add('hidden');
+    });
+}
 
 // ----- Language Switcher -----
 // URL-based: each locale lives at its own path (/, /es/, /el/, /fr/).
