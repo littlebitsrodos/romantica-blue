@@ -76,6 +76,17 @@ const translations = {
       }
     },
 
+    // Services (on request)
+    services: {
+      label: "On Request",
+      title: "Add to Your Stay",
+      subtitle: "Authentic Paros experiences, arranged for your dates",
+      items: {
+        cookingClass: { title: "Cooking Classes", desc: "Hands-on Greek cooking with a local chef" },
+        privateChef: { title: "Private Chef", desc: "Breakfast, lunch, or dinner served at home" }
+      }
+    },
+
     // The Space (selling points)
     theSpace: {
       label: "The Space",
@@ -186,14 +197,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Aliki Beach, Paros 844 00, Greece",
-      copyright: "© 2026 Sea Tree. All rights reserved."
+      copyright: "© 2026 Sea Tree. All rights reserved.",
+      privacyLink: "Privacy Policy"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "We use cookies to understand how this site is used. Analytics only — no advertising trackers.",
       accept: "Accept",
-      decline: "Decline"
+      decline: "Decline",
+      learnMore: "Learn more"
     }
   },
 
@@ -266,6 +279,17 @@ const translations = {
         washer: { title: "Lavadora", desc: "Para estancias largas" },
         linens: { title: "Sábanas 100% Algodón", desc: "Toallas y ropa de cama limpias" },
         beach: { title: "Toallas de Playa", desc: "Incluidas para tus días de playa" }
+      }
+    },
+
+    // Services (on request)
+    services: {
+      label: "A Petición",
+      title: "Añade a tu Estancia",
+      subtitle: "Experiencias auténticas de Paros, organizadas para tus fechas",
+      items: {
+        cookingClass: { title: "Clases de Cocina", desc: "Cocina griega práctica con un chef local" },
+        privateChef: { title: "Chef Privado", desc: "Desayuno, almuerzo o cena servidos en casa" }
       }
     },
 
@@ -379,14 +403,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Playa de Aliki, Paros 844 00, Grecia",
-      copyright: "© 2026 Sea Tree. Todos los derechos reservados."
+      copyright: "© 2026 Sea Tree. Todos los derechos reservados.",
+      privacyLink: "Política de Privacidad"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Usamos cookies para entender cómo se utiliza este sitio. Solo analíticas — sin rastreadores publicitarios.",
       accept: "Aceptar",
-      decline: "Rechazar"
+      decline: "Rechazar",
+      learnMore: "Más información"
     }
   },
 
@@ -459,6 +485,17 @@ const translations = {
         washer: { title: "Πλυντήριο", desc: "Για μεγαλύτερες διαμονές" },
         linens: { title: "Σεντόνια 100% Βαμβάκι", desc: "Καθαρές πετσέτες & κλινοσκεπάσματα" },
         beach: { title: "Πετσέτες Θαλάσσης", desc: "Παρέχονται για τις μέρες στην παραλία" }
+      }
+    },
+
+    // Services (on request)
+    services: {
+      label: "Κατόπιν Αιτήματος",
+      title: "Προσθέστε στη Διαμονή σας",
+      subtitle: "Αυθεντικές εμπειρίες Πάρου, οργανωμένες για τις ημερομηνίες σας",
+      items: {
+        cookingClass: { title: "Μαθήματα Μαγειρικής", desc: "Πρακτικά μαθήματα ελληνικής κουζίνας με τοπικό σεφ" },
+        privateChef: { title: "Ιδιωτικός Σεφ", desc: "Πρωινό, μεσημεριανό ή δείπνο στο σπίτι" }
       }
     },
 
@@ -572,14 +609,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
-      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος."
+      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος.",
+      privacyLink: "Πολιτική Απορρήτου"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Χρησιμοποιούμε cookies για να καταλάβουμε πώς χρησιμοποιείται ο ιστότοπος. Μόνο analytics — χωρίς διαφημιστικούς ιχνηλάτες.",
       accept: "Αποδοχή",
-      decline: "Απόρριψη"
+      decline: "Απόρριψη",
+      learnMore: "Διαβάστε περισσότερα"
     }
   },
 
@@ -652,6 +691,17 @@ const translations = {
         washer: { title: "Machine à Laver", desc: "Pour les longs séjours" },
         linens: { title: "Draps 100% Coton", desc: "Serviettes & literie propres" },
         beach: { title: "Serviettes de Plage", desc: "Fournies pour vos journées à la plage" }
+      }
+    },
+
+    // Services (on request)
+    services: {
+      label: "Sur Demande",
+      title: "Complétez votre Séjour",
+      subtitle: "Des expériences authentiques de Paros, arrangées pour vos dates",
+      items: {
+        cookingClass: { title: "Cours de Cuisine", desc: "Cuisine grecque pratique avec un chef local" },
+        privateChef: { title: "Chef Privé", desc: "Petit-déjeuner, déjeuner ou dîner servis à domicile" }
       }
     },
 
@@ -765,14 +815,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
-      copyright: "© 2026 Sea Tree. Tous droits réservés."
+      copyright: "© 2026 Sea Tree. Tous droits réservés.",
+      privacyLink: "Politique de Confidentialité"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Nous utilisons des cookies pour comprendre l'utilisation de ce site. Analyses uniquement — pas de traceurs publicitaires.",
       accept: "Accepter",
-      decline: "Refuser"
+      decline: "Refuser",
+      learnMore: "En savoir plus"
     }
   }
 };
