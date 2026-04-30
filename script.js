@@ -1,6 +1,6 @@
 // =====================================================
 // ROMANTICA BLUE — Main JavaScript
-// Language switcher, calendar, gallery lightbox, forms
+// Language switcher, calendar, gallery lightbox, contact links
 // =====================================================
 
 // ----- State Management -----
@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initGallery();
     initCalendar();
-    initContactForm();
     initEmailLink();
     initScrollAnimations();
     initConsentBanner();
@@ -647,7 +646,6 @@ function handleDateClick(dateStr) {
     }
 
     renderCalendar();
-    syncDatesToForm();
 }
 
 // Check if a date is within the selected range
@@ -745,132 +743,26 @@ function clearDateSelection() {
     selectedCheckIn = null;
     selectedCheckOut = null;
     renderCalendar();
-    syncDatesToForm();
 }
 
-// Sync selected dates to the contact form
-function syncDatesToForm() {
-    const datesInput = document.getElementById('dates');
-    if (!datesInput) return;
-
-    if (selectedCheckIn && selectedCheckOut) {
-        datesInput.value = `${formatDisplayDate(selectedCheckIn)} - ${formatDisplayDate(selectedCheckOut)}`;
-        // Removed auto-scroll so user can see price
-    } else {
-        datesInput.value = '';
-    }
-}
-
-// ----- Email Link (locale-aware mailto body) -----
+// ----- Contact Links (locale-aware mailto + WhatsApp body) -----
 function initEmailLink() {
-    const link = document.getElementById('booking-email');
-    if (!link) return;
-
     const t = translations[currentLang]?.booking;
-    if (!t?.emailBody) return;
+    if (!t) return;
 
-    const params = new URLSearchParams({
-        subject: 'Sea Tree inquiry',
-        body: t.emailBody
-    });
-    link.href = `mailto:antocosto@gmail.com?${params.toString()}`;
-}
-
-// ----- Contact Form -----
-function initContactForm() {
-    const form = document.querySelector('.contact-form form');
-
-    if (form) {
-        // Rate limiting: max 3 submissions per 5 minutes
-        const RATE_LIMIT = { maxSubmissions: 3, windowMs: 5 * 60 * 1000 };
-        let submissions = JSON.parse(sessionStorage.getItem('formSubmissions') || '[]');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Clean old submissions outside the window
-            const now = Date.now();
-            submissions = submissions.filter(time => now - time < RATE_LIMIT.windowMs);
-
-            // Check rate limit
-            if (submissions.length >= RATE_LIMIT.maxSubmissions) {
-                showFormMessage('Too many submissions. Please try again in a few minutes.', 'error');
-                return;
-            }
-
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-
-            // Basic validation
-            if (!data.name || !data.email || !data.message) {
-                showFormMessage('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            if (!isValidEmail(data.email)) {
-                showFormMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Honeypot check (if field exists and is filled, it's a bot)
-            if (data.website) {
-                console.log('Bot detected');
-                showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
-                form.reset();
-                return;
-            }
-
-            // Submit to Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Track submission for rate limiting on success
-                    submissions.push(now);
-                    sessionStorage.setItem('formSubmissions', JSON.stringify(submissions));
-
-                    showFormMessage('Thank you! We\'ll get back to you soon.', 'success');
-                    form.reset();
-                } else {
-                    showFormMessage('Oops! There was a problem sending your message.', 'error');
-                }
-            }).catch(error => {
-                showFormMessage('Oops! There was a problem sending your message.', 'error');
-            });
+    const emailLink = document.getElementById('booking-email');
+    if (emailLink && t.emailBody) {
+        const params = new URLSearchParams({
+            subject: 'Sea Tree inquiry',
+            body: t.emailBody
         });
+        emailLink.href = `mailto:antocosto@gmail.com?${params.toString()}`;
     }
-}
 
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function showFormMessage(message, type) {
-    const feedback = document.querySelector('.form-feedback');
-    if (!feedback) return;
-
-    feedback.textContent = message;
-    feedback.className = `form-feedback form-message ${type}`;
-    feedback.style.cssText = `
-    padding: 1rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    ${type === 'success'
-            ? 'background: #d4edda; color: #155724;'
-            : 'background: #f8d7da; color: #721c24;'}
-  `;
-
-    setTimeout(() => {
-        feedback.textContent = '';
-        feedback.className = 'form-feedback';
-        feedback.removeAttribute('style');
-    }, 5000);
+    const whatsappLink = document.getElementById('booking-whatsapp');
+    if (whatsappLink && t.whatsappBody) {
+        whatsappLink.href = `https://wa.me/306973286811?text=${encodeURIComponent(t.whatsappBody)}`;
+    }
 }
 
 // ----- Scroll Animations -----
