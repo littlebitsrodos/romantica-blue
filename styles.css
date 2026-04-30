@@ -990,52 +990,15 @@ section:nth-child(even) {
   gap: var(--space-lg);
 }
 
-.contact-form {
-  background: var(--color-white);
-  padding: var(--space-lg);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
-}
-
-.form-group {
-  margin-bottom: var(--space-md);
-}
-
-.form-group label {
-  display: block;
+.contact-direct h3 {
   margin-bottom: var(--space-xs);
-  font-weight: 500;
-  color: var(--color-text);
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 0.875rem var(--space-sm);
-  border: 2px solid var(--color-sand);
-  border-radius: var(--radius-md);
-  font-family: var(--font-body);
+.contact-direct__intro {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
   font-size: 1rem;
-  transition: border-color var(--transition-fast);
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--color-terracotta);
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-sm);
+  line-height: 1.5;
 }
 
 .booking-links {
@@ -1049,44 +1012,99 @@ section:nth-child(even) {
 }
 
 .booking-platform {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(7.5rem, auto) 1fr auto;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md);
+  gap: var(--space-md);
+  padding: 1.25rem var(--space-md);
   background: var(--color-white);
+  border: 1px solid rgba(58, 54, 51, 0.06);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-sm);
   box-shadow: var(--shadow-soft);
   transition: all var(--transition-medium);
   text-decoration: none;
   color: var(--color-text);
+  overflow: hidden;
 }
 
-.booking-platform:hover {
-  transform: translateX(8px);
+.booking-platform::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.booking-platform--airbnb { color: #FF385C; }
+.booking-platform--bookingcom { color: #003580; }
+.booking-platform--whatsapp { color: #25D366; }
+.booking-platform--call { color: var(--color-terracotta); }
+.booking-platform--email { color: var(--color-sea-blue); }
+
+.booking-platform:hover,
+.booking-platform:focus-visible {
+  transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
+  border-color: rgba(58, 54, 51, 0.1);
 }
 
-.booking-platform-logo {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-sand-light);
-  border-radius: var(--radius-md);
+.booking-platform:hover::before,
+.booking-platform:focus-visible::before {
+  opacity: 1;
+}
+
+.booking-platform__mark {
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.7rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: currentColor;
+  line-height: 1;
 }
 
-.booking-platform-logo.airbnb {
-  background: #FF5A5F;
-  color: white;
+.booking-platform--bookingcom .booking-platform__mark i {
+  font-style: normal;
+  color: #00bafc;
 }
 
-.booking-platform-logo.booking {
-  background: #003580;
-  color: white;
+.booking-platform__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.booking-platform__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.booking-platform__benefit {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.booking-platform__arrow {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  transition: transform var(--transition-medium), color var(--transition-medium);
+  flex-shrink: 0;
+}
+
+.booking-platform:hover .booking-platform__arrow,
+.booking-platform:focus-visible .booking-platform__arrow {
+  transform: translateX(4px);
+  color: currentColor;
 }
 
 /* ----- Footer ----- */
@@ -1240,8 +1258,14 @@ section:nth-child(even) {
     grid-column: span 1;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .booking-platform {
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-sm);
+    padding: 1rem var(--space-sm);
+  }
+
+  .booking-platform__mark {
+    font-size: 1.25rem;
   }
 
   section {
@@ -1280,16 +1304,6 @@ section:nth-child(even) {
 
 .delay-4 {
   animation-delay: 0.4s;
-}
-
-/* Security: Honeypot field for spam protection */
-.honeypot {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* Gallery Carousel Rotation */

@@ -161,17 +161,20 @@ const translations = {
     booking: {
       label: "Book Your Stay",
       title: "Ready to Experience Sea Tree?",
-      subtitle: "Get in touch or book directly through your favorite platform",
-      formTitle: "Send Us a Message",
-      name: "Your Name",
-      email: "Email Address",
-      dates: "Preferred Dates",
-      guests: "Number of Guests",
-      message: "Your Message",
-      send: "Send Inquiry",
+      subtitle: "Talk to the host or book through your favorite platform",
+      directTitle: "Talk to Antonis",
+      directIntro: "No forms, no waiting — just a direct line to the host. Usually replies within a few hours.",
+      whatsapp: "Message on WhatsApp",
+      whatsappBenefit: "Fastest reply, in your language",
+      whatsappBody: "Hi Antonis, I'd like to ask about Sea Tree.",
+      callBenefit: "English, Greek",
+      emailTitle: "Send an email",
+      emailBody: "Hi Antonis,\n\nI'd like to inquire about Sea Tree.\n\n• Dates:\n• Number of guests:\n• Anything else we should know:\n\nThank you!",
       platformsTitle: "Or Book Directly",
       airbnb: "Book on Airbnb",
-      bookingcom: "Book on Booking.com"
+      airbnbBenefit: "Instant confirmation",
+      bookingcom: "Book on Booking.com",
+      bookingcomBenefit: "Free cancellation options"
     },
 
     // Footer
@@ -180,7 +183,7 @@ const translations = {
       quickLinks: "Quick Links",
       contactTitle: "Contact",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Aliki Beach, Paros 844 00, Greece",
       copyright: "© 2026 Sea Tree. All rights reserved."
     },
@@ -350,17 +353,20 @@ const translations = {
     booking: {
       label: "Reserva Tu Estancia",
       title: "¿Listo Para Vivir Sea Tree?",
-      subtitle: "Contáctanos o reserva directamente en tu plataforma favorita",
-      formTitle: "Envíanos un Mensaje",
-      name: "Tu Nombre",
-      email: "Correo Electrónico",
-      dates: "Fechas Preferidas",
-      guests: "Número de Huéspedes",
-      message: "Tu Mensaje",
-      send: "Enviar Consulta",
+      subtitle: "Habla con el anfitrión o reserva en tu plataforma favorita",
+      directTitle: "Habla con Antonis",
+      directIntro: "Sin formularios, sin esperas — línea directa con el anfitrión. Suele responder en pocas horas.",
+      whatsapp: "Escribir por WhatsApp",
+      whatsappBenefit: "Respuesta más rápida, en tu idioma",
+      whatsappBody: "Hola Antonis, quería preguntarte por Sea Tree.",
+      callBenefit: "Inglés, griego",
+      emailTitle: "Enviar un correo",
+      emailBody: "Hola Antonis,\n\nQuería preguntar por Sea Tree.\n\n• Fechas:\n• Número de huéspedes:\n• Cualquier otra cosa que debamos saber:\n\n¡Gracias!",
       platformsTitle: "O Reserva Directamente",
       airbnb: "Reservar en Airbnb",
-      bookingcom: "Reservar en Booking.com"
+      airbnbBenefit: "Confirmación inmediata",
+      bookingcom: "Reservar en Booking.com",
+      bookingcomBenefit: "Cancelación gratuita disponible"
     },
 
     // Footer
@@ -369,7 +375,7 @@ const translations = {
       quickLinks: "Enlaces Rápidos",
       contactTitle: "Contacto",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Playa de Aliki, Paros 844 00, Grecia",
       copyright: "© 2026 Sea Tree. Todos los derechos reservados."
     },
@@ -539,17 +545,20 @@ const translations = {
     booking: {
       label: "Κλείστε τη Διαμονή σας",
       title: "Έτοιμοι να Ζήσετε το Sea Tree;",
-      subtitle: "Επικοινωνήστε μαζί μας ή κλείστε απευθείας στην αγαπημένη σας πλατφόρμα",
-      formTitle: "Στείλτε μας Μήνυμα",
-      name: "Το Όνομά σας",
-      email: "Διεύθυνση Email",
-      dates: "Προτιμώμενες Ημερομηνίες",
-      guests: "Αριθμός Επισκεπτών",
-      message: "Το Μήνυμά σας",
-      send: "Αποστολή Ερώτησης",
+      subtitle: "Μιλήστε με τον οικοδεσπότη ή κλείστε στην αγαπημένη σας πλατφόρμα",
+      directTitle: "Μιλήστε με τον Αντώνη",
+      directIntro: "Χωρίς φόρμες, χωρίς αναμονή — απευθείας γραμμή με τον οικοδεσπότη. Συνήθως απαντά μέσα σε λίγες ώρες.",
+      whatsapp: "Στείλτε μήνυμα στο WhatsApp",
+      whatsappBenefit: "Πιο γρήγορη απάντηση, στη γλώσσα σας",
+      whatsappBody: "Γεια σας Αντώνη, θα ήθελα να ρωτήσω για το Sea Tree.",
+      callBenefit: "Αγγλικά, Ελληνικά",
+      emailTitle: "Στείλτε email",
+      emailBody: "Γεια σας Αντώνη,\n\nΘα ήθελα να ρωτήσω για το Sea Tree.\n\n• Ημερομηνίες:\n• Αριθμός επισκεπτών:\n• Οτιδήποτε άλλο πρέπει να γνωρίζουμε:\n\nΕυχαριστώ!",
       platformsTitle: "Ή Κλείστε Απευθείας",
       airbnb: "Κράτηση στο Airbnb",
-      bookingcom: "Κράτηση στο Booking.com"
+      airbnbBenefit: "Άμεση επιβεβαίωση",
+      bookingcom: "Κράτηση στο Booking.com",
+      bookingcomBenefit: "Δυνατότητα δωρεάν ακύρωσης"
     },
 
     // Footer
@@ -558,7 +567,7 @@ const translations = {
       quickLinks: "Γρήγοροι Σύνδεσμοι",
       contactTitle: "Επικοινωνία",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
       copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος."
     },
@@ -728,17 +737,20 @@ const translations = {
     booking: {
       label: "Réservez Votre Séjour",
       title: "Prêt à Vivre l'Expérience Sea Tree ?",
-      subtitle: "Contactez-nous ou réservez directement sur votre plateforme préférée",
-      formTitle: "Envoyez-nous un Message",
-      name: "Votre Nom",
-      email: "Adresse Email",
-      dates: "Dates Préférées",
-      guests: "Nombre d'Invités",
-      message: "Votre Message",
-      send: "Envoyer la Demande",
+      subtitle: "Parlez à l'hôte ou réservez sur votre plateforme préférée",
+      directTitle: "Parlez à Antonis",
+      directIntro: "Pas de formulaire, pas d'attente — une ligne directe avec l'hôte. Réponse généralement en quelques heures.",
+      whatsapp: "Écrire sur WhatsApp",
+      whatsappBenefit: "Réponse la plus rapide, dans votre langue",
+      whatsappBody: "Bonjour Antonis, je voudrais me renseigner sur Sea Tree.",
+      callBenefit: "Anglais, grec",
+      emailTitle: "Envoyer un email",
+      emailBody: "Bonjour Antonis,\n\nJe voudrais me renseigner sur Sea Tree.\n\n• Dates :\n• Nombre d'invités :\n• Autre chose à savoir :\n\nMerci !",
       platformsTitle: "Ou Réservez Directement",
       airbnb: "Réserver sur Airbnb",
-      bookingcom: "Réserver sur Booking.com"
+      airbnbBenefit: "Confirmation immédiate",
+      bookingcom: "Réserver sur Booking.com",
+      bookingcomBenefit: "Annulation gratuite disponible"
     },
 
     // Footer
@@ -747,7 +759,7 @@ const translations = {
       quickLinks: "Liens Rapides",
       contactTitle: "Contact",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
+      email: "antocosto@gmail.com",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
       copyright: "© 2026 Sea Tree. Tous droits réservés."
     },

@@ -7,7 +7,7 @@
 
   <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self' https://api.web3forms.com">
+    content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; form-action 'self'">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
@@ -681,72 +681,65 @@
       <div class="section-header">
         <span class="section-label" data-translate="booking.label">Réservez Votre Séjour</span>
         <h2 data-translate="booking.title">Prêt à Vivre l'Expérience Sea Tree ?</h2>
-        <p data-translate="booking.subtitle">Contactez-nous ou réservez directement sur votre plateforme préférée</p>
+        <p data-translate="booking.subtitle">Parlez à l'hôte ou réservez sur votre plateforme préférée</p>
       </div>
 
       <div class="booking-grid">
-        <div class="contact-form">
-          <h3 data-translate="booking.formTitle">Envoyez-nous un Message</h3>
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms access key — get one at https://web3forms.com (verify info@seatree.gr), then replace the placeholder below -->
-            <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER">
-            <input type="hidden" name="subject" value="New booking inquiry — seatree.gr">
-            <input type="hidden" name="from_name" value="Sea Tree website">
-            <!-- Honeypot field for spam protection - hidden from users -->
-            <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name" data-translate="booking.name">Votre Nom</label>
-                <input type="text" id="name" name="name" autocomplete="name" required
-                  data-translate-placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <label for="email" data-translate="booking.email">Adresse Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" required
-                  data-translate-placeholder="Email Address">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="dates" data-translate="booking.dates">Dates Préférées</label>
-                <input type="text" id="dates" name="dates" placeholder="e.g., July 15-22, 2026">
-              </div>
-              <div class="form-group">
-                <label for="guests" data-translate="booking.guests">Nombre d'Invités</label>
-                <select id="guests" name="guests">
-                  <option value="1">1 Guest</option>
-                  <option value="2" selected>2 Guests</option>
-                  <option value="3">3 Guests</option>
-                  <option value="4">4 Guests</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="message" data-translate="booking.message">Votre Message</label>
-              <textarea id="message" name="message" rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" data-translate="booking.send">Envoyer la Demande</button>
-            <div class="form-feedback" role="status" aria-live="polite"></div>
-          </form>
+        <div class="contact-direct">
+          <h3 data-translate="booking.directTitle">Parlez à Antonis</h3>
+          <p class="contact-direct__intro" data-translate="booking.directIntro">Pas de formulaire, pas d'attente — une ligne directe avec l'hôte. Réponse généralement en quelques heures.</p>
+
+          <a href="https://wa.me/306973286811?text=Sea%20Tree%20inquiry"
+            id="booking-whatsapp"
+            class="booking-platform booking-platform--whatsapp" target="_blank" rel="noopener noreferrer">
+            <span class="booking-platform__mark" aria-hidden="true">WhatsApp</span>
+            <span class="booking-platform__body">
+              <strong class="booking-platform__title" data-translate="booking.whatsapp">Écrire sur WhatsApp</strong>
+              <span class="booking-platform__benefit" data-translate="booking.whatsappBenefit">Réponse la plus rapide, dans votre langue</span>
+            </span>
+            <span class="booking-platform__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="tel:+306973286811" class="booking-platform booking-platform--call">
+            <span class="booking-platform__mark" aria-hidden="true">Call</span>
+            <span class="booking-platform__body">
+              <strong class="booking-platform__title">+30 697 3286 811</strong>
+              <span class="booking-platform__benefit" data-translate="booking.callBenefit">Anglais, grec</span>
+            </span>
+            <span class="booking-platform__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="mailto:antocosto@gmail.com?subject=Sea%20Tree%20inquiry"
+            id="booking-email"
+            class="booking-platform booking-platform--email">
+            <span class="booking-platform__mark" aria-hidden="true">Email</span>
+            <span class="booking-platform__body">
+              <strong class="booking-platform__title" data-translate="booking.emailTitle">Envoyer un email</strong>
+              <span class="booking-platform__benefit">antocosto@gmail.com</span>
+            </span>
+            <span class="booking-platform__arrow" aria-hidden="true">→</span>
+          </a>
         </div>
 
         <div class="booking-links">
           <h3 data-translate="booking.platformsTitle">Ou Réservez Directement</h3>
-          <a href="https://www.airbnb.com/rooms/1659626910469787873" class="booking-platform" target="_blank"
-            rel="noopener noreferrer">
-            <div class="booking-platform-logo airbnb">Airbnb</div>
-            <div>
-              <strong data-translate="booking.airbnb">Réserver sur Airbnb</strong>
-              <p style="margin: 0; font-size: 0.9rem;">Instant booking available</p>
-            </div>
+          <a href="https://www.airbnb.com/rooms/1659626910469787873"
+            class="booking-platform booking-platform--airbnb" target="_blank" rel="noopener noreferrer">
+            <span class="booking-platform__mark" aria-hidden="true">airbnb</span>
+            <span class="booking-platform__body">
+              <strong class="booking-platform__title" data-translate="booking.airbnb">Réserver sur Airbnb</strong>
+              <span class="booking-platform__benefit" data-translate="booking.airbnbBenefit">Confirmation immédiate</span>
+            </span>
+            <span class="booking-platform__arrow" aria-hidden="true">→</span>
           </a>
           <a href="https://www.booking.com/hotel/gr/aliki-seafront-luxury-apartment.en-gb.html"
-            class="booking-platform" target="_blank" rel="noopener noreferrer">
-            <div class="booking-platform-logo booking">B.com</div>
-            <div>
-              <strong data-translate="booking.bookingcom">Réserver sur Booking.com</strong>
-              <p style="margin: 0; font-size: 0.9rem;">Free cancellation options</p>
-            </div>
+            class="booking-platform booking-platform--bookingcom" target="_blank" rel="noopener noreferrer">
+            <span class="booking-platform__mark" aria-hidden="true">Booking<i>.</i>com</span>
+            <span class="booking-platform__body">
+              <strong class="booking-platform__title" data-translate="booking.bookingcom">Réserver sur Booking.com</strong>
+              <span class="booking-platform__benefit" data-translate="booking.bookingcomBenefit">Annulation gratuite disponible</span>
+            </span>
+            <span class="booking-platform__arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
@@ -775,7 +768,7 @@
         <div>
           <h3 data-translate="footer.contactTitle">Contact</h3>
           <p><a href="tel:+306973286811" data-translate="footer.phone">+30 697 3286 811</a></p>
-          <p><a href="mailto:info@seatree.gr" data-translate="footer.email">info@seatree.gr</a></p>
+          <p><a href="mailto:antocosto@gmail.com" data-translate="footer.email">antocosto@gmail.com</a></p>
           <p data-translate="footer.address">Plage d'Aliki, Paros 844 00, Grèce</p>
         </div>
       </div>
