@@ -45,4 +45,48 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/"/>
   </url>
+  <url>
+    <loc>https://seatree.gr/privacy/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/privacy/"/>
+  </url>
+  <url>
+    <loc>https://seatree.gr/es/privacy/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/privacy/"/>
+  </url>
+  <url>
+    <loc>https://seatree.gr/el/privacy/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/privacy/"/>
+  </url>
+  <url>
+    <loc>https://seatree.gr/fr/privacy/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://seatree.gr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://seatree.gr/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://seatree.gr/el/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://seatree.gr/fr/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://seatree.gr/privacy/"/>
+  </url>
 </urlset>

@@ -99,21 +99,6 @@ const translations = {
       }
     },
 
-    // Bedrooms
-    bedrooms: {
-      label: "Sleeping",
-      title: "Restful Retreats",
-      subtitle: "Comfortable spaces for sweet island dreams",
-      room1: {
-        title: "Master Bedroom",
-        desc: "King-size bed, sea views, en-suite bathroom"
-      },
-      room2: {
-        title: "Guest Bedroom",
-        desc: "Two single beds, perfect for friends or kids"
-      }
-    },
-
     // Beach Access
     beach: {
       label: "Good to Know",
@@ -200,16 +185,14 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "antocosto@gmail.com",
       address: "Aliki Beach, Paros 844 00, Greece",
-      copyright: "© 2026 Sea Tree. All rights reserved.",
-      privacyLink: "Privacy Policy"
+      copyright: "© 2026 Sea Tree. All rights reserved."
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "We use cookies to understand how this site is used. Analytics only — no advertising trackers.",
       accept: "Accept",
-      decline: "Decline",
-      learnMore: "Learn more"
+      decline: "Decline"
     }
   },
 
@@ -308,21 +291,6 @@ const translations = {
       }
     },
 
-    // Bedrooms
-    bedrooms: {
-      label: "Dormitorios",
-      title: "Espacios de Descanso",
-      subtitle: "Espacios cómodos para dulces sueños isleños",
-      room1: {
-        title: "Dormitorio Principal",
-        desc: "Cama king-size, vistas al mar, baño privado"
-      },
-      room2: {
-        title: "Dormitorio de Invitados",
-        desc: "Dos camas individuales, perfecto para amigos o niños"
-      }
-    },
-
     // Beach Access
     beach: {
       label: "Bueno Saber",
@@ -409,16 +377,14 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "antocosto@gmail.com",
       address: "Playa de Aliki, Paros 844 00, Grecia",
-      copyright: "© 2026 Sea Tree. Todos los derechos reservados.",
-      privacyLink: "Política de Privacidad"
+      copyright: "© 2026 Sea Tree. Todos los derechos reservados."
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Usamos cookies para entender cómo se utiliza este sitio. Solo analíticas — sin rastreadores publicitarios.",
       accept: "Aceptar",
-      decline: "Rechazar",
-      learnMore: "Más información"
+      decline: "Rechazar"
     }
   },
 
@@ -517,21 +483,6 @@ const translations = {
       }
     },
 
-    // Bedrooms
-    bedrooms: {
-      label: "Υπνοδωμάτια",
-      title: "Ξεκούραστοι Χώροι",
-      subtitle: "Άνετοι χώροι για γλυκά νησιώτικα όνειρα",
-      room1: {
-        title: "Κύριο Υπνοδωμάτιο",
-        desc: "Διπλό κρεβάτι, θέα θάλασσα, ιδιωτικό μπάνιο"
-      },
-      room2: {
-        title: "Δεύτερο Υπνοδωμάτιο",
-        desc: "Δύο μονά κρεβάτια, ιδανικό για φίλους ή παιδιά"
-      }
-    },
-
     // Beach Access
     beach: {
       label: "Καλό να Γνωρίζετε",
@@ -618,16 +569,14 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "antocosto@gmail.com",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
-      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος.",
-      privacyLink: "Πολιτική Απορρήτου"
+      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος."
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Χρησιμοποιούμε cookies για να καταλάβουμε πώς χρησιμοποιείται ο ιστότοπος. Μόνο analytics — χωρίς διαφημιστικούς ιχνηλάτες.",
       accept: "Αποδοχή",
-      decline: "Απόρριψη",
-      learnMore: "Διαβάστε περισσότερα"
+      decline: "Απόρριψη"
     }
   },
 
@@ -726,21 +675,6 @@ const translations = {
       }
     },
 
-    // Bedrooms
-    bedrooms: {
-      label: "Chambres",
-      title: "Havres de Repos",
-      subtitle: "Espaces confortables pour de doux rêves insulaires",
-      room1: {
-        title: "Chambre Principale",
-        desc: "Lit king-size, vue mer, salle de bain privée"
-      },
-      room2: {
-        title: "Chambre d'Amis",
-        desc: "Deux lits simples, parfait pour amis ou enfants"
-      }
-    },
-
     // Beach Access
     beach: {
       label: "Bon à Savoir",
@@ -827,16 +761,14 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "antocosto@gmail.com",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
-      copyright: "© 2026 Sea Tree. Tous droits réservés.",
-      privacyLink: "Politique de Confidentialité"
+      copyright: "© 2026 Sea Tree. Tous droits réservés."
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Nous utilisons des cookies pour comprendre l'utilisation de ce site. Analyses uniquement — pas de traceurs publicitaires.",
       accept: "Accepter",
-      decline: "Refuser",
-      learnMore: "En savoir plus"
+      decline: "Refuser"
     }
   }
 };
