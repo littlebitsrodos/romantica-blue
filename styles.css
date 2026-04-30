@@ -679,49 +679,6 @@ section:nth-child(even) {
   margin: 0;
 }
 
-/* ----- Bedrooms ----- */
-.bedrooms-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-md);
-}
-
-.bedroom-card {
-  background: var(--color-white);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  transition: all var(--transition-medium);
-}
-
-.bedroom-card:hover {
-  box-shadow: var(--shadow-medium);
-}
-
-.bedroom-image {
-  height: 200px;
-  overflow: hidden;
-}
-
-.bedroom-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.bedroom-card:hover .bedroom-image img {
-  transform: scale(1.05);
-}
-
-.bedroom-info {
-  padding: var(--space-md);
-}
-
-.bedroom-info h3 {
-  margin-bottom: var(--space-xs);
-}
-
 /* ----- Beach Access Warning ----- */
 .beach-section {
   background: linear-gradient(135deg, var(--color-sand-light) 0%, var(--color-sand) 100%);

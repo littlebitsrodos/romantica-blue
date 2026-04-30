@@ -99,21 +99,6 @@ const translations = {
       }
     },
 
-    // Bedrooms
-    bedrooms: {
-      label: "Sleeping",
-      title: "Restful Retreats",
-      subtitle: "Comfortable spaces for sweet island dreams",
-      room1: {
-        title: "Master Bedroom",
-        desc: "King-size bed, sea views, en-suite bathroom"
-      },
-      room2: {
-        title: "Guest Bedroom",
-        desc: "Two single beds, perfect for friends or kids"
-      }
-    },
-
     // Beach Access
     beach: {
       label: "Good to Know",
@@ -300,21 +285,6 @@ const translations = {
         bathrooms: { title: "2 Baños", desc: "Uno en suite, uno compartido" },
         yoga: { title: "Sala de Yoga", desc: "Espacio dedicado para práctica" },
         balcony: { title: "Gran Balcón", desc: "Orientación sureste, sol matutino" }
-      }
-    },
-
-    // Bedrooms
-    bedrooms: {
-      label: "Dormitorios",
-      title: "Espacios de Descanso",
-      subtitle: "Espacios cómodos para dulces sueños isleños",
-      room1: {
-        title: "Dormitorio Principal",
-        desc: "Cama king-size, vistas al mar, baño privado"
-      },
-      room2: {
-        title: "Dormitorio de Invitados",
-        desc: "Dos camas individuales, perfecto para amigos o niños"
       }
     },
 
@@ -507,21 +477,6 @@ const translations = {
       }
     },
 
-    // Bedrooms
-    bedrooms: {
-      label: "Υπνοδωμάτια",
-      title: "Ξεκούραστοι Χώροι",
-      subtitle: "Άνετοι χώροι για γλυκά νησιώτικα όνειρα",
-      room1: {
-        title: "Κύριο Υπνοδωμάτιο",
-        desc: "Διπλό κρεβάτι, θέα θάλασσα, ιδιωτικό μπάνιο"
-      },
-      room2: {
-        title: "Δεύτερο Υπνοδωμάτιο",
-        desc: "Δύο μονά κρεβάτια, ιδανικό για φίλους ή παιδιά"
-      }
-    },
-
     // Beach Access
     beach: {
       label: "Καλό να Γνωρίζετε",
@@ -708,21 +663,6 @@ const translations = {
         bathrooms: { title: "2 Salles de Bain", desc: "Une en suite, une partagée" },
         yoga: { title: "Salle de Yoga", desc: "Espace dédié pour la pratique" },
         balcony: { title: "Grand Balcon", desc: "Orientation sud-est, soleil du matin" }
-      }
-    },
-
-    // Bedrooms
-    bedrooms: {
-      label: "Chambres",
-      title: "Havres de Repos",
-      subtitle: "Espaces confortables pour de doux rêves insulaires",
-      room1: {
-        title: "Chambre Principale",
-        desc: "Lit king-size, vue mer, salle de bain privée"
-      },
-      room2: {
-        title: "Chambre d'Amis",
-        desc: "Deux lits simples, parfait pour amis ou enfants"
       }
     },
 
