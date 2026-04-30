@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGallery();
     initCalendar();
     initContactForm();
+    initEmailLink();
     initScrollAnimations();
     initConsentBanner();
 
@@ -758,6 +759,21 @@ function syncDatesToForm() {
     } else {
         datesInput.value = '';
     }
+}
+
+// ----- Email Link (locale-aware mailto body) -----
+function initEmailLink() {
+    const link = document.getElementById('booking-email');
+    if (!link) return;
+
+    const t = translations[currentLang]?.booking;
+    if (!t?.emailBody) return;
+
+    const params = new URLSearchParams({
+        subject: 'Sea Tree inquiry',
+        body: t.emailBody
+    });
+    link.href = `mailto:antocosto@gmail.com?${params.toString()}`;
 }
 
 // ----- Contact Form -----
