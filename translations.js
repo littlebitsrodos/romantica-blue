@@ -176,17 +176,18 @@ const translations = {
     booking: {
       label: "Book Your Stay",
       title: "Ready to Experience Sea Tree?",
-      subtitle: "Get in touch or book directly through your favorite platform",
-      formTitle: "Send Us a Message",
-      name: "Your Name",
-      email: "Email Address",
-      dates: "Preferred Dates",
-      guests: "Number of Guests",
-      message: "Your Message",
-      send: "Send Inquiry",
+      subtitle: "Talk to the host or book through your favorite platform",
+      directTitle: "Talk to Antonis",
+      directIntro: "No forms, no waiting — just a direct line to the host. Usually replies within a few hours.",
+      whatsapp: "Message on WhatsApp",
+      whatsappBenefit: "Fastest reply, in your language",
+      callBenefit: "English, Greek",
+      emailTitle: "Send an email",
       platformsTitle: "Or Book Directly",
       airbnb: "Book on Airbnb",
-      bookingcom: "Book on Booking.com"
+      airbnbBenefit: "Instant confirmation",
+      bookingcom: "Book on Booking.com",
+      bookingcomBenefit: "Free cancellation options"
     },
 
     // Footer
@@ -382,17 +383,18 @@ const translations = {
     booking: {
       label: "Reserva Tu Estancia",
       title: "¿Listo Para Vivir Sea Tree?",
-      subtitle: "Contáctanos o reserva directamente en tu plataforma favorita",
-      formTitle: "Envíanos un Mensaje",
-      name: "Tu Nombre",
-      email: "Correo Electrónico",
-      dates: "Fechas Preferidas",
-      guests: "Número de Huéspedes",
-      message: "Tu Mensaje",
-      send: "Enviar Consulta",
+      subtitle: "Habla con el anfitrión o reserva en tu plataforma favorita",
+      directTitle: "Habla con Antonis",
+      directIntro: "Sin formularios, sin esperas — línea directa con el anfitrión. Suele responder en pocas horas.",
+      whatsapp: "Escribir por WhatsApp",
+      whatsappBenefit: "Respuesta más rápida, en tu idioma",
+      callBenefit: "Inglés, griego",
+      emailTitle: "Enviar un correo",
       platformsTitle: "O Reserva Directamente",
       airbnb: "Reservar en Airbnb",
-      bookingcom: "Reservar en Booking.com"
+      airbnbBenefit: "Confirmación inmediata",
+      bookingcom: "Reservar en Booking.com",
+      bookingcomBenefit: "Cancelación gratuita disponible"
     },
 
     // Footer
@@ -588,17 +590,18 @@ const translations = {
     booking: {
       label: "Κλείστε τη Διαμονή σας",
       title: "Έτοιμοι να Ζήσετε το Sea Tree;",
-      subtitle: "Επικοινωνήστε μαζί μας ή κλείστε απευθείας στην αγαπημένη σας πλατφόρμα",
-      formTitle: "Στείλτε μας Μήνυμα",
-      name: "Το Όνομά σας",
-      email: "Διεύθυνση Email",
-      dates: "Προτιμώμενες Ημερομηνίες",
-      guests: "Αριθμός Επισκεπτών",
-      message: "Το Μήνυμά σας",
-      send: "Αποστολή Ερώτησης",
+      subtitle: "Μιλήστε με τον οικοδεσπότη ή κλείστε στην αγαπημένη σας πλατφόρμα",
+      directTitle: "Μιλήστε με τον Αντώνη",
+      directIntro: "Χωρίς φόρμες, χωρίς αναμονή — απευθείας γραμμή με τον οικοδεσπότη. Συνήθως απαντά μέσα σε λίγες ώρες.",
+      whatsapp: "Στείλτε μήνυμα στο WhatsApp",
+      whatsappBenefit: "Πιο γρήγορη απάντηση, στη γλώσσα σας",
+      callBenefit: "Αγγλικά, Ελληνικά",
+      emailTitle: "Στείλτε email",
       platformsTitle: "Ή Κλείστε Απευθείας",
       airbnb: "Κράτηση στο Airbnb",
-      bookingcom: "Κράτηση στο Booking.com"
+      airbnbBenefit: "Άμεση επιβεβαίωση",
+      bookingcom: "Κράτηση στο Booking.com",
+      bookingcomBenefit: "Δυνατότητα δωρεάν ακύρωσης"
     },
 
     // Footer
@@ -794,17 +797,18 @@ const translations = {
     booking: {
       label: "Réservez Votre Séjour",
       title: "Prêt à Vivre l'Expérience Sea Tree ?",
-      subtitle: "Contactez-nous ou réservez directement sur votre plateforme préférée",
-      formTitle: "Envoyez-nous un Message",
-      name: "Votre Nom",
-      email: "Adresse Email",
-      dates: "Dates Préférées",
-      guests: "Nombre d'Invités",
-      message: "Votre Message",
-      send: "Envoyer la Demande",
+      subtitle: "Parlez à l'hôte ou réservez sur votre plateforme préférée",
+      directTitle: "Parlez à Antonis",
+      directIntro: "Pas de formulaire, pas d'attente — une ligne directe avec l'hôte. Réponse généralement en quelques heures.",
+      whatsapp: "Écrire sur WhatsApp",
+      whatsappBenefit: "Réponse la plus rapide, dans votre langue",
+      callBenefit: "Anglais, grec",
+      emailTitle: "Envoyer un email",
       platformsTitle: "Ou Réservez Directement",
       airbnb: "Réserver sur Airbnb",
-      bookingcom: "Réserver sur Booking.com"
+      airbnbBenefit: "Confirmation immédiate",
+      bookingcom: "Réserver sur Booking.com",
+      bookingcomBenefit: "Annulation gratuite disponible"
     },
 
     // Footer

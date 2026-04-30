@@ -703,7 +703,7 @@ function updateSelectionDisplay() {
         if (bookBtn && paymentUrl === '#') {
             bookBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                alert('Payment links coming soon! Please use the contact form below.');
+                alert('Payment links coming soon! Please use the contact options below.');
             });
         }
 
