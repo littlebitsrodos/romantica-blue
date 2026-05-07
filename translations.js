@@ -182,14 +182,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Aliki Beach, Paros 844 00, Greece",
-      copyright: "© 2026 Sea Tree. All rights reserved."
+      copyright: "© 2026 Sea Tree. All rights reserved.",
+      privacyLink: "Privacy Policy"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "We use cookies to understand how this site is used. Analytics only — no advertising trackers.",
       accept: "Accept",
-      decline: "Decline"
+      decline: "Decline",
+      learnMore: "Learn more"
     }
   },
 
@@ -371,14 +373,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Playa de Aliki, Paros 844 00, Grecia",
-      copyright: "© 2026 Sea Tree. Todos los derechos reservados."
+      copyright: "© 2026 Sea Tree. Todos los derechos reservados.",
+      privacyLink: "Política de Privacidad"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Usamos cookies para entender cómo se utiliza este sitio. Solo analíticas — sin rastreadores publicitarios.",
       accept: "Aceptar",
-      decline: "Rechazar"
+      decline: "Rechazar",
+      learnMore: "Más información"
     }
   },
 
@@ -560,14 +564,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Αλυκή, Πάρος 844 00, Ελλάδα",
-      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος."
+      copyright: "© 2026 Sea Tree. Με επιφύλαξη παντός δικαιώματος.",
+      privacyLink: "Πολιτική Απορρήτου"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Χρησιμοποιούμε cookies για να καταλάβουμε πώς χρησιμοποιείται ο ιστότοπος. Μόνο analytics — χωρίς διαφημιστικούς ιχνηλάτες.",
       accept: "Αποδοχή",
-      decline: "Απόρριψη"
+      decline: "Απόρριψη",
+      learnMore: "Διαβάστε περισσότερα"
     }
   },
 
@@ -749,14 +755,16 @@ const translations = {
       phone: "+30 697 3286 811",
       email: "info@seatree.gr",
       address: "Plage d'Aliki, Paros 844 00, Grèce",
-      copyright: "© 2026 Sea Tree. Tous droits réservés."
+      copyright: "© 2026 Sea Tree. Tous droits réservés.",
+      privacyLink: "Politique de Confidentialité"
     },
 
     // Cookie consent banner (GA4 Consent Mode v2)
     consent: {
       text: "Nous utilisons des cookies pour comprendre l'utilisation de ce site. Analyses uniquement — pas de traceurs publicitaires.",
       accept: "Accepter",
-      decline: "Refuser"
+      decline: "Refuser",
+      learnMore: "En savoir plus"
     }
   }
 };

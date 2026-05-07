@@ -148,9 +148,11 @@
   <link rel="stylesheet" href="/styles.css">
 
   <!-- Scripts - Defer for performance -->
-  <!-- analytics.js MUST run before gtag.js so Consent Mode default-denied is in place before the first pageview -->
-  <script src="/analytics.js" defer></script>
-  <script src="https://www.googletagmanager.com/gtag/js?id=G-GB2FXF8X5K" defer></script>
+  <!-- GA4 paused 2026-04-30: previous Measurement ID was for Costomenu, not seatree.gr.
+       Re-enable both lines below + initConsentBanner() in script.js + cookie-consent
+       tests in tests/mobile.spec.js once a seatree.gr Property is provisioned. -->
+  <!-- <script src="/analytics.js" defer></script> -->
+  <!-- <script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" defer></script> -->
   <script src="/translations.js" defer></script>
   <script src="/script.js" defer></script>
 </head>
@@ -305,6 +307,21 @@
             <img src="/images/optimized/bedroom.webp" alt="Bedroom" loading="lazy" width="1200" height="900">
           </div>
           <div class="carousel-slide">
+            <img src="/images/optimized/yoga-room-bay-view.webp"
+              alt="Yoga and meditation room with a wide window looking onto Aliki bay, rolled mats and a rubber plant"
+              loading="lazy" width="1600" height="1200">
+          </div>
+          <div class="carousel-slide">
+            <img src="/images/optimized/yoga-room-balcony-door.webp"
+              alt="Yoga and meditation room with rolled mats, rubber plant, and a door opening onto the sea-view balcony"
+              loading="lazy" width="1200" height="1600">
+          </div>
+          <div class="carousel-slide">
+            <img src="/images/optimized/yoga-room-mats.webp"
+              alt="Yoga and meditation room with three mats stacked at the wall in warm afternoon light"
+              loading="lazy" width="960" height="1280">
+          </div>
+          <div class="carousel-slide">
             <img src="/images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy" width="1200"
               height="900">
           </div>
@@ -371,6 +388,21 @@
         </div>
         <div class="gallery-item">
           <img src="/images/optimized/bedroom.webp" alt="Bedroom" loading="lazy" width="1200" height="900">
+        </div>
+        <div class="gallery-item">
+          <img src="/images/optimized/yoga-room-bay-view.webp"
+            alt="Yoga and meditation room with a wide window looking onto Aliki bay, rolled mats and a rubber plant"
+            loading="lazy" width="1600" height="1200">
+        </div>
+        <div class="gallery-item">
+          <img src="/images/optimized/yoga-room-balcony-door.webp"
+            alt="Yoga and meditation room with rolled mats, rubber plant, and a door opening onto the sea-view balcony"
+            loading="lazy" width="1200" height="1600">
+        </div>
+        <div class="gallery-item">
+          <img src="/images/optimized/yoga-room-mats.webp"
+            alt="Yoga and meditation room with three mats stacked at the wall in warm afternoon light"
+            loading="lazy" width="960" height="1280">
         </div>
         <div class="gallery-item">
           <img src="/images/optimized/workspace-sea-view.webp" alt="Living Area with Desk" loading="lazy" width="1200"
@@ -781,6 +813,7 @@
       </div>
       <div class="footer-bottom">
         <p data-translate="footer.copyright">© 2026 Sea Tree. Todos los derechos reservados.</p>
+        <p><a href="/privacy/" data-translate="footer.privacyLink">Política de Privacidad</a></p>
       </div>
     </div>
   </footer>
@@ -797,6 +830,7 @@
   <!-- Cookie consent banner (Consent Mode v2) -->
   <div class="consent-banner hidden" id="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
     <p data-translate="consent.text">Usamos cookies para entender cómo se utiliza este sitio. Solo analíticas — sin rastreadores publicitarios.</p>
+    <p class="consent-learn-more"><a href="/privacy/" data-translate="consent.learnMore">Más información</a></p>
     <div class="consent-actions">
       <button type="button" class="btn btn-secondary consent-decline" data-translate="consent.decline">Rechazar</button>
       <button type="button" class="btn btn-primary consent-accept" data-translate="consent.accept">Aceptar</button>
