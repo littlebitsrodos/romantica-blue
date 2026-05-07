@@ -990,52 +990,82 @@ section:nth-child(even) {
   gap: var(--space-lg);
 }
 
-.contact-form {
+.contact-direct {
   background: var(--color-white);
   padding: var(--space-lg);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
 }
 
-.form-group {
-  margin-bottom: var(--space-md);
-}
-
-.form-group label {
-  display: block;
+.contact-direct h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
   margin-bottom: var(--space-xs);
-  font-weight: 500;
+}
+
+.contact-direct > p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-sand-light);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-sm);
+  text-decoration: none;
   color: var(--color-text);
+  transition: all var(--transition-medium);
 }
 
-.form-group input,
-.form-group textarea,
-.form-group select {
-  width: 100%;
-  padding: 0.875rem var(--space-sm);
-  border: 2px solid var(--color-sand);
+.contact-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-card-featured {
+  border: 2px solid var(--color-terracotta);
+  background: var(--color-white);
+}
+
+.contact-card-icon {
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 64px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: var(--radius-md);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  transition: border-color var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--color-terracotta);
+.contact-card-icon.whatsapp-icon { background: #25D366; color: white; }
+.contact-card-icon.call-icon { background: var(--color-terracotta); color: white; }
+.contact-card-icon.email-icon { background: var(--color-sea-blue); color: white; }
+
+.contact-card > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
+.contact-card strong { font-size: 1rem; }
+
+.contact-card span:not(.contact-card-icon):not(.contact-card-arrow) {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-sm);
+.contact-card-arrow {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 .booking-links {
@@ -1065,6 +1095,13 @@ section:nth-child(even) {
 .booking-platform:hover {
   transform: translateX(8px);
   box-shadow: var(--shadow-medium);
+}
+
+.booking-platform-arrow {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 .booking-platform-logo {
