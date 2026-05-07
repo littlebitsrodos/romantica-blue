@@ -171,7 +171,9 @@ const translations = {
       send: "Send Inquiry",
       platformsTitle: "Or Book Directly",
       airbnb: "Book on Airbnb",
-      bookingcom: "Book on Booking.com"
+      bookingcom: "Book on Booking.com",
+      whatsapp: "Chat on WhatsApp",
+      whatsappSub: "Direct message · Quick reply"
     },
 
     // Footer
@@ -362,7 +364,9 @@ const translations = {
       send: "Enviar Consulta",
       platformsTitle: "O Reserva Directamente",
       airbnb: "Reservar en Airbnb",
-      bookingcom: "Reservar en Booking.com"
+      bookingcom: "Reservar en Booking.com",
+      whatsapp: "Chatear por WhatsApp",
+      whatsappSub: "Mensaje directo · Respuesta rápida"
     },
 
     // Footer
@@ -553,7 +557,9 @@ const translations = {
       send: "Αποστολή Ερώτησης",
       platformsTitle: "Ή Κλείστε Απευθείας",
       airbnb: "Κράτηση στο Airbnb",
-      bookingcom: "Κράτηση στο Booking.com"
+      bookingcom: "Κράτηση στο Booking.com",
+      whatsapp: "Επικοινωνία στο WhatsApp",
+      whatsappSub: "Άμεσο μήνυμα · Γρήγορη απάντηση"
     },
 
     // Footer
@@ -744,7 +750,9 @@ const translations = {
       send: "Envoyer la Demande",
       platformsTitle: "Ou Réservez Directement",
       airbnb: "Réserver sur Airbnb",
-      bookingcom: "Réserver sur Booking.com"
+      bookingcom: "Réserver sur Booking.com",
+      whatsapp: "Chatter sur WhatsApp",
+      whatsappSub: "Message direct · Réponse rapide"
     },
 
     // Footer

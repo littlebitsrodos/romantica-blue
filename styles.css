@@ -1089,6 +1089,11 @@ section:nth-child(even) {
   color: white;
 }
 
+.booking-platform-logo.whatsapp {
+  background: #25D366;
+  color: white;
+}
+
 /* ----- Footer ----- */
 .footer {
   background: var(--color-sea-blue);
