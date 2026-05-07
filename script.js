@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalendar();
     initContactForm();
     initScrollAnimations();
-    initConsentBanner();
+    // initConsentBanner();  // Paused with GA4 — re-enable when seatree.gr Property ID is set
 
     // Set initial language from the URL-resolved locale (not hardcoded 'en',
     // which would clobber the pre-translated /es/, /el/, /fr/ HTML back to English).

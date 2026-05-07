@@ -131,6 +131,9 @@ test.describe('navigation', () => {
 });
 
 test.describe('cookie consent (GA4 Consent Mode v2)', () => {
+  // Paused 2026-04-30: GA4 disabled until correct seatree.gr Property ID arrives;
+  // banner is suppressed in script.js. Re-enable when initConsentBanner() is restored.
+  test.skip();
   test('banner appears for first-time visitors and persists the decision', async ({ page }) => {
     await page.goto('/');
     const banner = page.locator('#consent-banner');

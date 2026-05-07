@@ -52,13 +52,21 @@
     "name": "Sea Tree",
     "description": "Sea Tree — a unique vacation rental in Aliki Beach, Paros, Greece. This beautiful blue haven was once the legendary Romantica disco bar — the heartbeat of Paros nightlife. Today, those same walls have been lovingly transformed into a serene island retreat.",
     "url": "https://seatree.gr",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "Airbnb",
+      "value": "1659626910469787873"
+    },
+    "additionalType": "https://schema.org/Apartment",
     "image": [
       "https://seatree.gr/images/optimized/terrace-sunset-panorama.webp",
       "https://seatree.gr/images/optimized/daybed-moon-sunset.webp",
       "https://seatree.gr/images/optimized/living-room-sea-view.webp",
       "https://seatree.gr/images/optimized/bedroom.webp",
       "https://seatree.gr/images/optimized/workspace-sea-view.webp",
-      "https://seatree.gr/images/optimized/terrace-sea-view.webp"
+      "https://seatree.gr/images/optimized/terrace-sea-view.webp",
+      "https://seatree.gr/images/optimized/yoga-room-bay-view.webp",
+      "https://seatree.gr/images/optimized/brass-turtles-detail.webp"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -96,7 +104,19 @@
     "containsPlace": [
       {
         "@type": "Accommodation",
+        "additionalType": "https://schema.org/Room",
         "name": "Master Bedroom",
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 1,
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "maxValue": 2
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "King Bed", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Sea View", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true }
+        ],
         "bed": {
           "@type": "BedDetails",
           "typeOfBed": "King",
@@ -105,7 +125,18 @@
       },
       {
         "@type": "Accommodation",
+        "additionalType": "https://schema.org/Room",
         "name": "Guest Bedroom",
+        "numberOfBedrooms": 1,
+        "numberOfBathroomsTotal": 1,
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "maxValue": 2
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Twin Beds", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true }
+        ],
         "bed": {
           "@type": "BedDetails",
           "typeOfBed": "Single",
