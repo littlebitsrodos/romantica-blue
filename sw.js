@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sea-tree-v23';
+const CACHE_NAME = 'sea-tree-v24';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',

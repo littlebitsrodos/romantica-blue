@@ -83,8 +83,28 @@ const translations = {
       subtitle: "Authentic Paros experiences, arranged for your dates",
       items: {
         cookingClass: { title: "Cooking Classes", desc: "Hands-on Greek cooking with a local chef" },
-        privateChef: { title: "Private Chef", desc: "Breakfast, lunch, or dinner served at home" }
+        privateChef: { title: "Private Chef", desc: "Breakfast, lunch, or dinner served at home" },
+        yoga: { title: "Yoga Sessions", desc: "Morning classes on the terrace with a certified instructor" },
+        bikeRental: { title: "Bike Rental", desc: "Explore the island at your own pace" },
+        diving: { title: "Diving", desc: "Guided dives in crystal-clear Aegean waters" },
+        walkingTours: { title: "Walking Tours", desc: "Discover hidden villages and ancient paths" }
       }
+    },
+
+    // Practical Info (check-in, house rules)
+    practical: {
+      label: "Good to Know",
+      title: "Before You Arrive",
+      checkin: { label: "Check-in", value: "3:00 PM – 6:00 PM" },
+      checkout: { label: "Check-out", value: "Until 11:00 AM" },
+      family: { title: "Family Friendly" },
+      rules: [
+        "No smoking indoors",
+        "No pets",
+        "No parties or events",
+        "Quiet hours: 3:00 – 5:00 PM",
+        "Children of all ages welcome — cots available free of charge"
+      ]
     },
 
     // The Space (selling points)
@@ -278,8 +298,28 @@ const translations = {
       subtitle: "Experiencias auténticas de Paros, organizadas para tus fechas",
       items: {
         cookingClass: { title: "Clases de Cocina", desc: "Cocina griega práctica con un chef local" },
-        privateChef: { title: "Chef Privado", desc: "Desayuno, almuerzo o cena servidos en casa" }
+        privateChef: { title: "Chef Privado", desc: "Desayuno, almuerzo o cena servidos en casa" },
+        yoga: { title: "Sesiones de Yoga", desc: "Clases matutinas en la terraza con instructor certificado" },
+        bikeRental: { title: "Alquiler de Bicicletas", desc: "Explora la isla a tu propio ritmo" },
+        diving: { title: "Buceo", desc: "Inmersiones guiadas en aguas cristalinas del Egeo" },
+        walkingTours: { title: "Rutas a Pie", desc: "Descubre pueblos escondidos y senderos antiguos" }
       }
+    },
+
+    // Practical Info (check-in, house rules)
+    practical: {
+      label: "Bueno Saber",
+      title: "Antes de Llegar",
+      checkin: { label: "Check-in", value: "3:00 PM – 6:00 PM" },
+      checkout: { label: "Check-out", value: "Hasta las 11:00 AM" },
+      family: { title: "Ideal para Familias" },
+      rules: [
+        "No fumar en interiores",
+        "No se admiten mascotas",
+        "No se permiten fiestas ni eventos",
+        "Horas de silencio: 3:00 – 5:00 PM",
+        "Niños de todas las edades bienvenidos — cunas disponibles gratis"
+      ]
     },
 
     // The Space (selling points)
@@ -473,8 +513,28 @@ const translations = {
       subtitle: "Αυθεντικές εμπειρίες Πάρου, οργανωμένες για τις ημερομηνίες σας",
       items: {
         cookingClass: { title: "Μαθήματα Μαγειρικής", desc: "Πρακτικά μαθήματα ελληνικής κουζίνας με τοπικό σεφ" },
-        privateChef: { title: "Ιδιωτικός Σεφ", desc: "Πρωινό, μεσημεριανό ή δείπνο στο σπίτι" }
+        privateChef: { title: "Ιδιωτικός Σεφ", desc: "Πρωινό, μεσημεριανό ή δείπνο στο σπίτι" },
+        yoga: { title: "Μαθήματα Yoga", desc: "Πρωινά μαθήματα στη βεράντα με πιστοποιημένο εκπαιδευτή" },
+        bikeRental: { title: "Ενοικίαση Ποδηλάτων", desc: "Εξερευνήστε το νησί με τον δικό σας ρυθμό" },
+        diving: { title: "Καταδύσεις", desc: "Καθοδηγούμενες καταδύσεις σε κρυστάλλινα νερά του Αιγαίου" },
+        walkingTours: { title: "Περιπατητικές Διαδρομές", desc: "Ανακαλύψτε κρυμμένα χωριά και αρχαία μονοπάτια" }
       }
+    },
+
+    // Practical Info (check-in, house rules)
+    practical: {
+      label: "Καλό να Γνωρίζετε",
+      title: "Πριν την Άφιξή σας",
+      checkin: { label: "Check-in", value: "3:00 μ.μ. – 6:00 μ.μ." },
+      checkout: { label: "Check-out", value: "Έως τις 11:00 π.μ." },
+      family: { title: "Φιλικό για Οικογένειες" },
+      rules: [
+        "Δεν επιτρέπεται το κάπνισμα στους εσωτερικούς χώρους",
+        "Δεν επιτρέπονται κατοικίδια",
+        "Δεν επιτρέπονται πάρτι ή εκδηλώσεις",
+        "Ώρες κοινής ησυχίας: 3:00 – 5:00 μ.μ.",
+        "Παιδιά όλων των ηλικιών είναι ευπρόσδεκτα — παρέχονται βρεφικές κούνιες δωρεάν"
+      ]
     },
 
     // The Space (selling points)
@@ -668,8 +728,28 @@ const translations = {
       subtitle: "Des expériences authentiques de Paros, arrangées pour vos dates",
       items: {
         cookingClass: { title: "Cours de Cuisine", desc: "Cuisine grecque pratique avec un chef local" },
-        privateChef: { title: "Chef Privé", desc: "Petit-déjeuner, déjeuner ou dîner servis à domicile" }
+        privateChef: { title: "Chef Privé", desc: "Petit-déjeuner, déjeuner ou dîner servis à domicile" },
+        yoga: { title: "Séances de Yoga", desc: "Cours du matin sur la terrasse avec un instructeur certifié" },
+        bikeRental: { title: "Location de Vélos", desc: "Explorez l'île à votre rythme" },
+        diving: { title: "Plongée", desc: "Plongées guidées dans les eaux cristallines de l'Égée" },
+        walkingTours: { title: "Balades Guidées", desc: "Découvrez des villages cachés et d'anciens sentiers" }
       }
+    },
+
+    // Practical Info (check-in, house rules)
+    practical: {
+      label: "Bon à Savoir",
+      title: "Avant votre Arrivée",
+      checkin: { label: "Arrivée", value: "3:00 PM – 6:00 PM" },
+      checkout: { label: "Départ", value: "Jusqu'à 11:00 AM" },
+      family: { title: "Adapté aux Familles" },
+      rules: [
+        "Non-fumeur à l'intérieur",
+        "Animaux non admis",
+        "Fêtes et événements non autorisés",
+        "Heures calmes : 3:00 – 5:00 PM",
+        "Enfants de tous âges bienvenus — lits bébé disponibles gratuitement"
+      ]
     },
 
     // The Space (selling points)
