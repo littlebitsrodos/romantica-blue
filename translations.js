@@ -22,32 +22,62 @@ const translations = {
 
     // Navigation
     nav: {
-      story: "Our Story",
-      gallery: "Gallery",
-      amenities: "Amenities",
-      location: "Location",
+      rhythm: "The Rhythm",
+      home: "The Home",
+      aliki: "Life in Aliki",
       availability: "Availability",
-      contact: "Contact"
+      inquiry: "Inquire"
     },
 
     // Hero
     hero: {
-      title: "Sea Tree",
-      tagline: "Slow down. Breathe.",
-      location: "Aliki Beach, Paros, Greece",
-      checkAvailability: "Check Availability",
-      ourStory: "Our Story"
+      title: "Live slowly by the water",
+      tagline: "A seaside home in Aliki, Paros",
+      subtitle: "For longer stays. For mornings that stretch. For time that feels like yours again.",
+      inquire: "Tell us about your stay",
+      discover: "Discover the rhythm"
     },
 
-    // Story Section
-    story: {
-      label: "Our Story",
-      title: "From Late Nights to Slow Mornings",
-      p1: "This blue house was once the Romantica disco bar — for two decades, the heartbeat of Paros nightlife, where islanders and travelers danced until sunrise.",
-      p2: "Today, those same walls hold a different rhythm. Morning light through white curtains. Coffee on the balcony. Stone floors cool underfoot. The soul of Romantica lives on — in the sound of waves, the salt air, and the slow pace of island life.",
-      highlight: {
-        title: "A Touch of History",
-        text: "Ask the locals about Romantica — they'll smile and share stories of the island's best parties. Now the loudest sound is the sea."
+    // Rhythm Section
+    rhythm: {
+      label: "The Rhythm",
+      title: "A Day at Sea Tree",
+      subtitle: "This is what staying here feels like.",
+      morning: {
+        time: "Morning",
+        title: "Light Through the Curtains",
+        desc: "Wake when you wake. Coffee on the balcony, sea-light on kourasani walls. The fishing boats are already out. No rush."
+      },
+      midday: {
+        time: "Midday",
+        title: "Village Life",
+        desc: "Walk to the bakery. Pick up tomatoes from the market. Swim at the sandy beach two minutes away. Come home for a late lunch."
+      },
+      afternoon: {
+        time: "Afternoon",
+        title: "Rest or Work",
+        desc: "The house is cool and quiet. Starlink keeps you connected. The yoga room is yours. Or just read in the shade."
+      },
+      evening: {
+        time: "Evening",
+        title: "Golden Hour on the Terrace",
+        desc: "Watch the light change over Aliki bay. Dinner at a taverna, or cook what you found at the market. The sea turns gold, then pink, then dark."
+      }
+    },
+
+    // Home Section
+    home: {
+      label: "The Home",
+      title: "Room to Stretch Out",
+      p1: "100 square meters of light-filled space. Two bedrooms, two bathrooms, a full kitchen, and a yoga room with a view of the bay.",
+      p2: "The terrace is the heart of the house: a covered daybed, dining for six, and the kind of sunset that stops conversation.",
+      features: {
+        bedrooms: "Bedrooms",
+        bedroomsDesc: "King + twin beds",
+        bathrooms: "Bathrooms",
+        bathroomsDesc: "One en-suite",
+        guests: "Guests",
+        guestsDesc: "Ideal for 2-4"
       }
     },
 
@@ -119,49 +149,46 @@ const translations = {
       }
     },
 
-    // Beach Access
-    beach: {
-      label: "Good to Know",
-      title: "About Our Beach",
-      warningTitle: "⚠️ Honest Note",
-      warning: "Our beach access involves a rocky path and natural stone coastline. It's absolutely stunning and pristine — but we want you to know:",
-      points: [
-        "The path has uneven terrain (not suitable for wheelchairs)",
-        "Best to bring water shoes for comfort",
-        "Large suitcases may be tricky on arrival"
-      ],
-      altTitle: "🏖️ Prefer Sandy Beaches?",
-      altIntro: "No worries! Beautiful sandy beaches nearby:",
-      alt1: "Aliki Sandy Beach — 1 minute walk",
-      alt2: "Piso Aliki Beach — 5 minute walk",
-      alt3: "Agios Nikolaos — 10 minute drive"
+    // Waterfront Section
+    waterfront: {
+      label: "The Waterfront",
+      title: "Steps from the Sea",
+      rockyTitle: "A Quieter Shore",
+      rockyDesc: "Below the terrace, a rocky coastline keeps this corner of Aliki peaceful. Crystal-clear water for swimming, snorkeling, or just watching the boats.",
+      sandyTitle: "Sandy Beaches Nearby",
+      sandyIntro: "Prefer sand between your toes? You have options:",
+      sandy1: "Aliki Beach — 2 minute walk",
+      sandy2: "Piso Aliki — 5 minute walk",
+      sandy3: "Faragas Beach — 10 minute drive",
+      note: "Good to know: the path to our shore is uneven. Water shoes recommended."
     },
 
-    // Location
-    location: {
-      label: "Location",
-      title: "In the Heart of Aliki",
-      subtitle: "A quiet village in south Paros",
-      distances: {
-        port: { label: "Parikia Port", value: "12 km (15 min)" },
-        airport: { label: "Paros Airport", value: "2 km (5 min)" },
-        village: { label: "Aliki Village", value: "2 min walk" },
-        market: { label: "Supermarket", value: "5 min walk" },
-        naousa: { label: "Naousa (nightlife)", value: "22 km (25 min)" }
-      }
-    },
-
-    // Neighborhood
-    neighborhood: {
-      label: "Eat & Explore",
-      title: "Your Neighborhood in Aliki",
-      subtitle: "Four family tavernas within walking distance. Fresh fish. Honest cooking.",
-      nightlife: "Prefer nightlife? Naousa is 25 minutes by car — the island's liveliest village.",
-      tavernas: {
-        mouragio: { name: "To Mouragio", desc: "Waterfront, fresh seafood, family-run for 30 years", distance: "2 min walk" },
-        aliki: { name: "Aliki Restaurant", desc: "Greek classics, family recipes since 1974", distance: "3 min walk" },
-        thalassamou: { name: "Thalassamou", desc: "Beachfront tables, grilled fish", distance: "4 min walk" },
-        balcony: { name: "To Balcony tou Aki", desc: "Local fisherman's catch, simple and fresh", distance: "5 min walk" }
+    // Life in Aliki
+    aliki: {
+      label: "Life in Aliki",
+      title: "A Village That Moves Slowly",
+      subtitle: "Traditional fishing boats. Four family tavernas. One bakery. No crowds.",
+      eating: {
+        title: "Where to Eat",
+        desc: "Four tavernas, all within walking distance. Fresh fish every day. Owners who remember your name by day three.",
+        mouragio: "Waterfront tables, family-run 30 years",
+        thalassamou: "Beachfront, grilled catch of the day",
+        aliki: "Greek classics since 1974",
+        balcony: "Simple, honest, local"
+      },
+      daily: {
+        title: "Daily Needs",
+        bakery: "Bakery — 2 min walk",
+        market: "Mini market — 3 min walk",
+        supermarket: "Supermarket — 5 min walk",
+        pharmacy: "Pharmacy — 10 min drive"
+      },
+      getting: {
+        title: "Getting Around",
+        airport: "Airport — 5 min drive",
+        port: "Parikia port — 15 min drive",
+        naousa: "Naousa — 25 min drive",
+        car: "A car is recommended"
       }
     },
 
@@ -177,35 +204,52 @@ const translations = {
       days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     },
 
-    // Booking/Contact
-    booking: {
-      label: "Book Your Stay",
-      title: "Ready to Experience Sea Tree?",
-      subtitle: "Talk to the host or book through your favorite platform",
-      directTitle: "Talk to Antonis",
-      directSub: "No forms, no waiting — just a direct line to the host. Usually replies within a few hours.",
-      whatsapp: "Message on WhatsApp",
-      whatsappSub: "Fastest reply, in your language",
-      callLabel: "Call",
-      phone: "+30 697 3286 811",
-      phoneSub: "English, Greek",
-      emailLabel: "Email",
-      emailCTA: "Send an email",
-      platformsTitle: "Or Book Directly",
-      airbnb: "Book on Airbnb",
-      airbnbSub: "Instant confirmation",
-      bookingcom: "Book on Booking.com",
-      bookingcomSub: "Free cancellation options"
+    // Host Section
+    host: {
+      label: "A Note from Antonis",
+      quote: "I grew up in this house. My father ran Romantica here for twenty years. When the music stopped, I wondered what this place could become. Now it is a home for people who want to stay a while — to work remotely, to write, to rest, to be still. If you are looking for a place to slow down, I would be glad to have you.",
+      role: "Your host in Aliki"
+    },
+
+    // Romantica Section
+    romantica: {
+      label: "The Memory",
+      title: "Before It Was Sea Tree",
+      p1: "This blue house was once Romantica — for twenty years, the disco bar where islanders and travelers danced until sunrise. Ask the locals; they still remember.",
+      p2: "The music is gone now. What remains is the building itself, the sea view that hasn't changed, and a quieter kind of rhythm. The soul of the place lives on — just differently."
+    },
+
+    // Inquiry Section
+    inquiry: {
+      label: "Your Stay",
+      title: "Tell Us About Your Trip",
+      subtitle: "We welcome longer stays. Tell us what you have in mind.",
+      form: {
+        name: "Your name",
+        email: "Email",
+        dates: "Dates (approximate)",
+        guests: "Number of guests",
+        message: "Tell us about your stay",
+        submit: "Send Inquiry"
+      },
+      quick: {
+        title: "Prefer to Talk?",
+        desc: "Reach out directly. Antonis usually replies within a few hours.",
+        whatsapp: "WhatsApp Antonis"
+      },
+      platforms: {
+        note: "Already know your dates? You can also book on:"
+      }
     },
 
     // Footer
     footer: {
-      about: "A unique vacation rental in Paros, Greece — where disco history meets island serenity.",
+      about: "A seaside home in Aliki, Paros. For longer stays, slower mornings, and time that feels like yours.",
       quickLinks: "Quick Links",
       contactTitle: "Contact",
       phone: "+30 697 3286 811",
-      email: "info@seatree.gr",
-      address: "Aliki Beach, Paros 844 00, Greece",
+      email: "antocosto@gmail.com",
+      address: "Aliki, Paros 844 00, Greece",
       copyright: "© 2026 Sea Tree. All rights reserved.",
       privacyLink: "Privacy Policy"
     },
@@ -237,32 +281,62 @@ const translations = {
 
     // Navigation
     nav: {
-      story: "Nuestra Historia",
-      gallery: "Galería",
-      amenities: "Servicios",
-      location: "Ubicación",
+      rhythm: "El Ritmo",
+      home: "La Casa",
+      aliki: "Vida en Aliki",
       availability: "Disponibilidad",
-      contact: "Contacto"
+      inquiry: "Consultar"
     },
 
     // Hero
     hero: {
-      title: "Sea Tree",
-      tagline: "Desacelera. Respira.",
-      location: "Playa de Aliki, Paros, Grecia",
-      checkAvailability: "Ver Disponibilidad",
-      ourStory: "Nuestra Historia"
+      title: "Vive despacio junto al mar",
+      tagline: "Una casa frente al mar en Aliki, Paros",
+      subtitle: "Para estancias largas. Para mañanas que se alargan. Para tiempo que vuelve a ser tuyo.",
+      inquire: "Cuéntanos sobre tu estancia",
+      discover: "Descubre el ritmo"
     },
 
-    // Story Section
-    story: {
-      label: "Nuestra Historia",
-      title: "De Noches Largas a Mañanas Lentas",
-      p1: "Esta casa azul fue una vez la discoteca Romantica — durante dos décadas, el corazón de la vida nocturna de Paros, donde isleños y viajeros bailaban hasta el amanecer.",
-      p2: "Hoy, esas mismas paredes tienen un ritmo diferente. Luz matutina a través de cortinas blancas. Café en el balcón. Suelos de piedra frescos bajo los pies. El alma de Romantica sigue viva — en el sonido de las olas, el aire salado y el ritmo lento de la vida isleña.",
-      highlight: {
-        title: "Un Toque de Historia",
-        text: "Pregunta a los locales sobre Romantica — sonreirán y compartirán historias de las mejores fiestas de la isla. Ahora el sonido más fuerte es el del mar."
+    // Rhythm Section
+    rhythm: {
+      label: "El Ritmo",
+      title: "Un Día en Sea Tree",
+      subtitle: "Así se siente estar aquí.",
+      morning: {
+        time: "Mañana",
+        title: "Luz Entre las Cortinas",
+        desc: "Despierta cuando despiertes. Café en el balcón, luz marina en paredes de kourasani. Los barcos de pesca ya están fuera. Sin prisa."
+      },
+      midday: {
+        time: "Mediodía",
+        title: "Vida de Pueblo",
+        desc: "Camina a la panadería. Compra tomates en el mercado. Nada en la playa de arena a dos minutos. Vuelve a casa para un almuerzo tardío."
+      },
+      afternoon: {
+        time: "Tarde",
+        title: "Descanso o Trabajo",
+        desc: "La casa está fresca y tranquila. Starlink te mantiene conectado. La sala de yoga es tuya. O simplemente lee a la sombra."
+      },
+      evening: {
+        time: "Atardecer",
+        title: "Hora Dorada en la Terraza",
+        desc: "Observa cómo cambia la luz sobre la bahía de Aliki. Cena en una taberna, o cocina lo que encontraste en el mercado. El mar se vuelve dorado, luego rosa, luego oscuro."
+      }
+    },
+
+    // Home Section
+    home: {
+      label: "La Casa",
+      title: "Espacio para Estirarse",
+      p1: "100 metros cuadrados de espacio lleno de luz. Dos habitaciones, dos baños, cocina completa y una sala de yoga con vistas a la bahía.",
+      p2: "La terraza es el corazón de la casa: un daybed cubierto, comedor para seis, y ese tipo de atardecer que detiene la conversación.",
+      features: {
+        bedrooms: "Habitaciones",
+        bedroomsDesc: "Cama King + gemelas",
+        bathrooms: "Baños",
+        bathroomsDesc: "Uno en suite",
+        guests: "Huéspedes",
+        guestsDesc: "Ideal para 2-4"
       }
     },
 
@@ -334,49 +408,46 @@ const translations = {
       }
     },
 
-    // Beach Access
-    beach: {
-      label: "Bueno Saber",
-      title: "Sobre Nuestra Playa",
-      warningTitle: "⚠️ Nota Honesta",
-      warning: "El acceso a nuestra playa incluye un camino rocoso y costa natural de piedra. Es absolutamente impresionante y prístino — pero queremos que sepas:",
-      points: [
-        "El camino tiene terreno irregular (no apto para sillas de ruedas)",
-        "Mejor traer zapatos de agua para comodidad",
-        "Las maletas grandes pueden ser difíciles al llegar"
-      ],
-      altTitle: "🏖️ ¿Prefieres Playas de Arena?",
-      altIntro: "¡Sin problema! Hermosas playas de arena cerca:",
-      alt1: "Playa de Arena de Aliki — 1 minuto a pie",
-      alt2: "Playa Piso Aliki — 5 minutos a pie",
-      alt3: "Agios Nikolaos — 10 minutos en coche"
+    // Waterfront Section
+    waterfront: {
+      label: "El Paseo Marítimo",
+      title: "A Pasos del Mar",
+      rockyTitle: "Una Costa Más Tranquila",
+      rockyDesc: "Bajo la terraza, una costa rocosa mantiene este rincón de Aliki en paz. Agua cristalina para nadar, bucear o simplemente observar los barcos.",
+      sandyTitle: "Playas de Arena Cerca",
+      sandyIntro: "¿Prefieres arena entre los dedos? Tienes opciones:",
+      sandy1: "Playa Aliki — 2 minutos a pie",
+      sandy2: "Piso Aliki — 5 minutos a pie",
+      sandy3: "Playa Faragas — 10 minutos en coche",
+      note: "Bueno saber: el camino a nuestra costa es irregular. Se recomiendan zapatos de agua."
     },
 
-    // Location
-    location: {
-      label: "Ubicación",
-      title: "En el Corazón de Aliki",
-      subtitle: "Un pueblo tranquilo en el sur de Paros",
-      distances: {
-        port: { label: "Puerto de Parikia", value: "12 km (15 min)" },
-        airport: { label: "Aeropuerto de Paros", value: "2 km (5 min)" },
-        village: { label: "Pueblo de Aliki", value: "2 min a pie" },
-        market: { label: "Supermercado", value: "5 min a pie" },
-        naousa: { label: "Naousa (vida nocturna)", value: "22 km (25 min)" }
-      }
-    },
-
-    // Neighborhood
-    neighborhood: {
-      label: "Comer y Explorar",
-      title: "Tu Vecindario en Aliki",
-      subtitle: "Cuatro tabernas familiares a poca distancia. Pescado fresco. Cocina honesta.",
-      nightlife: "¿Prefieres vida nocturna? Naousa está a 25 minutos en coche — el pueblo más animado de la isla.",
-      tavernas: {
-        mouragio: { name: "To Mouragio", desc: "Frente al mar, mariscos frescos, familiar por 30 años", distance: "2 min a pie" },
-        aliki: { name: "Aliki Restaurant", desc: "Clásicos griegos, recetas familiares desde 1974", distance: "3 min a pie" },
-        thalassamou: { name: "Thalassamou", desc: "Mesas frente a la playa, pescado a la parrilla", distance: "4 min a pie" },
-        balcony: { name: "To Balcony tou Aki", desc: "Pescado del día, simple y fresco", distance: "5 min a pie" }
+    // Life in Aliki
+    aliki: {
+      label: "Vida en Aliki",
+      title: "Un Pueblo que Se Mueve Despacio",
+      subtitle: "Barcos de pesca tradicionales. Cuatro tabernas familiares. Una panadería. Sin multitudes.",
+      eating: {
+        title: "Dónde Comer",
+        desc: "Cuatro tabernas, todas a poca distancia. Pescado fresco cada día. Dueños que recuerdan tu nombre al tercer día.",
+        mouragio: "Mesas frente al mar, familiar 30 años",
+        thalassamou: "Frente a la playa, parrilla del día",
+        aliki: "Clásicos griegos desde 1974",
+        balcony: "Simple, honesto, local"
+      },
+      daily: {
+        title: "Necesidades Diarias",
+        bakery: "Panadería — 2 min a pie",
+        market: "Mini mercado — 3 min a pie",
+        supermarket: "Supermercado — 5 min a pie",
+        pharmacy: "Farmacia — 10 min en coche"
+      },
+      getting: {
+        title: "Cómo Moverse",
+        airport: "Aeropuerto — 5 min en coche",
+        port: "Puerto de Parikia — 15 min en coche",
+        naousa: "Naousa — 25 min en coche",
+        car: "Se recomienda un coche"
       }
     },
 
@@ -392,30 +463,47 @@ const translations = {
       days: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"]
     },
 
-    // Booking/Contact
-    booking: {
-      label: "Reserva Tu Estancia",
-      title: "¿Listo Para Vivir Sea Tree?",
-      subtitle: "Habla con el anfitrión o reserva directamente en tu plataforma favorita",
-      directTitle: "Habla con Antonis",
-      directSub: "Sin formularios, sin espera — solo una línea directa con el anfitrión. Generalmente responde en pocas horas.",
-      whatsapp: "Mensaje por WhatsApp",
-      whatsappSub: "Respuesta más rápida, en tu idioma",
-      callLabel: "Llamar",
-      phone: "+30 697 3286 811",
-      phoneSub: "Inglés, Griego",
-      emailLabel: "Email",
-      emailCTA: "Enviar un email",
-      platformsTitle: "O Reserva Directamente",
-      airbnb: "Reservar en Airbnb",
-      airbnbSub: "Confirmación inmediata",
-      bookingcom: "Reservar en Booking.com",
-      bookingcomSub: "Opciones de cancelación gratuita"
+    // Host Section
+    host: {
+      label: "Una Nota de Antonis",
+      quote: "Crecí en esta casa. Mi padre dirigió Romantica aquí durante veinte años. Cuando la música paró, me pregunté qué podría ser este lugar. Ahora es un hogar para personas que quieren quedarse un tiempo — para trabajar remotamente, para escribir, para descansar, para estar en calma. Si buscas un lugar para desacelerar, estaré encantado de recibirte.",
+      role: "Tu anfitrión en Aliki"
+    },
+
+    // Romantica Section
+    romantica: {
+      label: "El Recuerdo",
+      title: "Antes de Ser Sea Tree",
+      p1: "Esta casa azul fue una vez Romantica — durante veinte años, la discoteca donde isleños y viajeros bailaban hasta el amanecer. Pregunta a los locales; todavía lo recuerdan.",
+      p2: "La música ya no está. Lo que queda es el edificio, la vista al mar que no ha cambiado, y un ritmo más tranquilo. El alma del lugar sigue viva — solo de otra manera."
+    },
+
+    // Inquiry Section
+    inquiry: {
+      label: "Tu Estancia",
+      title: "Cuéntanos Sobre Tu Viaje",
+      subtitle: "Damos la bienvenida a estancias largas. Cuéntanos qué tienes en mente.",
+      form: {
+        name: "Tu nombre",
+        email: "Email",
+        dates: "Fechas (aproximadas)",
+        guests: "Número de huéspedes",
+        message: "Cuéntanos sobre tu estancia",
+        submit: "Enviar Consulta"
+      },
+      quick: {
+        title: "¿Prefieres Hablar?",
+        desc: "Contacta directamente. Antonis suele responder en pocas horas.",
+        whatsapp: "WhatsApp a Antonis"
+      },
+      platforms: {
+        note: "¿Ya conoces tus fechas? También puedes reservar en:"
+      }
     },
 
     // Footer
     footer: {
-      about: "Un alquiler vacacional único en Paros, Grecia — donde la historia disco se encuentra con la serenidad isleña.",
+      about: "Una casa frente al mar en Aliki, Paros. Para estancias largas, mañanas lentas, y tiempo que vuelve a ser tuyo.",
       quickLinks: "Enlaces Rápidos",
       contactTitle: "Contacto",
       phone: "+30 697 3286 811",
@@ -452,32 +540,62 @@ const translations = {
 
     // Navigation
     nav: {
-      story: "Η Ιστορία μας",
-      gallery: "Γκαλερί",
-      amenities: "Παροχές",
-      location: "Τοποθεσία",
+      rhythm: "Ο Ρυθμός",
+      home: "Το Σπίτι",
+      aliki: "Ζωή στην Αλυκή",
       availability: "Διαθεσιμότητα",
-      contact: "Επικοινωνία"
+      inquiry: "Επικοινωνία"
     },
 
     // Hero
     hero: {
-      title: "Sea Tree",
-      tagline: "Χαλάρωσε. Ανάπνευσε.",
-      location: "Αλυκή, Πάρος, Ελλάδα",
-      checkAvailability: "Έλεγχος Διαθεσιμότητας",
-      ourStory: "Η Ιστορία μας"
+      title: "Ζήσε αργά δίπλα στη θάλασσα",
+      tagline: "Ένα σπίτι στην Αλυκή, Πάρος",
+      subtitle: "Για μεγαλύτερες διαμονές. Για πρωινά που τεντώνονται. Για χρόνο που νιώθει ξανά δικός σου.",
+      inquire: "Πες μας για τη διαμονή σου",
+      discover: "Ανακάλυψε τον ρυθμό"
     },
 
-    // Story Section
-    story: {
-      label: "Η Ιστορία μας",
-      title: "Από τα Ξενύχτια στα Αργά Πρωινά",
-      p1: "Αυτό το μπλε σπίτι ήταν κάποτε το disco bar Romantica — για δύο δεκαετίες, η καρδιά της νυχτερινής ζωής της Πάρου, όπου ντόπιοι και ταξιδιώτες χόρευαν μέχρι την ανατολή.",
-      p2: "Σήμερα, οι ίδιοι τοίχοι έχουν έναν διαφορετικό ρυθμό. Πρωινό φως μέσα από λευκές κουρτίνες. Καφές στο μπαλκόνι. Πέτρινα πατώματα δροσερά κάτω από τα πόδια. Η ψυχή της Romantica ζει ακόμα — στον ήχο των κυμάτων, τον αλμυρό αέρα και τον αργό ρυθμό της νησιώτικης ζωής.",
-      highlight: {
-        title: "Μια Πινελιά Ιστορίας",
-        text: "Ρωτήστε τους ντόπιους για τη Romantica — θα χαμογελάσουν και θα μοιραστούν ιστορίες από τα καλύτερα πάρτι του νησιού. Τώρα ο πιο δυνατός ήχος είναι αυτός της θάλασσας."
+    // Rhythm Section
+    rhythm: {
+      label: "Ο Ρυθμός",
+      title: "Μια Μέρα στο Sea Tree",
+      subtitle: "Έτσι νιώθεις να μένεις εδώ.",
+      morning: {
+        time: "Πρωί",
+        title: "Φως Μέσα από τις Κουρτίνες",
+        desc: "Ξύπνα όταν ξυπνήσεις. Καφές στο μπαλκόνι, θαλασσινό φως στους κουρασανί τοίχους. Τα ψαροκάικα έχουν ήδη βγει. Χωρίς βιασύνη."
+      },
+      midday: {
+        time: "Μεσημέρι",
+        title: "Ζωή Χωριού",
+        desc: "Περπάτα μέχρι τον φούρνο. Πάρε ντομάτες από την αγορά. Κολύμπα στην αμμουδιά δύο λεπτά μακριά. Γύρνα για αργό μεσημεριανό."
+      },
+      afternoon: {
+        time: "Απόγευμα",
+        title: "Ξεκούραση ή Δουλειά",
+        desc: "Το σπίτι είναι δροσερό και ήσυχο. Το Starlink σε κρατάει συνδεδεμένο. Η αίθουσα yoga είναι δική σου. Ή απλά διάβασε στη σκιά."
+      },
+      evening: {
+        time: "Βράδυ",
+        title: "Χρυσή Ώρα στη Βεράντα",
+        desc: "Παρακολούθησε το φως να αλλάζει πάνω από τον κόλπο της Αλυκής. Δείπνο σε ταβέρνα, ή μαγείρεψε ό,τι βρήκες στην αγορά. Η θάλασσα γίνεται χρυσή, μετά ροζ, μετά σκοτεινή."
+      }
+    },
+
+    // Home Section
+    home: {
+      label: "Το Σπίτι",
+      title: "Χώρος να Απλωθείς",
+      p1: "100 τετραγωνικά μέτρα γεμάτα φως. Δύο υπνοδωμάτια, δύο μπάνια, πλήρης κουζίνα και δωμάτιο yoga με θέα τον κόλπο.",
+      p2: "Η βεράντα είναι η καρδιά του σπιτιού: ένα σκεπαστό daybed, τραπεζαρία για έξι, και το είδος του ηλιοβασιλέματος που σταματάει τη συζήτηση.",
+      features: {
+        bedrooms: "Υπνοδωμάτια",
+        bedroomsDesc: "King + δίδυμα κρεβάτια",
+        bathrooms: "Μπάνια",
+        bathroomsDesc: "Ένα en-suite",
+        guests: "Φιλοξενούμενοι",
+        guestsDesc: "Ιδανικό για 2-4"
       }
     },
 
@@ -549,49 +667,46 @@ const translations = {
       }
     },
 
-    // Beach Access
-    beach: {
-      label: "Καλό να Γνωρίζετε",
-      title: "Σχετικά με την Παραλία μας",
-      warningTitle: "⚠️ Ειλικρινής Σημείωση",
-      warning: "Η πρόσβαση στην παραλία μας περιλαμβάνει βραχώδες μονοπάτι και φυσική πέτρινη ακτή. Είναι απόλυτα εντυπωσιακή και παρθένα — αλλά θέλουμε να γνωρίζετε:",
-      points: [
-        "Το μονοπάτι έχει ανώμαλο έδαφος (δεν είναι κατάλληλο για αναπηρικά αμαξίδια)",
-        "Καλύτερα να φέρετε παπούτσια θαλάσσης για άνεση",
-        "Οι μεγάλες βαλίτσες μπορεί να είναι δύσκολες κατά την άφιξη"
-      ],
-      altTitle: "🏖️ Προτιμάτε Αμμώδεις Παραλίες;",
-      altIntro: "Κανένα πρόβλημα! Όμορφες αμμώδεις παραλίες κοντά:",
-      alt1: "Αμμώδης Παραλία Αλυκής — 1 λεπτό με τα πόδια",
-      alt2: "Παραλία Πίσω Αλυκή — 5 λεπτά με τα πόδια",
-      alt3: "Άγιος Νικόλαος — 10 λεπτά με αυτοκίνητο"
+    // Waterfront Section
+    waterfront: {
+      label: "Η Παραλία",
+      title: "Λίγα Βήματα από τη Θάλασσα",
+      rockyTitle: "Μια Πιο Ήσυχη Ακτή",
+      rockyDesc: "Κάτω από τη βεράντα, μια βραχώδης ακτή κρατάει αυτή τη γωνιά της Αλυκής ήρεμη. Κρυστάλλινα νερά για κολύμπι, snorkeling, ή απλά για να βλέπεις τα καΐκια.",
+      sandyTitle: "Αμμουδιές Κοντά",
+      sandyIntro: "Προτιμάς άμμο ανάμεσα στα δάχτυλα; Έχεις επιλογές:",
+      sandy1: "Παραλία Αλυκής — 2 λεπτά πεζή",
+      sandy2: "Πίσω Αλυκή — 5 λεπτά πεζή",
+      sandy3: "Παραλία Φάραγγας — 10 λεπτά με αυτοκίνητο",
+      note: "Καλό να ξέρεις: το μονοπάτι προς την ακτή μας είναι ανώμαλο. Συνιστώνται παπούτσια θαλάσσης."
     },
 
-    // Location
-    location: {
-      label: "Τοποθεσία",
-      title: "Στην Καρδιά της Αλυκής",
-      subtitle: "Ένα ήσυχο χωριό στη νότια Πάρο",
-      distances: {
-        port: { label: "Λιμάνι Παροικιάς", value: "12 χλμ (15 λεπτά)" },
-        airport: { label: "Αεροδρόμιο Πάρου", value: "2 χλμ (5 λεπτά)" },
-        village: { label: "Χωριό Αλυκής", value: "2 λεπτά πεζή" },
-        market: { label: "Σούπερ Μάρκετ", value: "5 λεπτά πεζή" },
-        naousa: { label: "Νάουσα (νυχτερινή ζωή)", value: "22 χλμ (25 λεπτά)" }
-      }
-    },
-
-    // Neighborhood
-    neighborhood: {
-      label: "Φαγητό & Εξερεύνηση",
-      title: "Η Γειτονιά σας στην Αλυκή",
-      subtitle: "Τέσσερις οικογενειακές ταβέρνες σε κοντινή απόσταση. Φρέσκο ψάρι. Ειλικρινής μαγειρική.",
-      nightlife: "Προτιμάτε νυχτερινή ζωή; Η Νάουσα είναι 25 λεπτά με αυτοκίνητο — το πιο ζωντανό χωριό του νησιού.",
-      tavernas: {
-        mouragio: { name: "To Mouragio", desc: "Στην παραλία, φρέσκα θαλασσινά, οικογενειακή για 30 χρόνια", distance: "2 λεπτά πεζή" },
-        aliki: { name: "Aliki Restaurant", desc: "Ελληνικά κλασικά, οικογενειακές συνταγές από το 1974", distance: "3 λεπτά πεζή" },
-        thalassamou: { name: "Thalassamou", desc: "Τραπέζια στην παραλία, ψητό ψάρι", distance: "4 λεπτά πεζή" },
-        balcony: { name: "To Balcony tou Aki", desc: "Ψάρι ντόπιου ψαρά, απλό και φρέσκο", distance: "5 λεπτά πεζή" }
+    // Life in Aliki
+    aliki: {
+      label: "Ζωή στην Αλυκή",
+      title: "Ένα Χωριό που Κινείται Αργά",
+      subtitle: "Παραδοσιακά ψαροκάικα. Τέσσερις οικογενειακές ταβέρνες. Ένας φούρνος. Χωρίς κόσμο.",
+      eating: {
+        title: "Πού να Φας",
+        desc: "Τέσσερις ταβέρνες, όλες σε κοντινή απόσταση. Φρέσκο ψάρι κάθε μέρα. Ιδιοκτήτες που θυμούνται το όνομά σου την τρίτη μέρα.",
+        mouragio: "Τραπέζια στο νερό, οικογενειακή 30 χρόνια",
+        thalassamou: "Στην παραλία, ψαροκάικα της ημέρας",
+        aliki: "Ελληνικά κλασικά από το 1974",
+        balcony: "Απλό, ειλικρινές, τοπικό"
+      },
+      daily: {
+        title: "Καθημερινές Ανάγκες",
+        bakery: "Φούρνος — 2 λεπτά πεζή",
+        market: "Μίνι μάρκετ — 3 λεπτά πεζή",
+        supermarket: "Σούπερ μάρκετ — 5 λεπτά πεζή",
+        pharmacy: "Φαρμακείο — 10 λεπτά με αυτοκίνητο"
+      },
+      getting: {
+        title: "Μετακινήσεις",
+        airport: "Αεροδρόμιο — 5 λεπτά με αυτοκίνητο",
+        port: "Λιμάνι Παροικιάς — 15 λεπτά με αυτοκίνητο",
+        naousa: "Νάουσα — 25 λεπτά με αυτοκίνητο",
+        car: "Συνιστάται αυτοκίνητο"
       }
     },
 
@@ -607,30 +722,47 @@ const translations = {
       days: ["Κυρ", "Δευ", "Τρί", "Τετ", "Πέμ", "Παρ", "Σάβ"]
     },
 
-    // Booking/Contact
-    booking: {
-      label: "Κλείστε τη Διαμονή σας",
-      title: "Έτοιμοι να Ζήσετε το Sea Tree;",
-      subtitle: "Μιλήστε με τον οικοδεσπότη ή κλείστε απευθείας στην αγαπημένη σας πλατφόρμα",
-      directTitle: "Μιλήστε στον Αντώνη",
-      directSub: "Χωρίς φόρμες, χωρίς αναμονή — απευθείας επικοινωνία με τον οικοδεσπότη. Συνήθως απαντά μέσα σε λίγες ώρες.",
-      whatsapp: "Μήνυμα στο WhatsApp",
-      whatsappSub: "Γρηγορότερη απάντηση, στη γλώσσα σας",
-      callLabel: "Κλήση",
-      phone: "+30 697 3286 811",
-      phoneSub: "Αγγλικά, Ελληνικά",
-      emailLabel: "Email",
-      emailCTA: "Αποστολή email",
-      platformsTitle: "Ή Κλείστε Απευθείας",
-      airbnb: "Κράτηση στο Airbnb",
-      airbnbSub: "Άμεση επιβεβαίωση",
-      bookingcom: "Κράτηση στο Booking.com",
-      bookingcomSub: "Επιλογές δωρεάν ακύρωσης"
+    // Host Section
+    host: {
+      label: "Ένα Σημείωμα από τον Αντώνη",
+      quote: "Μεγάλωσα σε αυτό το σπίτι. Ο πατέρας μου είχε τη Romantica εδώ για είκοσι χρόνια. Όταν σταμάτησε η μουσική, αναρωτήθηκα τι θα μπορούσε να γίνει αυτός ο χώρος. Τώρα είναι ένα σπίτι για ανθρώπους που θέλουν να μείνουν λίγο — να δουλέψουν από απόσταση, να γράψουν, να ξεκουραστούν, να ηρεμήσουν. Αν ψάχνεις ένα μέρος να επιβραδύνεις, θα χαρώ να σε φιλοξενήσω.",
+      role: "Ο οικοδεσπότης σου στην Αλυκή"
+    },
+
+    // Romantica Section
+    romantica: {
+      label: "Η Ανάμνηση",
+      title: "Πριν Γίνει Sea Tree",
+      p1: "Αυτό το μπλε σπίτι ήταν κάποτε η Romantica — για είκοσι χρόνια, το disco bar όπου ντόπιοι και ταξιδιώτες χόρευαν μέχρι την ανατολή. Ρώτα τους ντόπιους· ακόμα θυμούνται.",
+      p2: "Η μουσική έχει φύγει. Αυτό που μένει είναι το κτίριο, η θέα στη θάλασσα που δεν έχει αλλάξει, και ένας πιο ήσυχος ρυθμός. Η ψυχή του τόπου ζει ακόμα — απλά διαφορετικά."
+    },
+
+    // Inquiry Section
+    inquiry: {
+      label: "Η Διαμονή Σου",
+      title: "Πες μας για το Ταξίδι Σου",
+      subtitle: "Καλωσορίζουμε μεγαλύτερες διαμονές. Πες μας τι έχεις στο μυαλό σου.",
+      form: {
+        name: "Το όνομά σου",
+        email: "Email",
+        dates: "Ημερομηνίες (κατά προσέγγιση)",
+        guests: "Αριθμός φιλοξενούμενων",
+        message: "Πες μας για τη διαμονή σου",
+        submit: "Αποστολή Αιτήματος"
+      },
+      quick: {
+        title: "Προτιμάς να Μιλήσεις;",
+        desc: "Επικοινώνησε απευθείας. Ο Αντώνης συνήθως απαντά μέσα σε λίγες ώρες.",
+        whatsapp: "WhatsApp στον Αντώνη"
+      },
+      platforms: {
+        note: "Ξέρεις ήδη τις ημερομηνίες σου; Μπορείς επίσης να κλείσεις στο:"
+      }
     },
 
     // Footer
     footer: {
-      about: "Μοναδικό ενοικιαζόμενο κατάλυμα στην Πάρο, Ελλάδα — όπου η disco ιστορία συναντά τη νησιώτικη γαλήνη.",
+      about: "Ένα σπίτι στην Αλυκή, Πάρος. Για μεγαλύτερες διαμονές, αργά πρωινά, και χρόνο που νιώθει ξανά δικός σου.",
       quickLinks: "Γρήγοροι Σύνδεσμοι",
       contactTitle: "Επικοινωνία",
       phone: "+30 697 3286 811",
@@ -667,32 +799,62 @@ const translations = {
 
     // Navigation
     nav: {
-      story: "Notre Histoire",
-      gallery: "Galerie",
-      amenities: "Équipements",
-      location: "Emplacement",
+      rhythm: "Le Rythme",
+      home: "La Maison",
+      aliki: "Vie à Aliki",
       availability: "Disponibilité",
-      contact: "Contact"
+      inquiry: "Contact"
     },
 
     // Hero
     hero: {
-      title: "Sea Tree",
-      tagline: "Ralentissez. Respirez.",
-      location: "Plage d'Aliki, Paros, Grèce",
-      checkAvailability: "Vérifier Disponibilité",
-      ourStory: "Notre Histoire"
+      title: "Vivez lentement au bord de l'eau",
+      tagline: "Une maison face à la mer à Aliki, Paros",
+      subtitle: "Pour les longs séjours. Pour les matins qui s'étirent. Pour un temps qui vous appartient à nouveau.",
+      inquire: "Parlez-nous de votre séjour",
+      discover: "Découvrez le rythme"
     },
 
-    // Story Section
-    story: {
-      label: "Notre Histoire",
-      title: "Des Nuits Tardives aux Matins Lents",
-      p1: "Cette maison bleue était autrefois le disco-bar Romantica — pendant deux décennies, le cœur de la vie nocturne de Paros, où les insulaires et les voyageurs dansaient jusqu'au lever du soleil.",
-      p2: "Aujourd'hui, ces mêmes murs ont un rythme différent. Lumière du matin à travers les rideaux blancs. Café sur le balcon. Sols en pierre fraîche sous les pieds. L'âme de Romantica vit toujours — dans le bruit des vagues, l'air salé et le rythme lent de la vie insulaire.",
-      highlight: {
-        title: "Une Touche d'Histoire",
-        text: "Demandez aux locaux à propos de Romantica — ils souriront et partageront des histoires des meilleures fêtes de l'île. Maintenant, le bruit le plus fort est celui de la mer."
+    // Rhythm Section
+    rhythm: {
+      label: "Le Rythme",
+      title: "Une Journée à Sea Tree",
+      subtitle: "Voici ce que c'est de séjourner ici.",
+      morning: {
+        time: "Matin",
+        title: "Lumière à Travers les Rideaux",
+        desc: "Réveillez-vous quand vous vous réveillez. Café sur le balcon, lumière marine sur les murs en kourasani. Les bateaux de pêche sont déjà partis. Pas de hâte."
+      },
+      midday: {
+        time: "Midi",
+        title: "Vie de Village",
+        desc: "Marchez jusqu'à la boulangerie. Achetez des tomates au marché. Nagez à la plage de sable à deux minutes. Rentrez pour un déjeuner tardif."
+      },
+      afternoon: {
+        time: "Après-midi",
+        title: "Repos ou Travail",
+        desc: "La maison est fraîche et calme. Starlink vous garde connecté. La salle de yoga est à vous. Ou lisez simplement à l'ombre."
+      },
+      evening: {
+        time: "Soir",
+        title: "Heure Dorée sur la Terrasse",
+        desc: "Regardez la lumière changer sur la baie d'Aliki. Dîner à la taverne, ou cuisinez ce que vous avez trouvé au marché. La mer devient dorée, puis rose, puis sombre."
+      }
+    },
+
+    // Home Section
+    home: {
+      label: "La Maison",
+      title: "Espace pour S'étendre",
+      p1: "100 mètres carrés d'espace lumineux. Deux chambres, deux salles de bain, une cuisine équipée et une salle de yoga avec vue sur la baie.",
+      p2: "La terrasse est le cœur de la maison : un daybed couvert, une table pour six, et le genre de coucher de soleil qui arrête la conversation.",
+      features: {
+        bedrooms: "Chambres",
+        bedroomsDesc: "King + lits jumeaux",
+        bathrooms: "Salles de bain",
+        bathroomsDesc: "Une en suite",
+        guests: "Invités",
+        guestsDesc: "Idéal pour 2-4"
       }
     },
 
@@ -764,49 +926,46 @@ const translations = {
       }
     },
 
-    // Beach Access
-    beach: {
-      label: "Bon à Savoir",
-      title: "À Propos de Notre Plage",
-      warningTitle: "⚠️ Note Honnête",
-      warning: "L'accès à notre plage comprend un sentier rocheux et un littoral en pierre naturelle. C'est absolument magnifique et préservé — mais nous voulons que vous sachiez :",
-      points: [
-        "Le sentier a un terrain irrégulier (non adapté aux fauteuils roulants)",
-        "Mieux vaut apporter des chaussures aquatiques pour le confort",
-        "Les grandes valises peuvent être difficiles à l'arrivée"
-      ],
-      altTitle: "🏖️ Vous Préférez les Plages de Sable ?",
-      altIntro: "Pas de souci ! Belles plages de sable à proximité :",
-      alt1: "Plage de Sable d'Aliki — 1 minute à pied",
-      alt2: "Plage Piso Aliki — 5 minutes à pied",
-      alt3: "Agios Nikolaos — 10 minutes en voiture"
+    // Waterfront Section
+    waterfront: {
+      label: "Le Bord de Mer",
+      title: "À Quelques Pas de la Mer",
+      rockyTitle: "Une Côte Plus Calme",
+      rockyDesc: "Sous la terrasse, une côte rocheuse garde ce coin d'Aliki paisible. Eau cristalline pour nager, faire du snorkeling, ou simplement regarder les bateaux.",
+      sandyTitle: "Plages de Sable à Proximité",
+      sandyIntro: "Vous préférez le sable entre les orteils ? Vous avez des options :",
+      sandy1: "Plage d'Aliki — 2 minutes à pied",
+      sandy2: "Piso Aliki — 5 minutes à pied",
+      sandy3: "Plage de Faragas — 10 minutes en voiture",
+      note: "Bon à savoir : le chemin vers notre rivage est irrégulier. Chaussures aquatiques recommandées."
     },
 
-    // Location
-    location: {
-      label: "Emplacement",
-      title: "Au Cœur d'Aliki",
-      subtitle: "Un village paisible dans le sud de Paros",
-      distances: {
-        port: { label: "Port de Parikia", value: "12 km (15 min)" },
-        airport: { label: "Aéroport de Paros", value: "2 km (5 min)" },
-        village: { label: "Village d'Aliki", value: "2 min à pied" },
-        market: { label: "Supermarché", value: "5 min à pied" },
-        naousa: { label: "Naousa (vie nocturne)", value: "22 km (25 min)" }
-      }
-    },
-
-    // Neighborhood
-    neighborhood: {
-      label: "Manger & Explorer",
-      title: "Votre Quartier à Aliki",
-      subtitle: "Quatre tavernes familiales à distance de marche. Poisson frais. Cuisine honnête.",
-      nightlife: "Vous préférez la vie nocturne? Naousa est à 25 minutes en voiture — le village le plus animé de l'île.",
-      tavernas: {
-        mouragio: { name: "To Mouragio", desc: "Front de mer, fruits de mer frais, familial depuis 30 ans", distance: "2 min à pied" },
-        aliki: { name: "Aliki Restaurant", desc: "Classiques grecs, recettes familiales depuis 1974", distance: "3 min à pied" },
-        thalassamou: { name: "Thalassamou", desc: "Tables en bord de plage, poisson grillé", distance: "4 min à pied" },
-        balcony: { name: "To Balcony tou Aki", desc: "Poisson du pêcheur local, simple et frais", distance: "5 min à pied" }
+    // Life in Aliki
+    aliki: {
+      label: "Vie à Aliki",
+      title: "Un Village Qui Bouge Lentement",
+      subtitle: "Bateaux de pêche traditionnels. Quatre tavernes familiales. Une boulangerie. Pas de foule.",
+      eating: {
+        title: "Où Manger",
+        desc: "Quatre tavernes, toutes à distance de marche. Poisson frais tous les jours. Des propriétaires qui se souviennent de votre nom dès le troisième jour.",
+        mouragio: "Tables face à la mer, familial depuis 30 ans",
+        thalassamou: "En bord de plage, prise du jour grillée",
+        aliki: "Classiques grecs depuis 1974",
+        balcony: "Simple, honnête, local"
+      },
+      daily: {
+        title: "Besoins Quotidiens",
+        bakery: "Boulangerie — 2 min à pied",
+        market: "Mini marché — 3 min à pied",
+        supermarket: "Supermarché — 5 min à pied",
+        pharmacy: "Pharmacie — 10 min en voiture"
+      },
+      getting: {
+        title: "Se Déplacer",
+        airport: "Aéroport — 5 min en voiture",
+        port: "Port de Parikia — 15 min en voiture",
+        naousa: "Naousa — 25 min en voiture",
+        car: "Une voiture est recommandée"
       }
     },
 
