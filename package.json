@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:pwa-cache": "node scripts/check_pwa_cache_contract.mjs",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
     "test:mobile": "playwright test --project=mobile",
