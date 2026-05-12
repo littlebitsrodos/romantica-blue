@@ -18,19 +18,13 @@ It is descriptive project memory, not a general development best-practices docum
 Observed dirty entries on 2026-05-10:
 
 ```text
- M .agent/memory/episodic/AGENT_LEARNINGS.jsonl
-?? .agent/memory/episodic/snapshots/workspace_2026-04-28.md
-?? .agent/skills/new-site-checklist/
-?? .agents/
-?? .codex/
 ?? AGENTS.md
 ?? https___seatree.gr_-Vacation rental-2026-05-07/
 ?? images/2026-04-30 - yoga room and brass turtles/
 ```
 
-Treat these as existing agent/tooling/audit/source-photo artifacts unless the
-human explicitly asks to clean or commit them. Do not reset or delete them as
-part of unrelated work.
+Treat these as existing source-photo or local audit artifacts unless the human
+explicitly asks to clean or commit them. Do not reset or delete unrelated work.
 
 ## Project Shape
 
@@ -46,15 +40,6 @@ Sea Tree is a static vacation-rental website for Aliki Beach, Paros.
   - `/fr/` French
 - Per-locale pages are generated from `index.html` and `translations.js`.
 - Hosted/deployed through GitHub Pages CI.
-
-## Legal / Data Controller Details
-
-- Legal entity: `ΑΚΤΑΙ ΠΑΡΟΥ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ`
-- Distinctive title: `ΑΚΤΑΙ ΠΑΡΟΥ Ι.Κ.Ε.`
-- Registered office: `Γρηγορίου Λαμπράκη 69, Γλυφάδα Αττικής, Ελλάδα`
-- VAT / tax office: `Α.Φ.Μ. 802416469 / Δ.Ο.Υ. ΚΕΦΟΔΕ Αττικής`
-- Public contact email: `antocosto@gmail.com`
-- Public contact phone: `+30 697 3286 811`
 
 ## Main Files
 
@@ -143,40 +128,16 @@ Regenerate locale pages after body/copy/i18n changes:
 python3 scripts/build_locales.py
 ```
 
-## Agent Context Placement
+## Project Context Placement
 
 Recommended placement for project-specific context:
 
 - `PROJECT_CONTEXT.md` at repo root: human-readable operational snapshot, like this file.
-- `AGENTS.md` at repo root: Codex-facing adapter with Codex-specific paths and commands.
-- `CLAUDE.md` at repo root: Claude Code-facing adapter with Claude-specific paths and commands.
-- `.agent/`: shared portable agentic-stack memory, tools, skills, and protocols.
-- `.agent/memory/semantic/DECISIONS.md`: durable decisions that should not be re-debated.
-- `.agent/memory/semantic/DOMAIN_KNOWLEDGE.md`: stable domain facts.
-- `.agent/memory/working/`: temporary active-task state.
+- `AGENTS.md` at repo root: concise Codex-facing project instructions.
+- `CLAUDE.md` at repo root: concise Claude Code-facing project instructions.
 
 Do not put repo context in `docs/` unless `.gitignore` changes first: this repo
 currently ignores `docs/`, so a `docs/PROJECT_CONTEXT.md` would be local-only.
-
-## Agent Infrastructure Notes
-
-This repo has layered agent assets:
-
-- `.agent/` is the primary portable brain and is mostly tracked.
-- `.claude/` contains Claude-specific hooks/skills and local worktrees.
-- `.agents/` and `.codex/` are currently untracked.
-- `.antigravity/skills/` contains at least the tracked performance engineer skill.
-
-Harness-specific adapter paths are intentional:
-
-- `AGENTS.md` checks Codex's `~/.Codex/skills/gstack/bin`.
-- `CLAUDE.md` checks Claude Code's `~/.claude/skills/gstack/bin`.
-- On 2026-05-10, both adapter paths existed locally.
-
-Also observed:
-
-- `.agent/memory/working/REVIEW_QUEUE.md` exists and had no pending candidates.
-- `.agent/memory/working/WORKSPACE.md` tracks temporary active-task state.
 
 ## Safe-To-Edit Assumption
 
@@ -199,7 +160,6 @@ Generated or special surfaces:
 - `es/index.html`, `el/index.html`, `fr/index.html`: generated; do not hand-edit.
 - `bookings.json`: generated at deploy time by `scripts/sync_bookings.py` and ignored.
 - `lighthouse-*.json`, `psi-*.json`, `lh-sweep.*`: historical/local audit artifacts.
-- `.claude/worktrees/`: local worktrees; ignored.
 
 ## Known Quirks
 

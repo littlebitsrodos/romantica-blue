@@ -16,7 +16,7 @@ Use one candidate per session. Do not combine unrelated refactors.
 2. **Agent Context Module** — complete
    - Clean up repo navigation for future agents.
    - Goal: make `PROJECT_CONTEXT.md`, `AGENTS.md`, `CLAUDE.md`, and `.agent/` roles explicit and non-contradictory.
-   - Output: root harness files are explicit adapters; `.agent/` remains the shared portable brain; gstack paths are documented as harness-specific.
+   - Output: root harness files contain only practical Sea Tree project guidance.
 
 3. **Contact/Booking Contact Surface Cleanup** — next recommended session
    - Resolve stale Formspree code versus current direct-contact UI.
