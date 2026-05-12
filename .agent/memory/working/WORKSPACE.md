@@ -37,3 +37,18 @@
 - Recall applied: before structural HTML changes, check CSS selectors targeting old elements and update HTML/CSS together.
 - Current step: user chose to commit the current dirty redesign/context state before QA so any QA fixes can be isolated in later atomic commits.
 - Scope to verify: mobile overflow, calendar columns, gallery carousel alignment, contact form layout/behavior, accessibility, and long Greek/French copy in hero/form areas.
+- Result: automated QA passed (`12/12` focused mobile layout; full Playwright `24 passed, 18 intentionally skipped`). Manual visual QA found no fixable bugs.
+- Remaining decision: whether to replace the current `mailto:antocosto@gmail.com` inquiry form with a real Formspree endpoint before shipping.
+
+## 2026-05-12 — Privacy policy controller details
+
+- User provided the Sea Tree legal/data-controller details for privacy pages and future project reference.
+- Legal entity: `ΑΚΤΑΙ ΠΑΡΟΥ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ`; distinctive title: `ΑΚΤΑΙ ΠΑΡΟΥ Ι.Κ.Ε.`
+- Registered office: `Γρηγορίου Λαμπράκη 69, Γλυφάδα Αττικής, Ελλάδα`; VAT/tax office: `Α.Φ.Μ. 802416469 / Δ.Ο.Υ. ΚΕΦΟΔΕ Αττικής`.
+- Public contact details remain `antocosto@gmail.com` and `+30 697 3286 811`.
+
+## 2026-05-12 — VacationRental schema validator cleanup
+
+- Added a static schema contract check for `VacationRental` JSON-LD before changing implementation.
+- Fixed validator-facing shape issues by making `identifier` a string and adding `occupancy.value` on the rental and each room in `containsPlace`.
+- Bumped `sw.js` cache version so returning visitors do not keep stale structured data.

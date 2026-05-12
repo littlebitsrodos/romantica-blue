@@ -47,6 +47,15 @@ Sea Tree is a static vacation-rental website for Aliki Beach, Paros.
 - Per-locale pages are generated from `index.html` and `translations.js`.
 - Hosted/deployed through GitHub Pages CI.
 
+## Legal / Data Controller Details
+
+- Legal entity: `ΑΚΤΑΙ ΠΑΡΟΥ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ`
+- Distinctive title: `ΑΚΤΑΙ ΠΑΡΟΥ Ι.Κ.Ε.`
+- Registered office: `Γρηγορίου Λαμπράκη 69, Γλυφάδα Αττικής, Ελλάδα`
+- VAT / tax office: `Α.Φ.Μ. 802416469 / Δ.Ο.Υ. ΚΕΦΟΔΕ Αττικής`
+- Public contact email: `antocosto@gmail.com`
+- Public contact phone: `+30 697 3286 811`
+
 ## Main Files
 
 | Path | Purpose |

@@ -164,9 +164,9 @@ def translate_placeholders(html, loc_translations):
             return match.group(0)
         # Replace placeholder="..." if already present, else insert one.
         new_open = tag_open_prefix + f'data-translate-placeholder="{key}"' + tag_open_suffix
-        if re.search(r'\bplaceholder="[^"]*"', new_open):
+        if re.search(r'(?<!data-translate-)\bplaceholder="[^"]*"', new_open):
             new_open = re.sub(
-                r'\bplaceholder="[^"]*"', f'placeholder="{text}"', new_open, count=1
+                r'(?<!data-translate-)\bplaceholder="[^"]*"', f'placeholder="{text}"', new_open, count=1
             )
         else:
             new_open = re.sub(r">$", f' placeholder="{text}">', new_open, count=1)
