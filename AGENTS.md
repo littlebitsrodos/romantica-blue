@@ -1,4 +1,4 @@
-# Project Instructions (Claude Code) — Sea Tree
+# Project Instructions (Codex) — Sea Tree
 
 Static vacation-rental site for Sea Tree, Aliki Beach, Paros. No build step —
 HTML/CSS/vanilla JS with a PWA shell.
@@ -73,7 +73,7 @@ Skip it and the system is just files on disk.
 | `images/optimized/` | Public images, both `.jpg` and `.webp` per asset. Always link from here. |
 | `{es,el,fr}/index.html` | Generated per-locale pages. Never hand-edit — regenerate via `scripts/build_locales.py`. |
 | `scripts/build_locales.py` | Reads `translations.js` + `index.html`, emits per-locale HTML with translated head/body and hreflang cluster. Also rewrites `sitemap.xml` `<lastmod>` from the most recent commit on `index.html` / `translations.js`. |
-| `.claude/skills/optimize-photos/` | Pipeline for importing new source photos → paired `.jpg`/`.webp` + snippet generator. |
+| `.Codex/skills/optimize-photos/` | Pipeline for importing new source photos → paired `.jpg`/`.webp` + snippet generator. |
 | `lighthouse-*.json` | Historical audit reports (Jan 2026 optimization pass). Gitignored. |
 
 ## Image pipeline
@@ -135,7 +135,7 @@ Skip it and the system is just files on disk.
 
 ## Deliberate non-features
 
-A running list of features considered and deliberately skipped — so a future Claude or contributor doesn't re-propose
+A running list of features considered and deliberately skipped — so a future Codex or contributor doesn't re-propose
 them. If data changes, revisit.
 
 - **No hero video.** The widely-cited "86% conversion lift" traces to vendor blog posts, not controlled studies.
@@ -164,8 +164,8 @@ Three layered systems coexist — check each before assuming a capability lives 
 
 - `PROJECT_CONTEXT.md` is the repo-local handoff snapshot: current worktree state, project map, safe edit surfaces,
   and next architecture sessions.
-- `AGENTS.md` is the Codex adapter. Keep Codex-specific paths and commands there.
-- `CLAUDE.md` is the Claude Code adapter. Keep Claude-specific paths and commands here.
+- `AGENTS.md` is the Codex adapter. Keep Codex-specific paths and commands here.
+- `CLAUDE.md` is the Claude Code adapter. Keep Claude-specific paths and commands there.
 - `.agent/` is the shared portable brain. Put cross-harness memory, lessons, protocols, and reusable skills there.
 - If a rule belongs to every harness, update `.agent/` first, then mirror only the short adapter guidance needed here.
 
@@ -197,13 +197,13 @@ Key routing rules:
 
 ## gstack (REQUIRED — global install)
 
-Claude Code uses the `~/.claude/skills/gstack` global adapter path. This intentionally differs from
-Codex's `~/.Codex/skills/gstack` path in `AGENTS.md`.
+Codex uses the `~/.Codex/skills/gstack` global adapter path. This intentionally differs from
+Claude Code's `~/.claude/skills/gstack` path in `CLAUDE.md`.
 
 **Before doing ANY work, verify gstack is installed:**
 
 ```bash
-test -d ~/.claude/skills/gstack/bin && echo "GSTACK_OK" || echo "GSTACK_MISSING"
+test -d ~/.Codex/skills/gstack/bin && echo "GSTACK_OK" || echo "GSTACK_MISSING"
 ```
 
 If GSTACK_MISSING: STOP. Do not proceed. Tell the user:
@@ -211,8 +211,8 @@ If GSTACK_MISSING: STOP. Do not proceed. Tell the user:
 > gstack is required for all AI-assisted work in this repo.
 > Install it:
 > ```bash
-> git clone --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
-> cd ~/.claude/skills/gstack && ./setup --team
+> git clone --depth 1 https://github.com/garrytan/gstack.git ~/.Codex/skills/gstack
+> cd ~/.Codex/skills/gstack && ./setup --team
 > ```
 > Then restart your AI coding tool.
 
@@ -220,4 +220,4 @@ Do not skip skills, ignore gstack errors, or work around missing gstack.
 
 Using gstack skills: After install, skills like /qa, /ship, /review, /investigate,
 and /browse are available. Use /browse for all web browsing.
-Use ~/.claude/skills/gstack/... for gstack file paths (the global path).
+Use ~/.Codex/skills/gstack/... for gstack file paths (the global path).

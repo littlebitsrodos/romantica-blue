@@ -1,0 +1,209 @@
+# sea-tree-paros Project Context
+
+Date: 2026-05-10
+
+This document captures project-specific working context for `sea-tree-paros`.
+It is descriptive project memory, not a general development best-practices document.
+
+## Repository
+
+- Path on Mac mini: `/Users/neuralnode/Projects/sea-tree-paros`
+- Git remote: `https://github.com/littlebitsrodos/sea-tree-paros.git`
+- Branch: `main`
+- Last observed commit: `5ee0a24 feat: add guest services and arrival info`
+- Status observed on 2026-05-10: `main...origin/main`, dirty worktree.
+
+## Current Worktree State
+
+Observed dirty entries on 2026-05-10:
+
+```text
+ M .agent/memory/episodic/AGENT_LEARNINGS.jsonl
+?? .agent/memory/episodic/snapshots/workspace_2026-04-28.md
+?? .agent/skills/new-site-checklist/
+?? .agents/
+?? .codex/
+?? AGENTS.md
+?? https___seatree.gr_-Vacation rental-2026-05-07/
+?? images/2026-04-30 - yoga room and brass turtles/
+```
+
+Treat these as existing agent/tooling/audit/source-photo artifacts unless the
+human explicitly asks to clean or commit them. Do not reset or delete them as
+part of unrelated work.
+
+## Project Shape
+
+Sea Tree is a static vacation-rental website for Aliki Beach, Paros.
+
+- Plain HTML, CSS, and vanilla JavaScript.
+- No app build step for normal development.
+- PWA shell with `manifest.json`, `sw.js`, and `offline.html`.
+- Four crawlable locale URLs:
+  - `/` English
+  - `/es/` Spanish
+  - `/el/` Greek
+  - `/fr/` French
+- Per-locale pages are generated from `index.html` and `translations.js`.
+- Hosted/deployed through GitHub Pages CI.
+
+## Legal / Data Controller Details
+
+- Legal entity: `ΑΚΤΑΙ ΠΑΡΟΥ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ`
+- Distinctive title: `ΑΚΤΑΙ ΠΑΡΟΥ Ι.Κ.Ε.`
+- Registered office: `Γρηγορίου Λαμπράκη 69, Γλυφάδα Αττικής, Ελλάδα`
+- VAT / tax office: `Α.Φ.Μ. 802416469 / Δ.Ο.Υ. ΚΕΦΟΔΕ Αττικής`
+- Public contact email: `antocosto@gmail.com`
+- Public contact phone: `+30 697 3286 811`
+
+## Main Files
+
+| Path | Purpose |
+|---|---|
+| `index.html` | Primary English page, metadata, JSON-LD, and all page sections. |
+| `styles.css` | Main design system and responsive layout. |
+| `script.js` | Language switcher, nav behavior, gallery/lightbox, calendar, booking/contact behavior, service-worker registration. |
+| `translations.js` | Source of truth for EN/ES/EL/FR text. |
+| `scripts/build_locales.py` | Generates `es/`, `el/`, `fr/` pages and patches hreflang metadata. |
+| `scripts/sync_bookings.py` | Refreshes availability from booking feeds into `bookings.json`. |
+| `sw.js` | Service worker cache. Bump `CACHE_NAME` when cached assets change. |
+| `tests/mobile.spec.js` | Playwright + axe checks for layout, mobile nav, locale navigation, and accessibility. |
+| `playwright.config.js` | Starts `python3 -m http.server` on port 4173 for tests. |
+| `.github/workflows/ci.yml` | Test and GitHub Pages deploy workflow. |
+
+## Site Route And Section Map
+
+Main page sections in `index.html`:
+
+```text
+#home
+#story
+#gallery
+#amenities
+#services
+#practical
+#beach
+#location
+#neighborhood
+#availability
+#contact
+```
+
+The header nav currently links to story, gallery, amenities, location,
+availability, and contact.
+
+## Assets
+
+- Public image assets live in `images/optimized/`.
+- Source/raw photos live under dated folders in `images/`.
+- Existing favicon is `favicon.svg`; it is a small circular sea-blue mark with wave lines.
+- Current header/footer brand treatment is text-only: `Sea <span>Tree</span>`.
+- `images/2026-04-30 - yoga room and brass turtles/` is currently untracked and should be treated as incoming source material until reviewed.
+
+## Current Active Task
+
+Minimal logo.
+
+Useful starting point:
+
+- `favicon.svg` already contains a simple wave mark.
+- Header and footer use the `.logo` text style rather than an image/logo component.
+- If the logo change touches `favicon.svg`, `styles.css`, `index.html`, or `translations.js`, remember:
+  - bump `CACHE_NAME` in `sw.js` for cached asset changes;
+  - rebuild locale pages if `index.html` body or `translations.js` changes;
+  - keep the logo usable in small favicon/app-icon contexts and in the fixed nav.
+
+Architecture follow-up sessions are tracked in `ARCHITECTURE_SESSIONS.md`.
+
+## Development Commands
+
+Serve locally on the Mac mini:
+
+```bash
+cd /Users/neuralnode/Projects/sea-tree-paros
+python3 -m http.server 8000
+```
+
+Run tests:
+
+```bash
+cd /Users/neuralnode/Projects/sea-tree-paros
+npm test
+```
+
+Mobile-only tests:
+
+```bash
+npm run test:mobile
+```
+
+Regenerate locale pages after body/copy/i18n changes:
+
+```bash
+python3 scripts/build_locales.py
+```
+
+## Agent Context Placement
+
+Recommended placement for project-specific context:
+
+- `PROJECT_CONTEXT.md` at repo root: human-readable operational snapshot, like this file.
+- `AGENTS.md` at repo root: Codex-facing adapter with Codex-specific paths and commands.
+- `CLAUDE.md` at repo root: Claude Code-facing adapter with Claude-specific paths and commands.
+- `.agent/`: shared portable agentic-stack memory, tools, skills, and protocols.
+- `.agent/memory/semantic/DECISIONS.md`: durable decisions that should not be re-debated.
+- `.agent/memory/semantic/DOMAIN_KNOWLEDGE.md`: stable domain facts.
+- `.agent/memory/working/`: temporary active-task state.
+
+Do not put repo context in `docs/` unless `.gitignore` changes first: this repo
+currently ignores `docs/`, so a `docs/PROJECT_CONTEXT.md` would be local-only.
+
+## Agent Infrastructure Notes
+
+This repo has layered agent assets:
+
+- `.agent/` is the primary portable brain and is mostly tracked.
+- `.claude/` contains Claude-specific hooks/skills and local worktrees.
+- `.agents/` and `.codex/` are currently untracked.
+- `.antigravity/skills/` contains at least the tracked performance engineer skill.
+
+Harness-specific adapter paths are intentional:
+
+- `AGENTS.md` checks Codex's `~/.Codex/skills/gstack/bin`.
+- `CLAUDE.md` checks Claude Code's `~/.claude/skills/gstack/bin`.
+- On 2026-05-10, both adapter paths existed locally.
+
+Also observed:
+
+- `.agent/memory/working/REVIEW_QUEUE.md` exists and had no pending candidates.
+- `.agent/memory/working/WORKSPACE.md` tracks temporary active-task state.
+
+## Safe-To-Edit Assumption
+
+Safe code surfaces for normal site work:
+
+```text
+index.html
+styles.css
+script.js
+translations.js
+sw.js
+manifest.json
+favicon.svg
+scripts/
+tests/
+```
+
+Generated or special surfaces:
+
+- `es/index.html`, `el/index.html`, `fr/index.html`: generated; do not hand-edit.
+- `bookings.json`: generated at deploy time by `scripts/sync_bookings.py` and ignored.
+- `lighthouse-*.json`, `psi-*.json`, `lh-sweep.*`: historical/local audit artifacts.
+- `.claude/worktrees/`: local worktrees; ignored.
+
+## Known Quirks
+
+- Project was previously called Romantica Blue; historical references to Romantica are intentional when they describe the former disco-bar story.
+- `.DS_Store` files recur but are ignored.
+- `docs/` is ignored even though tracked docs already exist historically; verify intent before adding new docs there.
+- `rg` was not available in the non-interactive SSH shell during the 2026-05-10 map; use `grep/find` if needed.

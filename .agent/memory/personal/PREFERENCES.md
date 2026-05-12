@@ -20,6 +20,7 @@
 - Review depth: critical issues only
 - Tone: direct, skip pleasantries
 - Surface tradeoffs: always
+- Preferred response language: Greek unless the user asks otherwise
 
 ## Constraints
 - _(edit me: primary stack, deployment targets, off-limits patterns)_
