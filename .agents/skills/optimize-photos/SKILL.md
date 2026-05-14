@@ -1,6 +1,11 @@
 ---
 name: optimize-photos
-description: Optimize a batch of raw photos (WhatsApp, phone exports, DSLR JPEG) into `images/optimized/` as paired `.jpg` + `.webp`, with semantic filenames and ready-to-paste gallery HTML snippets. Use when: "optimize photos", "process new photos", "add photos to the gallery", or after a new folder lands under `images/<date> - …/`.
+description: |
+  Optimize a batch of raw photos (WhatsApp, phone exports, DSLR JPEG) into
+  `images/optimized/` as paired `.jpg` + `.webp`, with semantic filenames and
+  ready-to-paste gallery HTML snippets. Use when: "optimize photos",
+  "process new photos", "add photos to the gallery", or after a new folder
+  lands under `images/<date> - …/`.
 ---
 
 # Optimize Photos
