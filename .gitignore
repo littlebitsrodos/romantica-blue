@@ -25,6 +25,7 @@ bookings.json
 # Local-only review/working docs (not part of the project)
 docs/
 /archive/local-docs/
+/archive/local-tools/
 
 # Playwright
 node_modules/
