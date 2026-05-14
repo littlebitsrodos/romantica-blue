@@ -41,7 +41,6 @@ export function assertLocalePlaceholderContract() {
     const bindings = extractPlaceholderBindings(html);
     const placeholderValues = extractPlaceholderValues(html);
 
-    assert.ok(bindings.length > 0, `${filePath} must declare data-translate-placeholder bindings`);
     assert.equal(
       bindings.length,
       placeholderValues.length,

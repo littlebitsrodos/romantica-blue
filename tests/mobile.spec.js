@@ -8,6 +8,20 @@ const LOCALES = [
   { path: '/fr/', lang: 'fr', label: 'FR' },
 ];
 
+async function waitForSiteStyles(page) {
+  const stylesReady = () => {
+    const nav = document.querySelector('.navbar');
+    return nav && getComputedStyle(nav).position === 'fixed';
+  };
+
+  try {
+    await page.waitForFunction(stylesReady, { timeout: 5000 });
+  } catch {
+    await page.reload({ waitUntil: 'load' });
+    await page.waitForFunction(stylesReady, { timeout: 5000 });
+  }
+}
+
 // Block third-party analytics network calls in tests — keeps networkidle
 // deterministic and prevents gtag.js fetches from racing with axe scans
 // or overflow measurements. analytics.js (same-origin) still runs and
@@ -35,6 +49,7 @@ test.describe('mobile layout', () => {
   for (const locale of LOCALES) {
     test(`${locale.label}: no horizontal page overflow`, async ({ page }) => {
       await page.goto(locale.path);
+      await waitForSiteStyles(page);
       const overflow = await page.evaluate(() => ({
         bodyScrollWidth: document.body.scrollWidth,
         viewportWidth: window.innerWidth,
@@ -46,6 +61,7 @@ test.describe('mobile layout', () => {
 
     test(`${locale.label}: calendar shows all 7 weekday columns`, async ({ page }) => {
       await page.goto(locale.path);
+      await waitForSiteStyles(page);
       const calendar = page.locator('.calendar');
       await calendar.scrollIntoViewIfNeeded();
       const headers = calendar.locator('.calendar-header');
@@ -58,6 +74,7 @@ test.describe('mobile layout', () => {
 
     test(`${locale.label}: gallery carousel slides align with the track`, async ({ page }) => {
       await page.goto(locale.path);
+      await waitForSiteStyles(page);
       const carousel = page.locator('.gallery-carousel');
       await carousel.scrollIntoViewIfNeeded();
       const trackWidth = await carousel.evaluate(el => el.getBoundingClientRect().width);
@@ -77,8 +94,8 @@ test.describe('a11y — axe-core', () => {
   for (const locale of LOCALES) {
     test(`${locale.label}: no critical or serious violations`, async ({ page }) => {
       await page.goto(locale.path);
-      // Wait for service worker registration prompt to flush; lazy images
-      // have already shown their alt by now.
+      await waitForSiteStyles(page);
+      // Let lazy image/network churn settle before axe scans dynamic sections.
       await page.waitForLoadState('networkidle').catch(() => { /* sw runs forever */ });
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa'])
