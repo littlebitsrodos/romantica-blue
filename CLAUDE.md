@@ -21,7 +21,7 @@ Static vacation-rental site for Sea Tree, Aliki Beach, Paros.
 | `{es,el,fr}/index.html` | Generated locale pages. Do not hand-edit. |
 | `scripts/build_locales.py` | Regenerates locale pages and hreflang metadata. |
 | `sw.js` | Service worker cache. Bump cache version when cached assets change. |
-| `images/` | Raw/source photos. Do not link from HTML. |
+| `images/source/` | Raw/source photos and import batches. Do not link from HTML. |
 | `images/optimized/` | Public images. Link these from HTML. |
 
 ## Site Conventions
@@ -29,6 +29,7 @@ Static vacation-rental site for Sea Tree, Aliki Beach, Paros.
 - Every `<img>` needs explicit `width` and `height` to preserve CLS = 0.
 - Non-critical images should use `loading="lazy"`.
 - Public images should come from `images/optimized/`, with `.webp` preferred and `.jpg` fallback when useful.
+- New photo drops and working source assets should go under `images/source/` (`imports/`, `real/`, `ai/`, `misc/`).
 - Scripts should stay as `<script defer>` in `<head>`.
 - New user-facing copy needs a `data-translate` key plus entries in all four languages.
 - After changing `translations.js` or translated body copy in `index.html`, run:

@@ -13,17 +13,15 @@ It is descriptive project memory, not a general development best-practices docum
 - Last observed commit: `5ee0a24 feat: add guest services and arrival info`
 - Status observed on 2026-05-10: `main...origin/main`, dirty worktree.
 
-## Current Worktree State
+## Historical Worktree Snapshot
 
-Observed dirty entries on 2026-05-10:
+Local-only artifacts observed on 2026-05-10 before later scaffold cleanup:
 
-```text
-?? AGENTS.md
-?? https___seatree.gr_-Vacation rental-2026-05-07/
-?? images/2026-04-30 - yoga room and brass turtles/
-```
+- `AGENTS.md`
+- `archive/site-captures/seatree-gr-vacation-rental-2026-05-07/`
+- `images/source/imports/2026-04-30-yoga-room-and-brass-turtles/`
 
-Treat these as existing source-photo or local audit artifacts unless the human
+Treat these as existing source-photo or audit artifacts unless the human
 explicitly asks to clean or commit them. Do not reset or delete unrelated work.
 
 ## Project Shape
@@ -80,10 +78,10 @@ availability, and contact.
 ## Assets
 
 - Public image assets live in `images/optimized/`.
-- Source/raw photos live under dated folders in `images/`.
+- Source/raw photos live under `images/source/`, grouped into `imports/`, `real/`, `ai/`, and `misc/`.
 - Existing favicon is `favicon.svg`; it is a small circular sea-blue mark with wave lines.
 - Current header/footer brand treatment is text-only: `Sea <span>Tree</span>`.
-- `images/2026-04-30 - yoga room and brass turtles/` is currently untracked and should be treated as incoming source material until reviewed.
+- `images/source/imports/2026-04-30-yoga-room-and-brass-turtles/` is currently source material and should be treated as incoming photography until reviewed.
 
 ## Current Active Task
 
@@ -98,7 +96,7 @@ Useful starting point:
   - rebuild locale pages if `index.html` body or `translations.js` changes;
   - keep the logo usable in small favicon/app-icon contexts and in the fixed nav.
 
-Architecture follow-up sessions are tracked in `ARCHITECTURE_SESSIONS.md`.
+Architecture follow-up sessions are tracked in `reference/architecture/ARCHITECTURE_SESSIONS.md`.
 
 ## Development Commands
 
@@ -159,7 +157,8 @@ Generated or special surfaces:
 
 - `es/index.html`, `el/index.html`, `fr/index.html`: generated; do not hand-edit.
 - `bookings.json`: generated at deploy time by `scripts/sync_bookings.py` and ignored.
-- `lighthouse-*.json`, `psi-*.json`, `lh-sweep.*`: historical/local audit artifacts.
+- Root-level `lighthouse-*.json`, `psi-*.json`, `lh-sweep.*`: historical/local audit artifacts.
+- Archived audit snapshots may also live under `archive/reports/` and `archive/site-captures/`.
 
 ## Known Quirks
 
