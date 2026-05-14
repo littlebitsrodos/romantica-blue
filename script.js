@@ -805,26 +805,6 @@ function initContactForm() {
                 return;
             }
 
-            if (form.action.startsWith('mailto:')) {
-                const recipient = form.action.replace(/^mailto:/, '');
-                const subject = encodeURIComponent('Sea Tree longer stay inquiry');
-                const body = encodeURIComponent([
-                    `Name: ${data.name || ''}`,
-                    `Email: ${data.email || ''}`,
-                    `Desired dates: ${data.dates || ''}`,
-                    `Length of stay: ${data.duration || ''}`,
-                    `Guests: ${data.guests || ''}`,
-                    `Remote work: ${data.remote || ''}`,
-                    '',
-                    'What kind of stay:',
-                    data.message || ''
-                ].join('\n'));
-
-                window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-                showFormMessage('Opening your email app with the inquiry details.', 'success');
-                return;
-            }
-
             // Submit to Formspree
             fetch(form.action, {
                 method: 'POST',

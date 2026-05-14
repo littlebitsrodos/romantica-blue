@@ -51,7 +51,10 @@ def load_translations():
 
 def get_by_path(obj, dotted):
     for part in dotted.split("."):
-        obj = obj[part]
+        if isinstance(obj, list):
+            obj = obj[int(part)]
+        else:
+            obj = obj[part]
     return obj
 
 
